@@ -1,0 +1,55 @@
+{
+  "__METADATA__": {
+    "version": "2.0",
+    "source": "PDS4 Data Dictionary v1.1900"
+  },
+  "Southern Summer": {
+    "type": "scalar_range",
+    "field": "solar_longitude",
+    "min": 270,
+    "max": 360,
+    "unit": "degrees",
+    "pds_ref": "pds:Time_Coordinates.solar_longitude"
+  },
+  "Northern Summer": {
+    "type": "scalar_range",
+    "field": "solar_longitude",
+    "min": 90,
+    "max": 180,
+    "unit": "degrees"
+  },
+  "Dust Storm Season": {
+    "type": "scalar_range",
+    "field": "solar_longitude",
+    "min": 180,
+    "max": 360,
+    "note": "Encompasses Southern Spring/Summer high opacity risk"
+  },
+  "Analysis Ready": {
+    "type": "categorical",
+    "field": "processing_level",
+    "values": ["Calibrated", "Derived"],
+    "description": "Data converted to physical units, ready for science"
+  },
+  "Raw Telemetry": {
+    "type": "categorical",
+    "field": "processing_level",
+    "values": ["Raw", "Telemetry"],
+    "description": "Uncalibrated instrument data"
+  },
+  "Noon": {
+    "type": "scalar_range",
+    "field": "local_true_solar_time",
+    "min": 11.0,
+    "max": 13.0,
+    "unit": "hours"
+  },
+  "Midnight": {
+    "type": "cyclic_range", 
+    "field": "local_true_solar_time",
+    "min": 23.0,
+    "max": 1.0,
+    "range_max": 24.0,
+    "description": "Requires cyclic logic handling across the 24h boundary"
+  }
+}
