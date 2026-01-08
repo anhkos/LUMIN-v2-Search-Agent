@@ -15,7 +15,7 @@ This repository contains the core logic for LUMIN v2, a neurosymbolic search age
 Open your terminal and run the following commands to download the codebase.
 
 ```bash
-git clone 
+git clone https://github.com/anhkos/LUMIN-v2-Search-Agent.git
 cd lumin-v2-core
 
 ```
