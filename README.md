@@ -45,11 +45,10 @@ python -m venv venv
 Install the required Python packages.
 
 ```bash
-pip install openai pydantic
+pip install -r requirements.txt
 
 ```
 
-*(Note: If a requirements.txt file is present, run `pip install -r requirements.txt` instead)*
 
 ### 4. Configure Environment Variables
 
