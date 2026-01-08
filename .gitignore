@@ -1,2 +1,3 @@
 activate_command.txt
 .env
+venv/ 
