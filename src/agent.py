@@ -1,7 +1,7 @@
 import os
 import json
 from openai import OpenAI # type: ignore
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 from logic_engine import NeuroSymbolicSolver
 
 load_dotenv()  # Load environment variables from .env file
