@@ -10,8 +10,7 @@ load_dotenv()  # Load environment variables from .env file
 client = OpenAI() # Ensure OPENAI_API_KEY is in your env
 solver = NeuroSymbolicSolver()
 
-# The "System 2" Prompt
-# We force the LLM to be a "Compiler", not a Chatbot.
+
 SYSTEM_PROMPT = """
 You are the LUMIN Query Compiler for NASA PDS.
 Your goal is to translate Natural Language into a Logic S-Expression.
