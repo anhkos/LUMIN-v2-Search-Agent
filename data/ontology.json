@@ -1,55 +1,219 @@
 {
   "__METADATA__": {
-    "version": "2.0",
-    "source": "PDS4 Data Dictionary v1.1900"
+    "version": "1.0",
+    "description": "Ontology derived strictly from provided PDS4 Beta Filters",
+    "note": "Counts removed from values for API compatibility"
   },
-  "Southern Summer": {
-    "type": "scalar_range",
-    "field": "solar_longitude",
-    "min": 270,
-    "max": 360,
-    "unit": "degrees",
-    "pds_ref": "pds:Time_Coordinates.solar_longitude"
+
+  "__MISSION_CONCEPTS__": {
+    "Mars Rovers": {
+      "type": "categorical",
+      "field": "gather.common.mission",
+      "values": [
+        "Mars 2020",
+        "MSL-Mars Science Laboratory",
+        "MER-Mars Exploration Rover",
+        "Mars Pathfinder",
+        "InSight",
+        "Phoenix"
+      ],
+      "description": "Landed surface operations on Mars (Perseverance, Curiosity, Spirit/Opportunity, Insight)"
+    },
+    "Outer Planets Missions": {
+      "type": "categorical",
+      "field": "gather.common.mission",
+      "values": [
+        "Cassini",
+        "Galileo",
+        "Juno",
+        "Voyager"
+      ],
+      "description": "Missions to Jupiter, Saturn, and the outer solar system"
+    },
+    "Lunar Exploration": {
+      "type": "categorical",
+      "field": "gather.common.mission",
+      "values": [
+        "LCROSS",
+        "Lunar Orbiter",
+        "Chandrayaan 1",
+        "MRO-Mars Reconnaissance Orbiter"
+      ],
+      "note": "MRO included here only if used as calibration, otherwise strictly Mars"
+    }
   },
-  "Northern Summer": {
-    "type": "scalar_range",
-    "field": "solar_longitude",
-    "min": 90,
-    "max": 180,
-    "unit": "degrees"
+
+  "__INSTRUMENT_CONCEPTS__": {
+    "High Resolution Imaging": {
+      "type": "categorical",
+      "field": "gather.common.instrument",
+      "values": [
+        "HIRISE",
+        "ISS",
+        "ISSNA",
+        "ISSWA",
+        "SSI",
+        "MDIS-NAC",
+        "MDIS-WAC",
+        "MAST_LEFT",
+        "MAST_RIGHT",
+        "MCAMZ_RIGHT",
+        "MCAMZ_LEFT"
+      ],
+      "description": "Science-grade cameras for detailed surface photography"
+    },
+    "Hazard & Navigation Cameras": {
+      "type": "categorical",
+      "field": "gather.common.instrument",
+      "values": [
+        "NAVCAM",
+        "NAVCAM_LEFT",
+        "NAVCAM_RIGHT",
+        "FRONT_HAZCAM_LEFT",
+        "FRONT_HAZCAM_RIGHT",
+        "REAR_HAZCAM_LEFT",
+        "REAR_HAZCAM_RIGHT",
+        "EDL_DDCAM",
+        "EDL_PUCAM"
+      ],
+      "description": "Engineering cameras used for driving and landing (Greyscale, Fisheye)"
+    },
+    "Spectroscopy (Composition)": {
+      "type": "categorical",
+      "field": "gather.common.instrument",
+      "values": [
+        "VIMS",
+        "NIMS",
+        "M3",
+        "UVS",
+        "APXS",
+        "SHERLOC_ACI",
+        "PIXL_MCC"
+      ],
+      "description": "Instruments that measure chemical composition or mineralogy"
+    },
+    "Radar Systems": {
+      "type": "categorical",
+      "field": "gather.common.instrument",
+      "values": [
+        "RADAR",
+        "MGN-RADAR",
+        "MGN-RADAR-ALT"
+      ],
+      "description": "Synthetic Aperture Radar and Altimetry"
+    }
   },
-  "Dust Storm Season": {
-    "type": "scalar_range",
-    "field": "solar_longitude",
-    "min": 180,
-    "max": 360,
-    "note": "Encompasses Southern Spring/Summer high opacity risk"
+
+  "__TARGET_CONCEPTS__": {
+    "Mars System": {
+      "type": "categorical",
+      "field": "gather.common.target",
+      "values": [
+        "MARS",
+        "PHOBOS",
+        "DEIMOS"
+      ],
+      "description": "The Red Planet and its two moons"
+    },
+    "Saturn System": {
+      "type": "categorical",
+      "field": "gather.common.target",
+      "values": [
+        "SATURN",
+        "TITAN",
+        "ENCELADUS",
+        "RHEA",
+        "DIONE",
+        "IAPETUS",
+        "HYPERION",
+        "MIMAS",
+        "TETHYS",
+        "PAN",
+        "ATLAS",
+        "PROMETHEUS",
+        "PANDORA"
+      ],
+      "description": "Saturn, its rings, and major icy moons"
+    },
+    "Jupiter System": {
+      "type": "categorical",
+      "field": "gather.common.target",
+      "values": [
+        "JUPITER",
+        "IO",
+        "EUROPA",
+        "GANYMEDE",
+        "CALLISTO",
+        "AMALTHEA",
+        "THEBE"
+      ],
+      "description": "The Gas Giant and the Galilean Moons"
+    },
+    "Calibration Targets": {
+      "type": "categorical",
+      "field": "gather.common.target",
+      "values": [
+        "DARK SKY",
+        "CALIBRATION",
+        "FLAT FIELD",
+        "SKY",
+        "DARK",
+        "PLAQ",
+        "CAL_TARGET"
+      ],
+      "description": "Non-science targets used for instrument calibration"
+    }
   },
-  "Analysis Ready": {
-    "type": "categorical",
-    "field": "processing_level",
-    "values": ["Calibrated", "Derived"],
-    "description": "Data converted to physical units, ready for science"
+
+  "__PRODUCT_CONCEPTS__": {
+    "Raw Data": {
+      "type": "categorical",
+      "field": "gather.common.product_type",
+      "values": [
+        "EDR",
+        "RAW_IMAGE",
+        "RAW_SPECTRUM",
+        "UVS",
+        "RDR" 
+      ],
+      "note": "RDR is technically Reduced, but often treated as base level in legacy datasets"
+    },
+    "Calibrated Data": {
+      "type": "categorical",
+      "field": "gather.common.product_type",
+      "values": [
+        "CALIBRATED_IMAGE",
+        "CALIBRATED_SPECTRUM",
+        "CDR",
+        "DDR",
+        "RDR (Maps)"
+      ],
+      "description": "Data corrected for instrument noise, ready for analysis"
+    }
   },
-  "Raw Telemetry": {
-    "type": "categorical",
-    "field": "processing_level",
-    "values": ["Raw", "Telemetry"],
-    "description": "Uncalibrated instrument data"
-  },
-  "Noon": {
-    "type": "scalar_range",
-    "field": "local_true_solar_time",
-    "min": 11.0,
-    "max": 13.0,
-    "unit": "hours"
-  },
-  "Midnight": {
-    "type": "cyclic_range", 
-    "field": "local_true_solar_time",
-    "min": 23.0,
-    "max": 1.0,
-    "range_max": 24.0,
-    "description": "Requires cyclic logic handling across the 24h boundary"
+
+  "__SPECIAL_BUNDLES__": {
+    "Mars 2020 Raw Images": {
+      "type": "bundle_id_match",
+      "field": "gather.pds_archive",
+      "values": [
+        "mars2020_hazcam_ops_raw",
+        "mars2020_navcam_ops_raw",
+        "mars2020_mastcamz_ops_raw",
+        "mars2020_cachecam_ops_raw",
+        "mars2020_edlcam_ops_raw"
+      ],
+      "description": "Direct access to raw engineering and science imagery from Perseverance"
+    },
+    "Mars 2020 Calibrated": {
+      "type": "bundle_id_match",
+      "field": "gather.pds_archive",
+      "values": [
+        "mars2020_hazcam_ops_calibrated",
+        "mars2020_navcam_ops_calibrated",
+        "mars2020_mastcamz_ops_calibrated"
+      ],
+      "description": "Science-ready calibrated imagery from Perseverance"
+    }
   }
 }
