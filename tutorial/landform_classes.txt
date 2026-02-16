@@ -1,0 +1,8 @@
+Bright dune:	A type of sand dune found on Mars.
+Crater:	Images of craters with specific diameter and visible rims.
+Dark dune:	Dunes that are completely defrosted on Mars.
+Other:	A catch-all class for images that don't fit the defined classes.
+Slope streak:	Features formed by dark flow-like features on slopes.
+Impact ejecta:	Evidence of meteorite impact on Mars' surface.
+Spider:	A phenomenon in the south polar region of Mars with a central pit and radial troughs.
+Swiss cheese:	Terrain with pits formed by sublimation of ice.
