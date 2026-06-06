@@ -1,92 +1,128 @@
-
 # LUMIN v2: Neurosymbolic Query Engine for NASA PDS
 
-This repository contains the core logic for LUMIN v2, a neurosymbolic search agent designed to translate abstract scientific queries into precise schema constraints for the Planetary Data System (PDS).
+LUMIN converts natural language queries into structured PDS4 schema field filters using a hand-curated knowledge graph and embedding-based traversal.
 
-## Prerequisites
+A query like *"southern summer"* resolves to `solar_longitude ∈ [180, 360] deg`. A query like *"HiRISE"* resolves to `instrument_id = HiRISE`. Unknown jargon falls through to cosine-similarity search over concept embeddings and returns a confidence score so downstream systems know when to ask for clarification.
 
-* Python 3.10 or higher
-* Git
-* An OpenAI API Key (for the Agentic component)
+---
 
-## Setup Instructions
+## How it works
 
-### 1. Clone the Repository
-Open your terminal and run the following commands to download the codebase.
+```
+NL query
+   │
+   ├─ Stage 1: exact alias lookup  (e.g. "southern summer" → alias:southern_summer)
+   │
+   └─ Stage 2: embedding similarity over concept + alias nodes
+                       │
+                       ▼
+              BFS traversal through KG
+              alias → concept → schema leaf
+                       │
+                       ▼
+              PDS4 filter dict  +  confidence score
+```
+
+The knowledge graph has three node layers:
+
+| Layer | Example | Role |
+|---|---|---|
+| Alias | `alias:southern_summer` | Surface string entry points (T0/T1) |
+| Concept | `concept:MartianSouthernSummer` | Semantic grouping with description |
+| Schema leaf | `schema:Time_Coordinates.solar_longitude` | Actual PDS4 field + constraints |
+
+---
+
+## Setup
 
 ```bash
-git clone https://github.com/anhkos/LUMIN-v2-Search-Agent.git
+git clone <repo>
 cd lumin-v2-core
-
-```
-
-### 2. Set Up Virtual Environment
-
-Always run this project inside a virtual environment to manage dependencies.
-
-**For macOS / Linux:**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-
-```
-
-**For Windows (PowerShell):**
-
-```bash
 python -m venv venv
-.\venv\Scripts\Activate.ps1
-
-```
-
-### 3. Install Dependencies
-
-Install the required Python packages.
-
-```bash
+venv\Scripts\activate       # Windows
 pip install -r requirements.txt
-
 ```
 
-
-### 4. Configure Environment Variables
-
-The agent requires an API key to function.
-
-1. Create a file named `.env` in the root directory (same level as this README).
-2. Add your API key to the file:
-
-```text
-OPENAI_API_KEY=sk-your-key-here
+Copy `example.env` to `.env` and fill in your keys:
 
 ```
+OPENAI_API_KEY=...          # used for embeddings in traversal.py
+OPENROUTER_API_KEY=...      # used for the LLM (OLMo / eval pipeline)
+```
 
-3. **Important:** Never commit your `.env` file to GitHub. It is already excluded in `.gitignore`.
+---
 
-## Running the System
+## Pipeline
 
-To verify your installation, run the logic engine demo. This tests the core neurosymbolic intersection logic (including cyclic time handling).
+Run these in order from the repo root. All outputs go to `output/`.
+
+### 1. Parse PDS4 LDD files → schema nodes
 
 ```bash
-python run_demo.py
-
+python analysis/parse_ldd.py --local cart=data/PDS4_CART_1P00_1970.json --local img=data/PDS4_IMG_1P00_1930.json
 ```
 
-To run the full agentic loop (requires API key):
+Outputs: `output/schema_nodes.json`, `output/schema_graph.json`
+
+### 2. Filter to query-relevant nodes
 
 ```bash
-python -m src.agent
+python analysis/filter_schema.py
+```
+
+Removes internal DD machinery, groups nodes by concept category (geographic, instrument\_mode, seasonal\_temporal, etc.).
+
+Outputs: `output/schema_nodes_clean.json`, `output/schema_nodes_by_concept.json`, `output/schema_nodes_summary.txt`
+
+### 3. Deduplicate
+
+```bash
+python analysis/dedup.py
+```
+
+Removes duplicate `class.name` entries, keeping first occurrence.
+
+Output: `output/schema_nodes_final.json`
+
+### 4. Build the knowledge graph
+
+```bash
+python build/build_kg.py
+```
+
+Layers concept nodes and alias nodes on top of schema leaves. Edges:
+- `alias → concept` via `is_alias_of`
+- `concept → schema_leaf` via `measured_by`, `corresponds_to`, or `instrument_of`
+
+Outputs: `output/lumin_kg.json`, `output/lumin_kg_summary.txt`
+
+### 5. Run the traversal engine
+
+```bash
+python src/traversal.py
+```
+
+Runs the demo query set and prints filters + confidence scores for each.
+
+---
+
+## Project structure
+
+```
+lumin-v2-core/
+├── analysis/
+│   ├── parse_ldd.py          # Parse PDS4 LDD JSON → schema nodes + graph
+│   ├── filter_schema.py      # Filter to query-relevant nodes by concept
+│   └── dedup.py              # Deduplicate by class.name
+├── build/
+│   └── build_kg.py           # Build full KG (aliases + concepts + schema leaves)
+├── src/
+│   └── traversal.py          # Query engine: VectorIndex + BFS traverser
+├── data/
+│   ├── PDS4_CART_1P00_1970.json   # Cartography LDD
+│   ├── PDS4_IMG_1P00_1930.json    # Imaging LDD
+│   └── normalized_pds_test_dataset.csv
+├── output/                   # All generated artifacts (gitignored)
 
 ```
 
-## Project Structure
-
-* `src/logic_engine.py`: The core polymorphic solver that handles set operations and math.
-* `src/agent.py`: The LLM entry point that translates natural language into logic plans.
-* `data/ontology.json`: The "Ground Truth" definition file derived from PDS4 standards.
-* `run_demo.py`: Integration test script for validting logic operations.
-
-```
-
-```
