@@ -3,3 +3,7 @@ activate_command.txt
 venv/ 
 deprecated/
 results/
+output/ 
+*.js
+*.pyc
+__pycache__/

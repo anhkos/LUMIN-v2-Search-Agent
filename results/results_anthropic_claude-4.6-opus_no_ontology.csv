@@ -1,4 +1,0 @@
-id,query,expected,predicted,field_match
-101,"I need the entry, descent, and landing (EDL) camera raw data.",{'gather.pds_archive': ['mars2020_edlcam_ops_raw']},"{'gather.common.instrument': ['Entry, Descent, and Landing Cameras'], 'gather.common.processing_level': ['Raw']}",0
-11,I want photos taken by the Curiosity rover,{'gather.common.mission': ['MSL-Mars Science Laboratory']},"{'gather.common.mission': ['Mars Science Laboratory (MSL)'], 'gather.common.instrument_type': ['Camera']}",1
-5,Show me hazard camera images,"{'gather.common.instrument': ['NAVCAM', 'NAVCAM_LEFT', 'NAVCAM_RIGHT', 'FRONT_HAZCAM_LEFT', 'FRONT_HAZCAM_RIGHT', 'REAR_HAZCAM_LEFT', 'REAR_HAZCAM_RIGHT', 'EDL_DDCAM', 'EDL_PUCAM']}","{'gather.common.instrument': ['Hazard Avoidance Camera', 'Front Hazard Avoidance Camera', 'Rear Hazard Avoidance Camera', 'Front Hazcam', 'Rear Hazcam', 'FRONT HAZARD AVOIDANCE CAMERA', 'REAR HAZARD AVOIDANCE CAMERA', 'FHAZ', 'RHAZ']}",1
