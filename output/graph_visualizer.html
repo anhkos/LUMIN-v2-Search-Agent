@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUMIN Knowledge Graph Visualizer</title>
+<style>
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0b1020;color:#e5e7eb;overflow:hidden}
+button,input,select{font:inherit}button{cursor:pointer}
+#app{height:100%;display:grid;grid-template-columns:280px 1fr 360px;grid-template-rows:54px 1fr}
+header{grid-column:1/4;background:#111827;border-bottom:1px solid #263144;display:flex;align-items:center;gap:18px;padding:0 18px}
+h1{font-size:15px;margin:0;color:#93c5fd;font-weight:700;white-space:nowrap}
+.stat{font-size:12px;color:#9ca3af}.stat strong{color:#f9fafb}.spacer{flex:1}
+.btn{background:#1f2937;border:1px solid #374151;color:#d1d5db;border-radius:6px;padding:6px 10px;font-size:12px}.btn:hover,.btn.active{border-color:#60a5fa;color:#eff6ff}
+aside{background:#0f172a;border-right:1px solid #263144;overflow:auto;padding:14px}
+#detail{border-right:none;border-left:1px solid #263144}
+main{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 30%,#172033 0,#0b1020 55%,#070b14 100%)}
+canvas{display:block;width:100%;height:100%}
+.section{margin-bottom:18px}.label{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:#7c879a;font-weight:700;margin-bottom:8px}
+#search{width:100%;background:#111827;border:1px solid #374151;color:#f9fafb;border-radius:7px;padding:8px 10px;outline:none;font-size:13px}
+#search:focus{border-color:#60a5fa}.check{display:flex;align-items:center;gap:8px;padding:5px 0;color:#cbd5e1;font-size:13px}.check input{accent-color:#60a5fa}
+.pill{display:inline-flex;align-items:center;gap:6px;margin:0 6px 6px 0;border:1px solid #334155;background:#111827;border-radius:999px;padding:4px 8px;font-size:12px;color:#cbd5e1}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}.range{width:100%;accent-color:#60a5fa}
+#hint{position:absolute;left:14px;bottom:14px;background:rgba(15,23,42,.86);border:1px solid #334155;border-radius:8px;padding:8px 10px;color:#cbd5e1;font-size:12px;pointer-events:none}
+#tip{position:absolute;display:none;max-width:320px;background:#111827;border:1px solid #3b465a;border-radius:8px;padding:9px 11px;box-shadow:0 10px 30px rgba(0,0,0,.35);font-size:12px;line-height:1.45;pointer-events:none;z-index:3}
+#tip strong{color:#f9fafb}.muted{color:#94a3b8}.small{font-size:12px;color:#94a3b8;line-height:1.5}
+#detail h2{font-size:17px;margin:0 0 4px;color:#f9fafb;word-break:break-word}#detail h3{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:#7c879a;margin:18px 0 8px}
+.type{font-size:12px;color:#93c5fd;margin-bottom:12px}.kv{display:grid;grid-template-columns:105px 1fr;gap:8px 10px;font-size:12px;border-top:1px solid #1f2937;padding-top:12px}
+.k{color:#7c879a}.v{color:#e5e7eb;word-break:break-word}.desc{font-size:13px;line-height:1.55;color:#cbd5e1;background:#111827;border-left:2px solid #3b82f6;padding:10px 12px;border-radius:6px}
+.edge-list{font-size:12px;line-height:1.55;color:#cbd5e1}.edge-item{padding:8px 0;border-bottom:1px solid #1f2937}.edge-item b{color:#f9fafb}
+.empty{height:100%;display:flex;align-items:center;justify-content:center;text-align:center;color:#7c879a;font-size:13px;padding:24px}
+#error{display:none;position:absolute;inset:16px;background:#111827;border:1px solid #ef4444;border-radius:8px;padding:16px;color:#fecaca;z-index:4}
+@media(max-width:980px){#app{grid-template-columns:220px 1fr;grid-template-rows:54px 1fr 240px}header{grid-column:1/3}#detail{grid-column:1/3;border-left:0;border-top:1px solid #263144}main{min-width:0}}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>LUMIN Knowledge Graph</h1>
+    <span class="stat"><strong id="nodeCount">-</strong> nodes</span>
+    <span class="stat"><strong id="edgeCount">-</strong> edges</span>
+    <span class="stat"><strong id="visibleCount">-</strong> visible</span>
+    <div class="spacer"></div>
+    <button class="btn" id="fitBtn">Fit</button>
+    <button class="btn active" id="connectedBtn">Connected only</button>
+    <button class="btn" id="labelsBtn">Labels</button>
+  </header>
+
+  <aside>
+    <div class="section">
+      <div class="label">Search</div>
+      <input id="search" placeholder="Alias, concept, schema field...">
+    </div>
+    <div class="section">
+      <div class="label">Node Types</div>
+      <label class="check"><input type="checkbox" value="alias" checked data-type> Alias</label>
+      <label class="check"><input type="checkbox" value="concept" checked data-type> Concept</label>
+      <label class="check"><input type="checkbox" value="schema_leaf" checked data-type> Schema leaf</label>
+    </div>
+    <div class="section">
+      <div class="label">Concept Categories</div>
+      <div id="categories"></div>
+    </div>
+    <div class="section">
+      <div class="label">Edge Types</div>
+      <div id="edgeTypes"></div>
+    </div>
+    <div class="section">
+      <div class="label">Graph Spread</div>
+      <input id="spread" class="range" type="range" min="40" max="220" value="120">
+      <div class="small">Drag nodes to pin them. Mouse wheel zooms; drag empty space pans.</div>
+    </div>
+  </aside>
+
+  <main>
+    <canvas id="canvas"></canvas>
+    <div id="tip"></div>
+    <div id="hint">Click a node for details. Double-click to release a pinned node.</div>
+    <div id="error"></div>
+  </main>
+
+  <aside id="detail">
+    <div class="empty">Select a node to inspect its metadata and connected edges.</div>
+  </aside>
+</div>
+
+<script>
+const COLORS={alias:"#f59e0b",concept:"#60a5fa",schema_leaf:"#34d399"};
+const CATEGORY_COLORS=["#60a5fa","#a78bfa","#f472b6","#fb7185","#f59e0b","#22c55e","#2dd4bf","#38bdf8"];
+const canvas=document.getElementById("canvas"),ctx=canvas.getContext("2d"),tip=document.getElementById("tip");
+let rawNodes=[],rawLinks=[],nodes=[],links=[],nodeById=new Map(),adj=new Map(),selected=null,hovered=null;
+let scale=1,tx=0,ty=0,dragNode=null,panStart=null,mouse={x:0,y:0},showLabels=false,connectedOnly=true,needsFit=true;
+let filters={types:new Set(["alias","concept","schema_leaf"]),categories:new Set(),edges:new Set(),q:"",spread:120};
+
+fetch("lumin_kg.json").then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(init).catch(err=>{
+  const e=document.getElementById("error");e.style.display="block";e.innerHTML="<b>Could not load output/lumin_kg.json.</b><br>Run this page through <code>node serve.js</code> from the repo root, or open it from the <code>output/</code> folder with a local server.<br><br>"+escapeHtml(err.message);
+});
+
+function init(data){
+  rawNodes=(data.nodes||[]).map((d,i)=>({...d,_i:i,_label:labelFor(d),_type:d.node_type||"unknown"}));
+  rawLinks=(data.links||data.edges||[]).map((e,i)=>({source:e.source,target:e.target,edge_type:e.edge_type||"unknown",value_hint:e.value_hint,_i:i}));
+  nodeById=new Map(rawNodes.map(n=>[n.id,n]));
+  for(const n of rawNodes)adj.set(n.id,[]);
+  for(const e of rawLinks){adj.get(e.source)?.push(e);adj.get(e.target)?.push(e)}
+  document.getElementById("nodeCount").textContent=rawNodes.length.toLocaleString();
+  document.getElementById("edgeCount").textContent=rawLinks.length.toLocaleString();
+  buildControls();
+  randomizePositions();
+  applyFilters();
+  bindEvents();
+  requestAnimationFrame(tick);
+}
+
+function buildControls(){
+  const cats=[...new Set(rawNodes.filter(n=>n._type==="concept").map(n=>n.category).filter(Boolean))].sort();
+  filters.categories=new Set(cats);
+  document.getElementById("categories").innerHTML=cats.map((c,i)=>`<label class="check"><input type="checkbox" value="${escapeHtml(c)}" checked data-cat><span class="dot" style="background:${CATEGORY_COLORS[i%CATEGORY_COLORS.length]}"></span>${escapeHtml(c)}</label>`).join("");
+  const ets=[...new Set(rawLinks.map(e=>e.edge_type))].sort();
+  filters.edges=new Set(ets);
+  document.getElementById("edgeTypes").innerHTML=ets.map(e=>`<label class="check"><input type="checkbox" value="${escapeHtml(e)}" checked data-edge>${escapeHtml(e)} <span class="muted">(${rawLinks.filter(x=>x.edge_type===e).length})</span></label>`).join("");
+}
+
+function applyFilters(){
+  const q=filters.q.trim().toLowerCase();
+  const edgeOk=e=>filters.edges.has(e.edge_type);
+  const typeOk=n=>filters.types.has(n._type);
+  const catOk=n=>n._type!=="concept"||!n.category||filters.categories.has(n.category);
+  const textOk=n=>!q||searchText(n).includes(q);
+  let visible=new Set(rawNodes.filter(n=>typeOk(n)&&catOk(n)&&textOk(n)).map(n=>n.id));
+  if(connectedOnly){
+    const connected=new Set();
+    for(const e of rawLinks)if(edgeOk(e)){connected.add(e.source);connected.add(e.target)}
+    visible=new Set([...visible].filter(id=>connected.has(id)));
+  }
+  links=rawLinks.filter(e=>edgeOk(e)&&visible.has(e.source)&&visible.has(e.target));
+  if(q){
+    const expanded=new Set(visible);
+    for(const e of rawLinks)if(edgeOk(e)&&(visible.has(e.source)||visible.has(e.target))){expanded.add(e.source);expanded.add(e.target)}
+    visible=expanded;
+    links=rawLinks.filter(e=>edgeOk(e)&&visible.has(e.source)&&visible.has(e.target));
+  }
+  nodes=[...visible].map(id=>nodeById.get(id)).filter(Boolean);
+  document.getElementById("visibleCount").textContent=nodes.length.toLocaleString();
+  needsFit=true;
+}
+
+function randomizePositions(){
+  const w=canvas.clientWidth||900,h=canvas.clientHeight||700;
+  for(const n of rawNodes){n.x=w/2+(Math.random()-.5)*w*.7;n.y=h/2+(Math.random()-.5)*h*.7;n.vx=0;n.vy=0;n.pinned=false}
+}
+
+function tick(){
+  resize();
+  const visibleIds=new Set(nodes.map(n=>n.id));
+  const degree=new Map(nodes.map(n=>[n.id,0]));
+  for(const e of links){degree.set(e.source,(degree.get(e.source)||0)+1);degree.set(e.target,(degree.get(e.target)||0)+1)}
+  for(let iter=0;iter<2;iter++){
+    for(const e of links){
+      const a=nodeById.get(e.source),b=nodeById.get(e.target); if(!a||!b)continue;
+      const dx=b.x-a.x,dy=b.y-a.y,dist=Math.max(1,Math.hypot(dx,dy)),target=filters.spread*(e.edge_type==="is_alias_of"?.7:1);
+      const f=(dist-target)*.006,fx=dx/dist*f,fy=dy/dist*f;
+      if(!a.pinned){a.vx+=fx;a.vy+=fy} if(!b.pinned){b.vx-=fx;b.vy-=fy}
+    }
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+      const a=nodes[i],b=nodes[j],dx=b.x-a.x,dy=b.y-a.y,d2=Math.max(36,dx*dx+dy*dy),dist=Math.sqrt(d2);
+      const force=(degree.get(a.id)||0)&& (degree.get(b.id)||0) ? 80/d2 : 12/d2;
+      const fx=dx/dist*force,fy=dy/dist*force;
+      if(!a.pinned){a.vx-=fx;a.vy-=fy} if(!b.pinned){b.vx+=fx;b.vy+=fy}
+    }
+    const cx=(canvas.width/devicePixelRatio)/2,cy=(canvas.height/devicePixelRatio)/2;
+    for(const n of nodes){if(!n.pinned){n.vx+=(cx-n.x)*.0008;n.vy+=(cy-n.y)*.0008;n.x+=n.vx;n.y+=n.vy;n.vx*=.82;n.vy*=.82}}
+  }
+  if(needsFit){fitView();needsFit=false}
+  draw(visibleIds);
+  requestAnimationFrame(tick);
+}
+
+function draw(){
+  const dpr=devicePixelRatio||1,w=canvas.width/dpr,h=canvas.height/dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);ctx.save();ctx.translate(tx,ty);ctx.scale(scale,scale);
+  const hi=highlightSet();
+  ctx.lineWidth=1/scale;
+  for(const e of links){
+    const a=nodeById.get(e.source),b=nodeById.get(e.target); if(!a||!b)continue;
+    ctx.strokeStyle=hi&&!(hi.has(a.id)&&hi.has(b.id))?"rgba(100,116,139,.12)":edgeColor(e.edge_type);
+    ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
+  }
+  for(const n of nodes){
+    const r=radius(n),isHi=!hi||hi.has(n.id);
+    ctx.globalAlpha=isHi?1:.18;ctx.fillStyle=nodeColor(n);ctx.beginPath();ctx.arc(n.x,n.y,r,0,Math.PI*2);ctx.fill();
+    if(n===selected||n===hovered){ctx.strokeStyle=n===selected?"#f9fafb":"#bfdbfe";ctx.lineWidth=2/scale;ctx.stroke()}
+    if(showLabels||n._type==="concept"||n===selected||n===hovered){
+      ctx.fillStyle="#e5e7eb";ctx.font=`${Math.max(10,12/Math.sqrt(scale))}px sans-serif`;ctx.textAlign="center";ctx.textBaseline="top";
+      ctx.fillText(short(n._label,28),n.x,n.y+r+4/scale);
+    }
+  }
+  ctx.globalAlpha=1;ctx.restore();
+}
+
+function bindEvents(){
+  document.querySelectorAll("input[type=checkbox]").forEach(cb=>cb.addEventListener("change",()=>{
+    filters.types=new Set([...document.querySelectorAll("[data-type]:checked")].map(x=>x.value));
+    filters.categories=new Set([...document.querySelectorAll("[data-cat]:checked")].map(x=>x.value));
+    filters.edges=new Set([...document.querySelectorAll("[data-edge]:checked")].map(x=>x.value));applyFilters();
+  }));
+  document.getElementById("search").addEventListener("input",e=>{filters.q=e.target.value;applyFilters()});
+  document.getElementById("spread").addEventListener("input",e=>{filters.spread=Number(e.target.value)});
+  document.getElementById("fitBtn").onclick=()=>fitView();
+  document.getElementById("labelsBtn").onclick=e=>{showLabels=!showLabels;e.currentTarget.classList.toggle("active",showLabels)};
+  document.getElementById("connectedBtn").onclick=e=>{connectedOnly=!connectedOnly;e.currentTarget.classList.toggle("active",connectedOnly);applyFilters()};
+  canvas.addEventListener("mousedown",e=>{mouse=pos(e);const n=nearest(mouse);if(n){dragNode=n;n.pinned=true;selectNode(n)}else panStart={x:e.clientX,y:e.clientY,tx,ty}});
+  window.addEventListener("mousemove",e=>{mouse=pos(e);if(dragNode){dragNode.x=mouse.wx;dragNode.y=mouse.wy;dragNode.vx=dragNode.vy=0}else if(panStart){tx=panStart.tx+e.clientX-panStart.x;ty=panStart.ty+e.clientY-panStart.y}else updateHover(e)});
+  window.addEventListener("mouseup",()=>{dragNode=null;panStart=null});
+  canvas.addEventListener("dblclick",e=>{const n=nearest(pos(e));if(n)n.pinned=false});
+  canvas.addEventListener("wheel",e=>{e.preventDefault();const p=pos(e),factor=e.deltaY<0?1.12:.89;scale=Math.max(.08,Math.min(5,scale*factor));tx=p.x-p.wx*scale;ty=p.y-p.wy*scale},{passive:false});
+}
+
+function updateHover(e){
+  const n=nearest(mouse);hovered=n;
+  if(!n){tip.style.display="none";return}
+  tip.style.display="block";tip.style.left=e.clientX+14+"px";tip.style.top=e.clientY+14+"px";
+  tip.innerHTML=`<strong>${escapeHtml(n._label)}</strong><br><span class="muted">${escapeHtml(n._type)}${n.category?" / "+escapeHtml(n.category):""}</span>`;
+}
+
+function selectNode(n){
+  selected=n; const edges=adj.get(n.id)||[];
+  document.getElementById("detail").innerHTML=`<h2>${escapeHtml(n._label)}</h2><div class="type">${escapeHtml(n._type)}${n.category?" / "+escapeHtml(n.category):""}</div>
+  ${n.description?`<div class="desc">${escapeHtml(n.description)}</div>`:""}
+  <h3>Metadata</h3><div class="kv">${metaRows(n)}</div>
+  <h3>Connected Edges (${edges.length})</h3><div class="edge-list">${edges.length?edges.map(edgeRow).join(""):"No connected edges."}</div>`;
+}
+
+function metaRows(n){
+  const keys=["id","surface_form","concept","label","category","class","name","ldd","namespace","data_type","unit","min_value","max_value","identifier"];
+  return keys.filter(k=>n[k]!=null&&n[k]!=="").map(k=>`<div class="k">${escapeHtml(k)}</div><div class="v">${escapeHtml(Array.isArray(n[k])?n[k].join(", "):n[k])}</div>`).join("");
+}
+function edgeRow(e){const other=e.source===selected.id?e.target:e.source;return `<div class="edge-item"><b>${escapeHtml(e.edge_type)}</b><br><span class="muted">${escapeHtml(e.source)} -> ${escapeHtml(e.target)}</span>${e.value_hint?`<br><span class="muted">value_hint:</span> ${escapeHtml(e.value_hint)}`:""}</div>`}
+function labelFor(n){return n.label||n.surface_form||((n.class&&n.name)?`${n.class}.${n.name}`:n.name)||n.id}
+function searchText(n){return [n.id,n._label,n.description,n.category,n.class,n.name,n.surface_form,n.concept,n.data_type,n.ldd].join(" ").toLowerCase()}
+function nodeColor(n){if(n._type==="concept"&&n.category){const cats=[...filters.categories];let idx=[...new Set(rawNodes.filter(x=>x._type==="concept").map(x=>x.category).filter(Boolean))].sort().indexOf(n.category);return CATEGORY_COLORS[Math.max(0,idx)%CATEGORY_COLORS.length]}return COLORS[n._type]||"#94a3b8"}
+function edgeColor(t){return t==="is_alias_of"?"rgba(245,158,11,.45)":t==="measured_by"?"rgba(52,211,153,.5)":t==="instrument_of"?"rgba(167,139,250,.5)":"rgba(96,165,250,.45)"}
+function radius(n){return n._type==="concept"?8:n._type==="alias"?4.5:5.5}
+function highlightSet(){if(!selected&&!hovered)return null;const n=selected||hovered,s=new Set([n.id]);for(const e of adj.get(n.id)||[]){s.add(e.source);s.add(e.target)}return s}
+function nearest(p){let best=null,bd=Infinity;for(const n of nodes){const d=Math.hypot(n.x-p.wx,n.y-p.wy);if(d<radius(n)+8/scale&&d<bd){best=n;bd=d}}return best}
+function pos(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;return{x,y,wx:(x-tx)/scale,wy:(y-ty)/scale}}
+function fitView(){if(!nodes.length)return;let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;for(const n of nodes){minX=Math.min(minX,n.x);minY=Math.min(minY,n.y);maxX=Math.max(maxX,n.x);maxY=Math.max(maxY,n.y)}const w=canvas.clientWidth,h=canvas.clientHeight,pad=70;scale=Math.max(.08,Math.min(2,(Math.min((w-pad*2)/(maxX-minX||1),(h-pad*2)/(maxY-minY||1)))));tx=w/2-(minX+maxX)/2*scale;ty=h/2-(minY+maxY)/2*scale}
+function resize(){const dpr=devicePixelRatio||1,w=canvas.clientWidth,h=canvas.clientHeight;if(canvas.width!==Math.floor(w*dpr)||canvas.height!==Math.floor(h*dpr)){canvas.width=Math.floor(w*dpr);canvas.height=Math.floor(h*dpr);needsFit=true}}
+function short(s,n){s=String(s||"");return s.length>n?s.slice(0,n-1)+"...":s}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+{
+  "condition": "rag_concept_docs",
+  "model": "gpt-4o-mini",
+  "summary": {
+    "n": 4,
+    "accuracy": 1.0,
+    "retrieval_recall": 1.0,
+    "by_tier": {
+      "T0": {
+        "n": 1,
+        "accuracy": 1.0,
+        "retrieval_recall": 1.0
+      },
+      "T1": {
+        "n": 1,
+        "accuracy": 1.0,
+        "retrieval_recall": 1.0
+      },
+      "T2": {
+        "n": 1,
+        "accuracy": 1.0,
+        "retrieval_recall": 1.0
+      },
+      "T3": {
+        "n": 1,
+        "accuracy": 1.0,
+        "retrieval_recall": 1.0
+      }
+    }
+  },
+  "results": [
+    {
+      "query": "southern summer",
+      "tier": "T0",
+      "condition": "rag_concept_docs",
+      "predicted_filters": {
+        "solar_longitude": {
+          "min": 180,
+          "max": 360
+        }
+      },
+      "ground_truth_filters": {
+        "solar_longitude": {
+          "min": 180,
+          "max": 360
+        }
+      },
+      "correct": true,
+      "confidence": 0.5329028367996216,
+      "context_docs": [
+        "Martian Southern Summer. The period of Mars southern hemisphere summer, defined by solar longitude between 180 and 360 degrees. Also called aphelion season. Aliases: southern summer, southern hemisphere summer, aphelion season, martian summer, southern warm season. Schema fields: solar_longitude.",
+        "Martian Northern Summer. The period of Mars northern hemisphere summer, defined by solar longitude between 0 and 180 degrees. Associated with perihelion season and elevated dust storm risk. Aliases: northern summer, northern hemisphere summer, perihelion season, dust storm season, northern warm season. Schema fields: solar_longitude.",
+        "Mars Perihelion. The point in Mars orbit closest to the Sun, occurring around solar longitude 250 degrees. Associated with warmer southern hemisphere and peak dust storm risk. Aliases: perihelion, mars perihelion, perihelion passage, closest to sun, peak dust season. Schema fields: solar_longitude.",
+        "Water Ice Clouds. Water ice clouds on Mars that form primarily during the aphelion cloud belt season (Ls 50-150 degrees) near the equator. Aliases: water ice clouds, ice clouds, aphelion cloud belt, ACB, martian clouds, equatorial clouds, cloud belt, cloud opacity. Schema fields: solar_longitude.",
+        "Mars Aphelion. The point in Mars orbit farthest from the Sun, occurring around solar longitude 70 degrees. Associated with cooler temperatures and the aphelion cloud belt. Aliases: aphelion, mars aphelion, aphelion passage, farthest from sun, aphelion cloud belt season. Schema fields: solar_longitude."
+      ],
+      "retrieval_recall": true
+    },
+    {
+      "query": "HiRISE",
+      "tier": "T1",
+      "condition": "rag_concept_docs",
+      "predicted_filters": {
+        "mission_name": {
+          "value": "HiRISE"
+        }
+      },
+      "ground_truth_filters": {
+        "mission_name": {
+          "value": "HiRISE"
+        }
+      },
+      "correct": true,
+      "confidence": 0.7049681544303894,
+      "context_docs": [
+        "HiRISE High-Resolution Imaging. High Resolution Imaging Science Experiment on MRO, providing the highest resolution images of Mars surface at sub-meter scale (0.25-0.5 m/pixel). Aliases: hirise, high resolution imaging, sub-meter imagery, high res camera, color imaging MRO, 25cm resolution. Schema fields: mission_name, pixel_resolution_x.",
+        "CRISM Hyperspectral Imaging. Compact Reconnaissance Imaging Spectrometer for Mars on MRO. Maps surface mineralogy. Modes include FRT (full resolution targeted) and HRL (half-resolution long). Aliases: crism, hyperspectral, spectrometer MRO, mineralogy mapper, FRT, HRL, targeted spectrometer, surface composition mapping, spectral imaging. Schema fields: mission_name.",
+        "SHARAD Radargrams. Subsurface radar sounding data from the SHARAD instrument on MRO. Used to image subsurface layering, polar deposits, and ice. Data type is radargram. Aliases: sharad, subsurface radar, ice penetrating radar, ground penetrating radar mars, radar sounder, subsurface sounder, radargram, radar cross section, stratigraphic profiles from orbit. Schema fields: mission_name.",
+        "CTX Context Camera. Context Camera on MRO providing wide-field grayscale images at approximately 6 m/pixel resolution over a 30 km swath. Aliases: ctx, context camera, context imager, 6 meter resolution, wide angle camera MRO, 30km swath, context imagery. Schema fields: mission_name, pixel_resolution_x.",
+        "MRO Aerobraking Phase. The aerobraking phase of the Mars Reconnaissance Orbiter mission in 2006, during which limited science data was collected due to non-science orbit geometry. Aliases: aerobraking, aerobraking phase, MRO aerobraking, 2006 aerobraking, orbital insertion phase, pre-science phase MRO. Schema fields: mission_phase_name, start_date_time, stop_date_time."
+      ],
+      "retrieval_recall": true
+    },
+    {
+      "query": "southern hemisphere warm season",
+      "tier": "T2",
+      "condition": "rag_concept_docs",
+      "predicted_filters": {
+        "solar_longitude": {
+          "min": 180,
+          "max": 360
+        }
+      },
+      "ground_truth_filters": {
+        "solar_longitude": {
+          "min": 180,
+          "max": 360
+        }
+      },
+      "correct": true,
+      "confidence": 0.583280086517334,
+      "context_docs": [
+        "Martian Southern Summer. The period of Mars southern hemisphere summer, defined by solar longitude between 180 and 360 degrees. Also called aphelion season. Aliases: southern summer, southern hemisphere summer, aphelion season, martian summer, southern warm season. Schema fields: solar_longitude.",
+        "Martian Northern Summer. The period of Mars northern hemisphere summer, defined by solar longitude between 0 and 180 degrees. Associated with perihelion season and elevated dust storm risk. Aliases: northern summer, northern hemisphere summer, perihelion season, dust storm season, northern warm season. Schema fields: solar_longitude.",
+        "Mars Perihelion. The point in Mars orbit closest to the Sun, occurring around solar longitude 250 degrees. Associated with warmer southern hemisphere and peak dust storm risk. Aliases: perihelion, mars perihelion, perihelion passage, closest to sun, peak dust season. Schema fields: solar_longitude.",
+        "Mars Polar Regions. The north and south polar regions of Mars, defined as latitudes above 60N or below 60S. Contains polar ice caps and layered deposits. Aliases: polar region, north pole, south pole, polar cap, polar ice cap, arctic region mars, polar layered deposits, NPLD, SPLD, north polar layered deposits, south polar layered deposits. Schema fields: north_bounding_coordinate, south_bounding_coordinate.",
+        "Water Ice Clouds. Water ice clouds on Mars that form primarily during the aphelion cloud belt season (Ls 50-150 degrees) near the equator. Aliases: water ice clouds, ice clouds, aphelion cloud belt, ACB, martian clouds, equatorial clouds, cloud belt, cloud opacity. Schema fields: solar_longitude."
+      ],
+      "retrieval_recall": true
+    },
+    {
+      "query": "NPLD stratigraphic profiles from orbit",
+      "tier": "T3",
+      "condition": "rag_concept_docs",
+      "predicted_filters": {
+        "mission_name": {
+          "value": "SHARAD"
+        }
+      },
+      "ground_truth_filters": {
+        "mission_name": {
+          "value": "SHARAD"
+        }
+      },
+      "correct": true,
+      "confidence": 0.3616332411766052,
+      "context_docs": [
+        "CRISM Hyperspectral Imaging. Compact Reconnaissance Imaging Spectrometer for Mars on MRO. Maps surface mineralogy. Modes include FRT (full resolution targeted) and HRL (half-resolution long). Aliases: crism, hyperspectral, spectrometer MRO, mineralogy mapper, FRT, HRL, targeted spectrometer, surface composition mapping, spectral imaging. Schema fields: mission_name.",
+        "Mars Polar Regions. The north and south polar regions of Mars, defined as latitudes above 60N or below 60S. Contains polar ice caps and layered deposits. Aliases: polar region, north pole, south pole, polar cap, polar ice cap, arctic region mars, polar layered deposits, NPLD, SPLD, north polar layered deposits, south polar layered deposits. Schema fields: north_bounding_coordinate, south_bounding_coordinate.",
+        "SHARAD Radargrams. Subsurface radar sounding data from the SHARAD instrument on MRO. Used to image subsurface layering, polar deposits, and ice. Data type is radargram. Aliases: sharad, subsurface radar, ice penetrating radar, ground penetrating radar mars, radar sounder, subsurface sounder, radargram, radar cross section, stratigraphic profiles from orbit. Schema fields: mission_name.",
+        "MRO Aerobraking Phase. The aerobraking phase of the Mars Reconnaissance Orbiter mission in 2006, during which limited science data was collected due to non-science orbit geometry. Aliases: aerobraking, aerobraking phase, MRO aerobraking, 2006 aerobraking, orbital insertion phase, pre-science phase MRO. Schema fields: mission_phase_name, start_date_time, stop_date_time.",
+        "HiRISE High-Resolution Imaging. High Resolution Imaging Science Experiment on MRO, providing the highest resolution images of Mars surface at sub-meter scale (0.25-0.5 m/pixel). Aliases: hirise, high resolution imaging, sub-meter imagery, high res camera, color imaging MRO, 25cm resolution. Schema fields: mission_name, pixel_resolution_x."
+      ],
+      "retrieval_recall": true
+    }
+  ]
+}

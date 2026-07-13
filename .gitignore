@@ -3,7 +3,10 @@ activate_command.txt
 venv/ 
 deprecated/
 results/
-output/ 
+output/*
+!output/
+!output/graph_visualizer.html
 *.js
+!serve.js
 *.pyc
 __pycache__/

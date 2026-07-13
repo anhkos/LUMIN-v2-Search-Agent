@@ -568,12 +568,24 @@ class Evaluator:
             print("Building RAG indices...")
             docs, meta = build_concept_docs(self.G)
             self.concept_index = FlatRAGIndex(docs, self.embedding_client, meta)
+            self._save_docs(docs, meta, kg_path.parent / "concept_docs.json")
         elif condition in ("rag_mapping_docs", "rag_oracle"):
             print("Building RAG indices...")
             docs, meta = build_mapping_docs(self.G)
             self.mapping_index = FlatRAGIndex(docs, self.embedding_client, meta)
+            self._save_docs(docs, meta, kg_path.parent / "mapping_docs.json")
         elif condition == "kg":
             self.traversal = LUMINTraversal(str(kg_path))
+
+    @staticmethod
+    def _save_docs(docs: list[str], metadata: list[dict], path: Path):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(
+                [{"doc": d, "metadata": m} for d, m in zip(docs, metadata)],
+                f,
+                indent=2,
+            )
+        print(f"  Saved {len(docs)} docs → {path}")
 
     def run(self, test_cases: list[dict]) -> list[EvalResult]:
         results = []

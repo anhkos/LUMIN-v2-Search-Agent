@@ -104,6 +104,16 @@ python src/traversal.py
 
 Runs the demo query set and prints filters + confidence scores for each.
 
+### Visualize the knowledge graph
+
+After `output/lumin_kg.json` exists, start the local static server:
+
+```bash
+node serve.js
+```
+
+Open `http://localhost:3000/` to explore aliases, concepts, schema leaves, and typed edges.
+
 ---
 
 ## Project structure
@@ -125,4 +135,3 @@ lumin-v2-core/
 ├── output/                   # All generated artifacts (gitignored)
 
 ```
-

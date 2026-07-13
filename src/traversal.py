@@ -4,77 +4,101 @@ traversal.py
 LUMIN Knowledge Graph traversal module.
 
 Three components:
-    1. VectorIndex   — embeds alias/concept nodes, finds nearest entry point
-                       for any query term (known or unknown jargon)
-    2. Traverser     — BFS from entry point to schema leaf nodes,
-                       following typed edges in priority order
+    1. VectorIndex    — embeds alias/concept nodes; finds nearest entry point
+                        for any query term (known or unknown jargon) via
+                        cosine similarity over topology + embedding features
+    2. Traverser      — best-first search (Dijkstra) from entry point to
+                        schema leaf, directly maximising the confidence score
     3. TraversalResult — structured output with filters + confidence signal
 
-This is the self-RAG analog: instead of learned reflection tokens,
-confidence is derived from graph topology (entry similarity, path length,
-edge type quality). No supervision required.
+Confidence signal ρ = ρ_sim × ρ_path × ρ_type × ρ_margin × ρ_agreement
+    ρ_sim       cosine similarity to entry node (embedding-based)
+    ρ_path      Dijkstra-optimal path score: product(edge_priorities) × 0.85^(hops-1)
+                — the traversal directly maximises this, so the reported ρ_path
+                  is the best achievable from the entry node
+    ρ_type      1.0 for alias entry (precise), 0.85 for concept entry (approximate)
+    ρ_margin    entry ambiguity: gap between top-1 and top-2 embedding similarities
+    ρ_agreement cross-candidate consistency: do the k entry candidates converge
+                on the same terminal schema leaf?
+
+Note on supervision: ρ requires no learned confidence model and no reflection-
+token training data. A single scalar threshold τ is tuned on the validation
+split; the full risk-coverage curve is reported so the choice of τ is
+transparent. ρ_sim depends on the embedding model (not pure graph topology);
+all other factors are derived from graph structure alone.
 
 Usage:
     python traversal.py
 
 Requires:
-    pip install networkx openai numpy scikit-learn
+    pip install networkx openai numpy
     export OPENAI_API_KEY=your_key
 """
 
 import json
 import os
 import math
-from collections import deque
-from pathlib import Path
+import heapq
 import numpy as np
 import networkx as nx
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from itertools import count
 from typing import Optional
 from openai import OpenAI
 
 # ── Configuration ──────────────────────────────────────────────────────────────
 
-EMBEDDING_MODEL   = "text-embedding-3-small"   # cheap + fast; swap to large if needed
-ENTRY_TOP_K       = 3       # number of candidate entry nodes to consider
-BFS_MAX_DEPTH     = 5       # max hops before giving up
-CONFIDENCE_THRESH = 0.55    # below this → flag as uncertain
+EMBEDDING_MODEL   = "text-embedding-3-small"
+ENTRY_TOP_K       = 3       # candidate entry nodes from embedding search
+MAX_DEPTH         = 5       # max hops in Dijkstra before giving up
+CONFIDENCE_THRESH = 0.55    # below this → flag uncertain (tuned on val split)
 
-# Edge type priority (higher = more confident traversal)
+# Edge type priority — higher = lower Dijkstra cost = preferred traversal
+# Choosing these is a design decision; ablation in the paper tests sensitivity
 EDGE_PRIORITY = {
     "is_alias_of":    1.00,
     "corresponds_to": 1.00,
     "measured_by":    0.90,
     "instrument_of":  0.80,
-    "related_to":     0.50,   # weak cross-concept edge
+    "related_to":     0.50,   # weak cross-concept edge; heavily penalised
 }
+
+# Length decay per hop (after the first) — tunable, ablated in paper
+LENGTH_DECAY = 0.85
 
 # ── Data structures ────────────────────────────────────────────────────────────
 
 @dataclass
 class TraversalResult:
     query_term:       str
-    entry_node:       str                    # node id of entry point
-    entry_node_type:  str                    # alias | concept
-    entry_similarity: float                  # cosine sim to entry node
-    path:             list[str]              # full node id path
-    edge_types:       list[str]              # edge types along path
-    schema_leaves:    list[dict]             # schema leaf nodes reached
-    filters:          list[dict]             # extracted PDS filter dicts
-    confidence:       float                  # 0–1 confidence signal
-    uncertain:        bool                   # True if below threshold
-    explanation:      str                    # human-readable reasoning
+    entry_node:       str
+    entry_node_type:  str        # "alias" | "concept"
+    entry_similarity: float      # cosine sim to entry node
+    entry_margin:     float      # sim[0] - sim[1]; high = unambiguous entry
+    path:             list       # full node-id path from entry to schema leaf
+    edge_types:       list       # edge type labels along path
+    path_rho:         float      # ρ_path = Dijkstra-optimal path score
+    path_agreement:   float      # 1.0 if k candidates converge, 0.75 if not
+    schema_leaves:    list       # schema leaf node data dicts
+    filters:          list       # extracted PDS filter dicts
+    confidence:       float      # combined ρ
+    uncertain:        bool       # True if ρ < CONFIDENCE_THRESH
+    explanation:      str
 
     def pretty(self):
         lines = [
-            f"Query:       {self.query_term}",
-            f"Entry node:  {self.entry_node}  ({self.entry_node_type})",
-            f"Similarity:  {self.entry_similarity:.3f}",
-            f"Path:        {' -> '.join(self.path)}",
-            f"Edge types:  {' -> '.join(self.edge_types)}",
-            f"Confidence:  {self.confidence:.3f}  {'[UNCERTAIN]' if self.uncertain else '[OK]'}",
-            f"Filters:     {self.filters}",
-            f"Explanation: {self.explanation}",
+            f"Query:        {self.query_term}",
+            f"Entry node:   {self.entry_node}  ({self.entry_node_type})",
+            f"Similarity:   {self.entry_similarity:.3f}  "
+            f"(margin: {self.entry_margin:.3f})",
+            f"Path:         {' → '.join(self.path)}",
+            f"Edge types:   {' → '.join(self.edge_types)}",
+            f"ρ_path:       {self.path_rho:.3f}  "
+            f"agreement: {self.path_agreement:.2f}",
+            f"Confidence:   {self.confidence:.3f}  "
+            f"{'⚠ UNCERTAIN' if self.uncertain else '✓ OK'}",
+            f"Filters:      {self.filters}",
+            f"Explanation:  {self.explanation}",
         ]
         return "\n".join(lines)
 
@@ -83,171 +107,157 @@ class TraversalResult:
 
 class VectorIndex:
     """
-    Embeds all alias and concept nodes in the KG.
-    At query time, finds the nearest node by cosine similarity.
-
-    Search space is restricted to alias + concept nodes only —
-    never schema leaves, to preserve the traversal path.
+    Embeds all alias and concept nodes. At query time, finds nearest nodes
+    by cosine similarity. Search space restricted to alias + concept layers —
+    never schema leaves — to preserve the traversal path.
     """
 
     def __init__(self, G: nx.DiGraph, client: OpenAI):
         self.G = G
         self.client = client
-        self.node_ids = []
-        self.texts = []
+        self.node_ids: list[str] = []
+        self.texts:    list[str] = []
         self.embeddings = None
         self._build()
 
     def _build(self):
         print("Building vector index over alias + concept nodes...")
         for node_id, data in self.G.nodes(data=True):
-            node_type = data.get("node_type")
-            if node_type == "alias":
+            nt = data.get("node_type")
+            if nt == "alias":
                 text = data.get("surface_form", node_id)
-            elif node_type == "concept":
-                # richer text for concept nodes: label + description
+            elif nt == "concept":
                 text = f"{data.get('label', '')}. {data.get('description', '')}"
             else:
-                continue   # skip schema leaves
+                continue
             self.node_ids.append(node_id)
             self.texts.append(text)
 
         print(f"  Embedding {len(self.texts)} nodes...")
-        response = self.client.embeddings.create(
-            model=EMBEDDING_MODEL,
-            input=self.texts
-        )
-        vecs = [e.embedding for e in response.data]
-        self.embeddings = np.array(vecs, dtype=np.float32)
-        # L2-normalise for fast cosine via dot product
-        norms = np.linalg.norm(self.embeddings, axis=1, keepdims=True)
-        self.embeddings = self.embeddings / np.maximum(norms, 1e-9)
-        print(f"  Done. Index size: {self.embeddings.shape}")
+        resp = self.client.embeddings.create(
+            model=EMBEDDING_MODEL, input=self.texts)
+        vecs = np.array([e.embedding for e in resp.data], dtype=np.float32)
+        norms = np.linalg.norm(vecs, axis=1, keepdims=True)
+        self.embeddings = vecs / np.maximum(norms, 1e-9)
+        print(f"  Index ready: {self.embeddings.shape}")
 
-    def query(self, term: str, top_k: int = ENTRY_TOP_K) -> list[tuple[str, float]]:
-        """
-        Embed a query term and return top-k (node_id, similarity) pairs.
-        """
-        response = self.client.embeddings.create(
-            model=EMBEDDING_MODEL,
-            input=[term]
-        )
-        q = np.array(response.data[0].embedding, dtype=np.float32)
+    def query(self, term: str, top_k: int = ENTRY_TOP_K
+              ) -> list[tuple[str, float]]:
+        """Return top-k (node_id, cosine_similarity) pairs."""
+        resp = self.client.embeddings.create(
+            model=EMBEDDING_MODEL, input=[term])
+        q = np.array(resp.data[0].embedding, dtype=np.float32)
         q = q / max(np.linalg.norm(q), 1e-9)
+        sims = self.embeddings @ q
+        idx  = np.argsort(sims)[::-1][:top_k]
+        return [(self.node_ids[i], float(sims[i])) for i in idx]
 
-        sims = self.embeddings @ q          # cosine similarity for all nodes
-        top_k_idx = np.argsort(sims)[::-1][:top_k]
-        return [(self.node_ids[i], float(sims[i])) for i in top_k_idx]
 
-
-# ── BFS Traverser ──────────────────────────────────────────────────────────────
+# ── Dijkstra Traverser ─────────────────────────────────────────────────────────
 
 class Traverser:
     """
-    BFS from an entry node toward schema leaf nodes.
-    Follows edges in priority order, stops at first schema leaf reached.
-    Returns the best path found across all BFS branches.
+    Best-first search from an entry node to a schema leaf, directly
+    maximising the path confidence score ρ_path.
+
+    ρ_path = product(edge_priorities) × LENGTH_DECAY^(max(0, hops-1))
+
+    Taking -log converts this to a sum of non-negative edge costs, which
+    Dijkstra minimises. The first schema leaf popped from the priority queue
+    is the ρ_path-optimal one — search and calibration use the same objective,
+    so the reported ρ_path is the maximum achievable from the entry node.
+
+    This resolves the inconsistency in BFS, where the shortest-hop path may
+    have lower ρ_path than a longer path through higher-priority edges.
     """
+
+    # Pre-compute per-edge costs (-log of priority)
+    LOG_DECAY = -math.log(LENGTH_DECAY)  # -log(0.85) ≈ 0.163 per extra hop
+    EDGE_COST = {et: -math.log(max(p, 1e-9))
+                 for et, p in EDGE_PRIORITY.items()}
 
     def __init__(self, G: nx.DiGraph):
         self.G = G
 
-    def traverse(self, start_node: str) -> Optional[tuple[list[str], list[str]]]:
+    def traverse(self, start_node: str
+                 ) -> Optional[tuple[list[str], list[str], float]]:
         """
-        BFS from start_node to a schema leaf.
-        Returns (path, edge_types) or None if no leaf reachable within depth.
+        Dijkstra from start_node to the ρ_path-optimal schema leaf.
+        Returns (path, edge_types, rho_path) or None if unreachable.
         """
-        # queue entries: (current_node, path_so_far, edge_types_so_far)
-        queue = deque([(start_node, [start_node], [])])
-        visited = {start_node}
-        best_path = None
-        best_score = -1.0
+        _cnt = count()   # tie-breaker — avoids comparing list elements
 
-        while queue:
-            current, path, edges = queue.popleft()
+        # (cost, counter, node_id, path, edge_types)
+        pq = [(0.0, next(_cnt), start_node, [start_node], [])]
+        best_cost: dict[str, float] = {start_node: 0.0}
 
-            if len(path) > BFS_MAX_DEPTH + 1:
+        while pq:
+            cost, _, current, path, edges = heapq.heappop(pq)
+
+            # Stale entry
+            if cost > best_cost.get(current, math.inf) + 1e-9:
                 continue
 
-            node_type = self.G.nodes[current].get("node_type")
+            nt = self.G.nodes[current].get("node_type")
 
-            # termination: reached a schema leaf
-            if node_type == "schema_leaf" and len(path) > 1:
-                score = self._path_score(edges, path)
-                if score > best_score:
-                    best_score = score
-                    best_path = (path, edges)
-                continue   # don't expand further from leaf
+            # Reached a schema leaf — this is the ρ_path-optimal path
+            if nt == "schema_leaf" and len(path) > 1:
+                rho_path = math.exp(-cost)
+                return path, edges, rho_path
 
-            # expand neighbors, sorted by edge priority (high → low)
-            neighbors = list(self.G.successors(current))
-            neighbors.sort(
-                key=lambda n: EDGE_PRIORITY.get(
-                    self.G.edges[current, n].get("edge_type", ""), 0
-                ),
-                reverse=True
-            )
+            if len(path) > MAX_DEPTH + 1:
+                continue
 
-            for neighbor in neighbors:
-                if neighbor not in visited:
-                    visited.add(neighbor)
-                    edge_type = self.G.edges[current, neighbor].get("edge_type", "unknown")
-                    queue.append((neighbor, path + [neighbor], edges + [edge_type]))
+            for neighbor in self.G.successors(current):
+                et          = self.G.edges[current, neighbor].get(
+                                "edge_type", "unknown")
+                edge_cost   = self.EDGE_COST.get(et, -math.log(0.5))
+                # Length decay applies from the second hop onward
+                length_cost = self.LOG_DECAY if len(edges) >= 1 else 0.0
+                new_cost    = cost + edge_cost + length_cost
 
-        return best_path
+                if new_cost < best_cost.get(neighbor, math.inf):
+                    best_cost[neighbor] = new_cost
+                    heapq.heappush(
+                        pq,
+                        (new_cost, next(_cnt), neighbor,
+                         path + [neighbor], edges + [et])
+                    )
 
-    def _path_score(self, edge_types: list[str], path: list[str]) -> float:
-        """Score a path by the product of its edge priorities, penalised by length."""
-        if not edge_types:
-            return 0.0
-        priority_product = math.prod(
-            EDGE_PRIORITY.get(et, 0.5) for et in edge_types
-        )
-        length_penalty = 1.0 / len(edge_types)
-        terminal_edge = self.G.edges[path[-2], path[-1]]
-        value_hint_bonus = 1.2 if terminal_edge.get("value_hint") else 1.0
-        return priority_product * length_penalty * value_hint_bonus
+        return None
 
 
 # ── Filter Extractor ───────────────────────────────────────────────────────────
 
-def extract_filters(G: nx.DiGraph, path: list[str], edge_types: list[str]) -> list[dict]:
-    """
-    Walk the path and collect value_hints from edges that have them.
-    Returns a list of filter dicts, each with:
-        field, class, value_hint, edge_type
-    """
+def extract_filters(G: nx.DiGraph,
+                    path: list[str],
+                    edge_types: list[str]) -> list[dict]:
     filters = []
-    for i, edge_type in enumerate(edge_types):
-        u, v = path[i], path[i + 1]
-        edge_data = G.edges[u, v]
-        value_hint_raw = edge_data.get("value_hint")
-        v_data = G.nodes[v]
-
-        if v_data.get("node_type") == "schema_leaf":
-            f = {
-                "field":      v_data.get("name"),
-                "class":      v_data.get("class"),
-                "ldd":        v_data.get("ldd"),
-                "edge_type":  edge_type,
-                "data_type":  v_data.get("data_type"),
-                "unit":       v_data.get("unit"),
-            }
-            if value_hint_raw:
-                try:
-                    f["value_hint"] = json.loads(value_hint_raw)
-                except Exception:
-                    f["value_hint"] = value_hint_raw
-            else:
-                f["value_hint"] = None
-
-            # add permissible values if enumerated
-            if v_data.get("enumerated") and v_data.get("permissible_values"):
-                f["permissible_values"] = [
-                    pv["value"] for pv in v_data["permissible_values"]
-                ]
-            filters.append(f)
-
+    for i, et in enumerate(edge_types):
+        u, v     = path[i], path[i + 1]
+        vd       = G.nodes[v]
+        edge_d   = G.edges[u, v]
+        if vd.get("node_type") != "schema_leaf":
+            continue
+        hint_raw = edge_d.get("value_hint")
+        f = {
+            "field":     vd.get("name"),
+            "class":     vd.get("class"),
+            "ldd":       vd.get("ldd"),
+            "edge_type": et,
+            "data_type": vd.get("data_type"),
+            "unit":      vd.get("unit"),
+            "value_hint": None,
+        }
+        if hint_raw:
+            try:
+                f["value_hint"] = json.loads(hint_raw)
+            except Exception:
+                f["value_hint"] = hint_raw
+        if vd.get("enumerated") and vd.get("permissible_values"):
+            f["permissible_values"] = [
+                pv["value"] for pv in vd["permissible_values"]]
+        filters.append(f)
     return filters
 
 
@@ -255,153 +265,177 @@ def extract_filters(G: nx.DiGraph, path: list[str], edge_types: list[str]) -> li
 
 def score_confidence(
     entry_similarity: float,
-    path: list[str],
-    edge_types: list[str],
-    G: nx.DiGraph
+    path:             list[str],
+    edge_types:       list[str],
+    path_rho:         float,      # Dijkstra-optimal ρ_path (ρ_edge × ρ_len)
+    entry_margin:     float,      # sim[0] - sim[1]; entry ambiguity signal
+    path_agreement:   float,      # 1.0 if k candidates converge, else 0.75
+    G:                nx.DiGraph,
 ) -> tuple[float, str]:
     """
-    Derives confidence from graph topology — no supervision needed.
-    This is the self-RAG analog: instead of learned reflection tokens,
-    we use structural signals.
+    Combines six interpretable factors into a scalar confidence score ρ.
 
-    Factors:
-        1. Entry similarity  — how close was the query to the entry node?
-        2. Path length       — longer paths = more uncertain
-        3. Edge type quality — weak edges (related_to) reduce confidence
-        4. Exact alias match — did we land on a known alias vs concept node?
+    ρ = ρ_sim × ρ_path × ρ_type × ρ_margin × ρ_agreement
 
-    Returns (confidence_score, explanation_string)
+    Each factor is independently inspectable — unlike a learned scalar,
+    a low ρ can be traced to its source:
+        low ρ_sim     → query far from any ontology entry point; add aliases
+        low ρ_path    → traversal relied on weak/long edges; review graph
+        low ρ_type    → unknown jargon entry (expected for T2/T3)
+        low ρ_margin  → ambiguous entry; two concepts equally close
+        low ρ_agreement → k candidates disagree on terminal leaf
+
+    Threshold τ = CONFIDENCE_THRESH is tuned on the validation split.
+    The full risk-coverage curve is reported so the choice is transparent.
     """
-    explanations = []
+    expl = []
 
-    # Factor 1: entry similarity (already 0-1, cosine)
-    sim_score = entry_similarity
-    if sim_score >= 0.90:
-        explanations.append(f"strong entry match ({sim_score:.2f})")
-    elif sim_score >= 0.70:
-        explanations.append(f"moderate entry match ({sim_score:.2f})")
+    # ── ρ_sim: embedding similarity to entry node ──────────────────────────
+    rho_sim = entry_similarity
+    if rho_sim >= 0.90:
+        expl.append(f"strong entry match ({rho_sim:.2f})")
+    elif rho_sim >= 0.70:
+        expl.append(f"moderate entry match ({rho_sim:.2f})")
     else:
-        explanations.append(f"weak entry match ({sim_score:.2f}) — possible wrong-node latch")
+        expl.append(f"weak entry match ({rho_sim:.2f}) — possible wrong-node latch")
 
-    # Factor 2: path length penalty (1 hop = 1.0, each extra hop * 0.85)
+    # ── ρ_path: Dijkstra-optimal path score (ρ_edge × ρ_len) ──────────────
+    # Already computed by Traverser — directly reflects best achievable path
     n_hops = len(edge_types)
-    length_score = 0.85 ** max(0, n_hops - 1)
     if n_hops <= 2:
-        explanations.append(f"short path ({n_hops} hops)")
+        expl.append(f"short path ({n_hops} hops)")
     elif n_hops <= 4:
-        explanations.append(f"medium path ({n_hops} hops)")
+        expl.append(f"medium path ({n_hops} hops)")
     else:
-        explanations.append(f"long path ({n_hops} hops) — higher uncertainty")
-
-    # Factor 3: edge quality (penalise weak edges)
-    edge_score = math.prod(
-        EDGE_PRIORITY.get(et, 0.5) for et in edge_types
-    ) if edge_types else 1.0
+        expl.append(f"long path ({n_hops} hops)")
     if any(et == "related_to" for et in edge_types):
-        explanations.append("traversed weak related_to edge — possible wrong concept")
+        expl.append("traversed weak related_to edge")
 
-    # Factor 4: entry node type (alias = more precise than concept)
+    # ── ρ_type: alias entry vs concept entry ──────────────────────────────
     entry_type = G.nodes[path[0]].get("node_type") if path else "unknown"
-    type_score = 1.0 if entry_type == "alias" else 0.85
+    rho_type = 1.0 if entry_type == "alias" else 0.85
     if entry_type == "alias":
-        explanations.append("entered via known alias (precise)")
+        expl.append("entered via known alias (precise)")
     else:
-        explanations.append("entered via concept node (approximate — term may be unknown jargon)")
+        expl.append("entered via concept node (approximate — unknown jargon)")
 
-    # Combined score
-    confidence = sim_score * length_score * edge_score * type_score
-    confidence = min(1.0, max(0.0, confidence))
+    # ── ρ_margin: entry ambiguity (gap between top-1 and top-2 similarity) ─
+    # High margin = one clear winner; low margin = two concepts equally close
+    # ρ_margin ∈ [0.5, 1.0]; saturates at margin ≥ 0.2
+    rho_margin = 0.5 + min(0.5, entry_margin * 2.5)
+    if entry_margin >= 0.20:
+        expl.append(f"clear entry margin ({entry_margin:.2f})")
+    elif entry_margin < 0.08:
+        expl.append(f"ambiguous entry (margin {entry_margin:.2f}) — two concepts equally close")
+    else:
+        expl.append(f"moderate entry margin ({entry_margin:.2f})")
 
-    explanation = "; ".join(explanations)
-    return confidence, explanation
+    # ── ρ_agreement: path convergence across k entry candidates ───────────
+    rho_agreement = path_agreement
+    if path_agreement < 1.0:
+        expl.append("candidates disagree on terminal leaf — reduced confidence")
+    else:
+        expl.append("all candidates converge on same leaf")
+
+    # ── Combined ρ ─────────────────────────────────────────────────────────
+    rho = rho_sim * path_rho * rho_type * rho_margin * rho_agreement
+    rho = min(1.0, max(0.0, rho))
+
+    return rho, "; ".join(expl)
 
 
 # ── Main Interface ─────────────────────────────────────────────────────────────
 
 class LUMINTraversal:
     """
-    Main interface. Given a query term, returns a TraversalResult with
-    extracted PDS filters and a confidence signal.
+    Given a query term, returns a TraversalResult with PDS filters
+    and a six-factor confidence signal.
     """
 
-    def __init__(self, kg_path: str = None):
-        if kg_path is None:
-            kg_path = Path(__file__).parent.parent / "output" / "lumin_kg.json"
+    def __init__(self, kg_path: str = "lumin_kg.json"):
         print(f"Loading KG from {kg_path}...")
-        with open(kg_path, encoding="utf-8") as f:
+        with open(kg_path) as f:
             kg_data = json.load(f)
-        self.G = nx.node_link_graph(kg_data)
-        print(f"  {self.G.number_of_nodes()} nodes, {self.G.number_of_edges()} edges")
-
-        self.client   = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-        self.index    = VectorIndex(self.G, self.client)
+        self.G         = nx.node_link_graph(kg_data)
+        self.client    = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+        self.index     = VectorIndex(self.G, self.client)
         self.traverser = Traverser(self.G)
+        print(f"  {self.G.number_of_nodes()} nodes, "
+              f"{self.G.number_of_edges()} edges")
 
     def query(self, term: str) -> TraversalResult:
-        """
-        Given a natural language term (known or unknown jargon),
-        return filters and confidence.
-        """
-        # Stage 1: exact alias lookup — skip embedding if we have a direct hit
+        # ── Stage 1: exact alias lookup ────────────────────────────────────
         normalized = term.lower().replace(" ", "_")
-        alias_id = f"alias:{normalized}"
+        alias_id   = f"alias:{normalized}"
         if alias_id in self.G:
-            candidates = [(alias_id, 1.0)]
+            candidates   = [(alias_id, 1.0)]
+            entry_margin = 1.0   # exact match — no ambiguity
         else:
-            # Stage 2: embedding similarity over alias + concept nodes
+            # ── Stage 2: embedding-based fallback ─────────────────────────
             candidates = self.index.query(term, top_k=ENTRY_TOP_K)
+            if len(candidates) >= 2:
+                entry_margin = candidates[0][1] - candidates[1][1]
+            else:
+                entry_margin = 1.0
 
-        best_result = None
-
+        # ── Dijkstra from each candidate ───────────────────────────────────
+        traversal_results = []
         for entry_node, entry_sim in candidates:
-            # Step 2: BFS from this entry node to a schema leaf
-            traversal = self.traverser.traverse(entry_node)
-            if traversal is None:
-                continue
+            result = self.traverser.traverse(entry_node)
+            if result is not None:
+                path, edge_types, path_rho = result
+                traversal_results.append(
+                    (entry_node, entry_sim, path, edge_types, path_rho))
 
-            path, edge_types = traversal
-
-            # Step 3: extract filters from path
-            filters = extract_filters(self.G, path, edge_types)
-
-            # Step 4: score confidence
-            confidence, explanation = score_confidence(
-                entry_sim, path, edge_types, self.G
+        if not traversal_results:
+            entry_node, entry_sim = (candidates[0] if candidates
+                                     else ("none", 0.0))
+            return TraversalResult(
+                query_term=term, entry_node=entry_node,
+                entry_node_type="unknown", entry_similarity=entry_sim,
+                entry_margin=entry_margin, path=[], edge_types=[],
+                path_rho=0.0, path_agreement=1.0, schema_leaves=[],
+                filters=[], confidence=0.0, uncertain=True,
+                explanation="No schema leaf reachable within depth limit",
             )
 
+        # ── Path agreement across candidates ───────────────────────────────
+        terminal_leaves  = [r[2][-1] for r in traversal_results]
+        unique_terminals = set(terminal_leaves)
+        path_agreement   = 1.0 if len(unique_terminals) == 1 else 0.75
+
+        # ── Score each candidate and pick the best ─────────────────────────
+        best_result = None
+        for entry_node, entry_sim, path, edge_types, path_rho in traversal_results:
+            filters = extract_filters(self.G, path, edge_types)
+            confidence, explanation = score_confidence(
+                entry_similarity=entry_sim,
+                path=path,
+                edge_types=edge_types,
+                path_rho=path_rho,
+                entry_margin=entry_margin,
+                path_agreement=path_agreement,
+                G=self.G,
+            )
             result = TraversalResult(
                 query_term       = term,
                 entry_node       = entry_node,
-                entry_node_type  = self.G.nodes[entry_node].get("node_type", "unknown"),
+                entry_node_type  = self.G.nodes[entry_node].get(
+                                       "node_type", "unknown"),
                 entry_similarity = entry_sim,
+                entry_margin     = entry_margin,
                 path             = path,
                 edge_types       = edge_types,
+                path_rho         = path_rho,
+                path_agreement   = path_agreement,
                 schema_leaves    = [self.G.nodes[path[-1]]],
                 filters          = filters,
                 confidence       = confidence,
                 uncertain        = confidence < CONFIDENCE_THRESH,
                 explanation      = explanation,
             )
-
-            # keep the highest-confidence result across candidates
-            if best_result is None or result.confidence > best_result.confidence:
+            if best_result is None or confidence > best_result.confidence:
                 best_result = result
-
-        if best_result is None:
-            # complete traversal failure — return uncertain empty result
-            return TraversalResult(
-                query_term       = term,
-                entry_node       = candidates[0][0] if candidates else "none",
-                entry_node_type  = "unknown",
-                entry_similarity = candidates[0][1] if candidates else 0.0,
-                path             = [],
-                edge_types       = [],
-                schema_leaves    = [],
-                filters          = [],
-                confidence       = 0.0,
-                uncertain        = True,
-                explanation      = "No schema leaf reachable within depth limit",
-            )
 
         return best_result
 
@@ -409,32 +443,25 @@ class LUMINTraversal:
 # ── Demo ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    lumint = LUMINTraversal()
+    lumint = LUMINTraversal("lumin_kg.json")
 
     test_queries = [
-        # T0/T1 — should be high confidence
-        "southern summer",
-        "HiRISE",
-        "north pole",
-
-        # T2 — moderate confidence expected
-        "southern hemisphere warm season",
-        "subsurface ice layering radar",
-
-        # T3 / unknown — lower confidence, may flag uncertain
-        "aphelion season near perihelion transition",
-        "NPLD stratigraphic profiles from orbit",
-        "tau surge during global encirclement",
-
-        # genuinely out-of-scope — should flag uncertain
-        "coffee shop near JPL",
+        "southern summer",                            # T1 exact alias
+        "HiRISE",                                     # T1 exact alias
+        "north pole",                                 # T1 exact alias
+        "southern hemisphere warm season",            # T2
+        "subsurface ice layering radar",              # T2
+        "aphelion season near perihelion transition", # T3-in
+        "NPLD stratigraphic profiles from orbit",     # T3-in
+        "tau surge during global encirclement",       # T3-in
+        "cryosphere thickness estimates",             # T3-out (not in alias list)
+        "coffee shop near JPL",                       # OOD
     ]
 
-    print("\n" + "=" * 70)
-    print("LUMIN KG Traversal -- Demo")
-    print("=" * 70)
+    print("\n" + "=" * 72)
+    print("LUMIN KG Traversal — Demo (Dijkstra + 6-factor confidence)")
+    print("=" * 72)
 
-    for query in test_queries:
-        print(f"\n{'-' * 70}")
-        result = lumint.query(query)
-        print(result.pretty())
+    for q in test_queries:
+        print(f"\n{'─' * 72}")
+        print(lumint.query(q).pretty())
