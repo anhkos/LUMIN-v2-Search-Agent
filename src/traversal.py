@@ -352,7 +352,7 @@ class LUMINTraversal:
     and a six-factor confidence signal.
     """
 
-    def __init__(self, kg_path: str = "lumin_kg.json"):
+    def __init__(self, kg_path: str = "output/lumin_kg.json"):
         print(f"Loading KG from {kg_path}...")
         with open(kg_path) as f:
             kg_data = json.load(f)
@@ -443,7 +443,7 @@ class LUMINTraversal:
 # ── Demo ───────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    lumint = LUMINTraversal("lumin_kg.json")
+    lumint = LUMINTraversal("output/lumin_kg.json")
 
     test_queries = [
         "southern summer",                            # T1 exact alias
