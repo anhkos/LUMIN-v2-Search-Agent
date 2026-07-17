@@ -55,6 +55,7 @@ canvas{display:block;width:100%;height:100%}
       <div class="label">Node Types</div>
       <label class="check"><input type="checkbox" value="alias" checked data-type> Alias</label>
       <label class="check"><input type="checkbox" value="concept" checked data-type> Concept</label>
+      <label class="check"><input type="checkbox" value="class" checked data-type> Class</label>
       <label class="check"><input type="checkbox" value="schema_leaf" checked data-type> Schema leaf</label>
     </div>
     <div class="section">
@@ -85,12 +86,12 @@ canvas{display:block;width:100%;height:100%}
 </div>
 
 <script>
-const COLORS={alias:"#f59e0b",concept:"#60a5fa",schema_leaf:"#34d399"};
+const COLORS={alias:"#f59e0b",concept:"#60a5fa",class:"#c084fc",schema_leaf:"#34d399"};
 const CATEGORY_COLORS=["#60a5fa","#a78bfa","#f472b6","#fb7185","#f59e0b","#22c55e","#2dd4bf","#38bdf8"];
 const canvas=document.getElementById("canvas"),ctx=canvas.getContext("2d"),tip=document.getElementById("tip");
 let rawNodes=[],rawLinks=[],nodes=[],links=[],nodeById=new Map(),adj=new Map(),selected=null,hovered=null;
 let scale=1,tx=0,ty=0,dragNode=null,panStart=null,mouse={x:0,y:0},showLabels=false,connectedOnly=true,needsFit=true;
-let filters={types:new Set(["alias","concept","schema_leaf"]),categories:new Set(),edges:new Set(),q:"",spread:120};
+let filters={types:new Set(["alias","concept","class","schema_leaf"]),categories:new Set(),edges:new Set(),q:"",spread:120};
 
 fetch("lumin_kg.json").then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()}).then(init).catch(err=>{
   const e=document.getElementById("error");e.style.display="block";e.innerHTML="<b>Could not load output/lumin_kg.json.</b><br>Run this page through <code>node serve.js</code> from the repo root, or open it from the <code>output/</code> folder with a local server.<br><br>"+escapeHtml(err.message);
@@ -98,7 +99,7 @@ fetch("lumin_kg.json").then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);retur
 
 function init(data){
   rawNodes=(data.nodes||[]).map((d,i)=>({...d,_i:i,_label:labelFor(d),_type:d.node_type||"unknown"}));
-  rawLinks=(data.links||data.edges||[]).map((e,i)=>({source:e.source,target:e.target,edge_type:e.edge_type||"unknown",value_hint:e.value_hint,_i:i}));
+  rawLinks=(data.links||data.edges||[]).map((e,i)=>({...e,source:e.source,target:e.target,edge_type:e.edge_type||"unknown",_i:i}));
   nodeById=new Map(rawNodes.map(n=>[n.id,n]));
   for(const n of rawNodes)adj.set(n.id,[]);
   for(const e of rawLinks){adj.get(e.source)?.push(e);adj.get(e.target)?.push(e)}
@@ -157,7 +158,7 @@ function tick(){
   for(let iter=0;iter<2;iter++){
     for(const e of links){
       const a=nodeById.get(e.source),b=nodeById.get(e.target); if(!a||!b)continue;
-      const dx=b.x-a.x,dy=b.y-a.y,dist=Math.max(1,Math.hypot(dx,dy)),target=filters.spread*(e.edge_type==="is_alias_of"?.7:1);
+      const dx=b.x-a.x,dy=b.y-a.y,dist=Math.max(1,Math.hypot(dx,dy)),target=filters.spread*(e.edge_type==="is_alias_of"||e.edge_type==="grounded_in"?.7:e.edge_type==="occurs_during"?1.4:1);
       const f=(dist-target)*.006,fx=dx/dist*f,fy=dy/dist*f;
       if(!a.pinned){a.vx+=fx;a.vy+=fy} if(!b.pinned){b.vx-=fx;b.vy-=fy}
     }
@@ -231,15 +232,24 @@ function selectNode(n){
 }
 
 function metaRows(n){
-  const keys=["id","surface_form","concept","label","category","class","name","ldd","namespace","data_type","unit","min_value","max_value","identifier"];
+  const keys=["id","surface_form","concept","label","category","class_of","class","name","ldd","namespace","data_type","unit","min_value","max_value","identifier"];
   return keys.filter(k=>n[k]!=null&&n[k]!=="").map(k=>`<div class="k">${escapeHtml(k)}</div><div class="v">${escapeHtml(Array.isArray(n[k])?n[k].join(", "):n[k])}</div>`).join("");
 }
-function edgeRow(e){const other=e.source===selected.id?e.target:e.source;return `<div class="edge-item"><b>${escapeHtml(e.edge_type)}</b><br><span class="muted">${escapeHtml(e.source)} -> ${escapeHtml(e.target)}</span>${e.value_hint?`<br><span class="muted">value_hint:</span> ${escapeHtml(e.value_hint)}`:""}</div>`}
+function fmtJsonAttr(raw){
+  try{return escapeHtml(JSON.stringify(JSON.parse(raw)))}catch(e){return escapeHtml(raw)}
+}
+function edgeRow(e){
+  const extra=[];
+  if(e.slot)extra.push(`<br><span class="muted">slot:</span> ${escapeHtml(e.slot)}`);
+  if(e.slot_values)extra.push(`<br><span class="muted">slot_values:</span> ${fmtJsonAttr(e.slot_values)}`);
+  if(e.value_hint)extra.push(`<br><span class="muted">value_hint:</span> ${fmtJsonAttr(e.value_hint)}`);
+  return `<div class="edge-item"><b>${escapeHtml(e.edge_type)}</b><br><span class="muted">${escapeHtml(e.source)} -> ${escapeHtml(e.target)}</span>${extra.join("")}</div>`;
+}
 function labelFor(n){return n.label||n.surface_form||((n.class&&n.name)?`${n.class}.${n.name}`:n.name)||n.id}
-function searchText(n){return [n.id,n._label,n.description,n.category,n.class,n.name,n.surface_form,n.concept,n.data_type,n.ldd].join(" ").toLowerCase()}
+function searchText(n){return [n.id,n._label,n.description,n.category,n.class_of,n.class,n.name,n.surface_form,n.concept,n.data_type,n.ldd].join(" ").toLowerCase()}
 function nodeColor(n){if(n._type==="concept"&&n.category){const cats=[...filters.categories];let idx=[...new Set(rawNodes.filter(x=>x._type==="concept").map(x=>x.category).filter(Boolean))].sort().indexOf(n.category);return CATEGORY_COLORS[Math.max(0,idx)%CATEGORY_COLORS.length]}return COLORS[n._type]||"#94a3b8"}
-function edgeColor(t){return t==="is_alias_of"?"rgba(245,158,11,.45)":t==="measured_by"?"rgba(52,211,153,.5)":t==="instrument_of"?"rgba(167,139,250,.5)":"rgba(96,165,250,.45)"}
-function radius(n){return n._type==="concept"?8:n._type==="alias"?4.5:5.5}
+function edgeColor(t){return t==="is_alias_of"?"rgba(245,158,11,.45)":t==="grounded_in"?"rgba(52,211,153,.5)":t==="occurs_during"?"rgba(244,114,182,.5)":t==="instance_of"?"rgba(96,165,250,.5)":"rgba(148,163,184,.4)"}
+function radius(n){return n._type==="concept"?8:n._type==="class"?7:n._type==="alias"?4.5:5.5}
 function highlightSet(){if(!selected&&!hovered)return null;const n=selected||hovered,s=new Set([n.id]);for(const e of adj.get(n.id)||[]){s.add(e.source);s.add(e.target)}return s}
 function nearest(p){let best=null,bd=Infinity;for(const n of nodes){const d=Math.hypot(n.x-p.wx,n.y-p.wy);if(d<radius(n)+8/scale&&d<bd){best=n;bd=d}}return best}
 function pos(e){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;return{x,y,wx:(x-tx)/scale,wy:(y-ty)/scale}}
