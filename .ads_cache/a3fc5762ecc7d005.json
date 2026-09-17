@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1997Tectp.276..181G",
+    "abstract": "Platinum-group elements (PGE) and gold were analyzed by ICP-MS after the Ni-sulphide fire assay pre-concentration step in 44 rocks from 5 orogenic mafic-ultramafic massifs of the central and southern Urals. They comprise: (a) ring-zoned, Ural-Alaskan type bodies of the 'Pt-bearing belt' (Kachkanar, Tagil, Uktus); and (b) lherzolite-harzburgite complexes overlain by layered wehrlite, gabbro, and diorite (Nurali, Mindyak) supposed to be ophiolite-type suites. Total PGE and Au contents are generally higher in Ural-Alaskan type complexes compared with lherzolite-harzburgite complexes. Mantle-normalized PGE patterns range from nearly unfractionated in the dunites ( {Pd}/{Ir} = 0.57-3.68 ) to mildly and strongly fractionated in wehrlite, clinopyroxenite, and gabbro ( {Pd}/{Ir} = 9.1-187 ). Exceptionally high values of {Pd}/{Ir} (761-2622) are observed in amphibole-rich lithologies at Kachkanar, possibly indicating a relationship between fractionation of the less refractory Pd and increased fluid activity in the parental magma. Pronounced, positive Pt-anomalies, up to 20 times the mantle estimate, distinguishes the Ural-Alaskan type dunites, and progressively reduces in pyroxenites and gabbros. In the lherzolite-harzburgite complexes of Mindyak and Nurali, layered wehrlites and pyroxenites, as well as rocks from the gabbro-diorite units have fractionated PGE patterns ( {Pd}/{Ir} = 2.94-92.39 ) and positive Pt-anomaly as in the Ural-Alaskan complexes. Conversely, the Pt-anomaly is negative in the peridotites, and increases from lherzolites and harzburgites, to dunites, similarly to residual mantle from alpine-type orogenic massifs. The {Pd}/{Ir} (0.71-3.7) is higher than in ophiolites, and resembles that of lherzolite massifs of the western Mediterranean, representing sub-continental mantle. Variation of the Pt-anomaly versus {Pd}/{Ir} in Ural-Alaskan type complexes and in the layered sequences overlaying lherzolite-harzburgite mantle suites is consistent with magmatic fractionation, in which Pt behaves as a compatible element. It reflects a progressive depletion by partial melting in mantle peridotites, the Pt becoming incompatible in the last stage of melting in which Pt-poor residual dunites are formed. The positive Pt-anomaly in Ural-Alaskan type complexes is striking, and would appear as a distinctive feature of the parent magma, probably inherited from its mantle source.",
+    "title": [
+      "Platinum-group elements as petrological indicators in mafic-ultramafic complexes of the central and southern Urals: preliminary results"
+    ],
+    "year": "1997",
+    "citation_count": 121
+  },
+  {
+    "bibcode": "2018SSRv..214...80V",
+    "abstract": "The NOMAD (\"Nadir and Occultation for MArs Discovery\") spectrometer suite on board the ExoMars Trace Gas Orbiter (TGO) has been designed to investigate the composition of Mars' atmosphere, with a particular focus on trace gases, clouds and dust. The detection sensitivity for trace gases is considerably improved compared to previous Mars missions, compliant with the science objectives of the TGO mission. This will allow for a major leap in our knowledge and understanding of the Martian atmospheric composition and the related physical and chemical processes. The instrument is a combination of three spectrometers, covering a spectral range from the UV to the mid-IR, and can perform solar occultation, nadir and limb observations. In this paper, we present the science objectives of the instrument and explain the technical principles of the three spectrometers. We also discuss the expected performance of the instrument in terms of spatial and temporal coverage and detection sensitivity.",
+    "title": [
+      "NOMAD, an Integrated Suite of Three Spectrometers for the ExoMars Trace Gas Mission: Technical Description, Science Objectives and Expected Performance"
+    ],
+    "year": "2018",
+    "citation_count": 110
+  },
+  {
+    "bibcode": "2018SSRv..214..109S",
+    "abstract": "In November 2018, for the first time a dedicated geophysical station, the InSight lander, will be deployed on the surface of Mars. Along with the two main geophysical packages, the Seismic Experiment for Interior Structure (SEIS) and the Heat-Flow and Physical Properties Package (HP<SUP>3</SUP>), the InSight lander holds a highly sensitive pressure sensor (PS) and the Temperature and Winds for InSight (TWINS) instrument, both of which (along with the InSight FluxGate (IFG) Magnetometer) form the Auxiliary Sensor Payload Suite (APSS). Associated with the RADiometer (RAD) instrument which will measure the surface brightness temperature, and the Instrument Deployment Camera (IDC) which will be used to quantify atmospheric opacity, this will make InSight capable to act as a meteorological station at the surface of Mars. While probing the internal structure of Mars is the primary scientific goal of the mission, atmospheric science remains a key science objective for InSight. InSight has the potential to provide a more continuous and higher-frequency record of pressure, air temperature and winds at the surface of Mars than previous in situ missions. In the paper, key results from multiscale meteorological modeling, from Global Climate Models to Large-Eddy Simulations, are described as a reference for future studies based on the InSight measurements during operations. We summarize the capabilities of InSight for atmospheric observations, from profiling during Entry, Descent and Landing to surface measurements (pressure, temperature, winds, angular momentum), and the plans for how InSight's sensors will be used during operations, as well as possible synergies with orbital observations. In a dedicated section, we describe the seismic impact of atmospheric phenomena (from the point of view of both \"noise\" to be decorrelated from the seismic signal and \"signal\" to provide information on atmospheric processes). We discuss in this framework Planetary Boundary Layer turbulence, with a focus on convective vortices and dust devils, gravity waves (with idealized modeling), and large-scale circulations. Our paper also presents possible new, exploratory, studies with the InSight instrumentation: surface layer scaling and exploration of the Monin-Obukhov model, aeolian surface changes and saltation / lifing studies, and monitoring of secular pressure changes. The InSight mission will be instrumental in broadening the knowledge of the Martian atmosphere, with a unique set of measurements from the surface of Mars.",
+    "title": [
+      "Atmospheric Science with InSight"
+    ],
+    "year": "2018",
+    "citation_count": 98
+  },
+  {
+    "bibcode": "1993CPL...202..196H",
+    "abstract": "Laser-induced fluorescence has been observed form the formaldehyde \u00c3 <SUP>1</SUP>A <SUB>2</SUB>-X\u223c <SUP>1</SUP>A <SUB>1</SUB> electronic transition in a well characterized, laminar methane/air diffusion flame burning at atmospheric pressure. This represents the first optical measurement in flames of naturally occurring formaldehyde, an important intermediate in the oxidation of hydrocarbons. Both 355 nm and tunable dye laser excitation of fluorescence are demonstrated. The observed fluorescence signals are corrected for partition function effects and for estimated collisional quenching rates to obtain relative concentration profiles.",
+    "title": [
+      "Laser-induced fluorescence measurements of formaldehyde in a methane/air diffusion flame"
+    ],
+    "year": "1993",
+    "citation_count": 89
+  },
+  {
+    "bibcode": "2020JGRE..12506250L",
+    "abstract": "Observations of water ice clouds and aerosols on Mars can provide important insights into the complexity of the water cycle. Recent observations have indicated an important link between dust activity and the water cycle, as intense dust activity can significantly raise the hygropause, and subsequently increase the escape of water after dissociation in the upper atmosphere. Here present observations from Nadir and Occultation for MArs Discovery/Trace Gas Orbiter that investigate the variation of water ice clouds in the perihelion season of Mars year 34 (April 2018-2019), their diurnal and seasonal behavior, and the vertical structure and microphysical properties of water ice and dust. These observations reveal the recurrent presence of a layer of mesospheric water ice clouds subsequent to the 2018 global dust storm. We show that this layer rose from 45 to 80 km in altitude on a time scale of days from heating in the lower atmosphere due to the storm. In addition, we demonstrate that there is a strong dawn-dusk asymmetry in water ice abundance, related to nighttime nucleation and subsequent daytime sublimation. Water ice particle sizes are retrieved consistently and exhibit sharp vertical gradients (from 0.1 to 4.0 \u03bcm), as well as mesospheric differences between the global dust storm (&lt;0.5 \u03bcm) and the 2019 regional dust storm (1.0 \u03bcm), which suggests differing water ice nucleation efficiencies. These results form the basis to advance our understanding of mesospheric water ice clouds on Mars, and further constrain the interactions between water ice and dust in the middle atmosphere.",
+    "title": [
+      "Strong Variability of Martian Water Ice Clouds During Dust Storms Revealed From ExoMars Trace Gas Orbiter/NOMAD"
+    ],
+    "year": "2020",
+    "citation_count": 61
+  }
+]

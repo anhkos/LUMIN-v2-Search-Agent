@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2012RPPh...75j6901K",
+    "abstract": "The transport of sand and dust by wind is a potent erosional force, creates sand dunes and ripples, and loads the atmosphere with suspended dust aerosols. This paper presents an extensive review of the physics of wind-blown sand and dust on Earth and Mars. Specifically, we review the physics of aeolian saltation, the formation and development of sand dunes and ripples, the physics of dust aerosol emission, the weather phenomena that trigger dust storms, and the lifting of dust by dust devils and other small-scale vortices. We also discuss the physics of wind-blown sand and dune formation on Venus and Titan.",
+    "title": [
+      "The physics of wind-blown sand and dust"
+    ],
+    "year": "2012",
+    "citation_count": 897
+  },
+  {
+    "bibcode": "2007JGRE..112.5S03M",
+    "abstract": "The Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) is a hyperspectral imager on the Mars Reconnaissance Orbiter (MRO) spacecraft. CRISM consists of three subassemblies, a gimbaled Optical Sensor Unit (OSU), a Data Processing Unit (DPU), and the Gimbal Motor Electronics (GME). CRISM's objectives are (1) to map the entire surface using a subset of bands to characterize crustal mineralogy, (2) to map the mineralogy of key areas at high spectral and spatial resolution, and (3) to measure spatial and seasonal variations in the atmosphere. These objectives are addressed using three major types of observations. In multispectral mapping mode, with the OSU pointed at planet nadir, data are collected at a subset of 72 wavelengths covering key mineralogic absorptions and binned to pixel footprints of 100 or 200 m/pixel. Nearly the entire planet can be mapped in this fashion. In targeted mode the OSU is scanned to remove most along-track motion, and a region of interest is mapped at full spatial and spectral resolution (15-19 m/pixel, 362-3920 nm at 6.55 nm/channel). Ten additional abbreviated, spatially binned images are taken before and after the main image, providing an emission phase function (EPF) of the site for atmospheric study and correction of surface spectra for atmospheric effects. In atmospheric mode, only the EPF is acquired. Global grids of the resulting lower data volume observations are taken repeatedly throughout the Martian year to measure seasonal variations in atmospheric properties. Raw, calibrated, and map-projected data are delivered to the community with a spectral library to aid in interpretation.",
+    "title": [
+      "Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) on Mars Reconnaissance Orbiter (MRO)"
+    ],
+    "year": "2007",
+    "citation_count": 785
+  },
+  {
+    "bibcode": "2008Natur.454..305M",
+    "abstract": "Phyllosilicates, a class of hydrous mineral first definitively identified on Mars by the OMEGA (Observatoire pour la Mineralogie, L'Eau, les Glaces et l'Activiti\u00e9) instrument, preserve a record of the interaction of water with rocks on Mars. Global mapping showed that phyllosilicates are widespread but are apparently restricted to ancient terrains and a relatively narrow range of mineralogy (Fe/Mg and Al smectite clays). This was interpreted to indicate that phyllosilicate formation occurred during the Noachian (the earliest geological era of Mars), and that the conditions necessary for phyllosilicate formation (moderate to high pH and high water activity) were specific to surface environments during the earliest era of Mars's history. Here we report results from the Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) of phyllosilicate-rich regions. We expand the diversity of phyllosilicate mineralogy with the identification of kaolinite, chlorite and illite or muscovite, and a new class of hydrated silicate (hydrated silica). We observe diverse Fe/Mg-OH phyllosilicates and find that smectites such as nontronite and saponite are the most common, but chlorites are also present in some locations. Stratigraphic relationships in the Nili Fossae region show olivine-rich materials overlying phyllosilicate-bearing units, indicating the cessation of aqueous alteration before emplacement of the olivine-bearing unit. Hundreds of detections of Fe/Mg phyllosilicate in rims, ejecta and central peaks of craters in the southern highland Noachian cratered terrain indicate excavation of altered crust from depth. We also find phyllosilicate in sedimentary deposits clearly laid by water. These results point to a rich diversity of Noachian environments conducive to habitability.",
+    "title": [
+      "Hydrated silicate minerals on Mars observed by the Mars Reconnaissance Orbiter CRISM instrument"
+    ],
+    "year": "2008",
+    "citation_count": 704
+  }
+]

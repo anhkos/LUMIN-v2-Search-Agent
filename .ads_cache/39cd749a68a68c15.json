@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2017JMST...22..162W",
+    "abstract": "In this paper, a new concept of sandglass-type floating body, which can overcome the performance limitations of traditional ship-type and cylindrical FDPSO (floating drilling production storage and offloading), is proposed as research subject. In the general design of dynamic positioning systems, it is adequate to deal with a three-degree of freedom problem in the horizontal plane. However, the new floating body with small water-plane area and low metacentric height may cause an unintentional coupling phenomenon between the pitch and surge motions by the thruster system. Therefore, first by numerical boundary element method (BEM) based on wave potential theory and experiments, the pitch motion characteristic of the sandglass-type model is studied and meanwhile the numerical method of this paper is validated. Furthermore, two dynamics models with and without consideration for the additional pitch moment by the thruster systems are introduced and numerically simulated, which can show the problem of pitch motion induced by the positioning thrusters. Then by the mass-spring-damper systems with two-degree of freedom, the influence of additional pitch moment by the thrusters on the pitch and surge motion performances is theoretically analyzed. Finally, based on the essential reason of pitch motion problem, a control law considering pitch inertia effect has been used and proven to be effective to decrease the pitch motion response.",
+    "title": [
+      "Pitch motion problem induced by dynamic positioning system for new sandglass-type floating body"
+    ],
+    "year": "2017",
+    "citation_count": 30
+  },
+  {
+    "bibcode": "2013Icar..226..591D",
+    "abstract": "During the Prime mission (2004-2008), the Cassini cameras captured the opposition effect in Saturn\u2019s main rings with a fine radial resolution at extremely small phase angles. Phase functions were extracted for 211 different radial locations in the main ring system (135 in the broadband clear filter of the Wide Angle Camera at 635 nm, 76 in four narrowband color filters (at the respective central wavelengths 440, 568, 650, and 752 nm for the Narrow Angle Camera and 460, 567, 649, and 742 nm for the Wide Angle Camera). The morphology of the observed opposition surges is fitted with a simple linear model in order to derive three useful parameters - the amplitude A, the width of the surge HWHM, and the slope S at larger phase angles - throughout the whole main ring system. In agreement with previous studies, the opposition surge is found to vary substantially across the ring system: whereas values of A and HWHM are nearly constant across the A and B Rings, they show strong local variations for the C Ring and the Cassini Division. Thanks to the high spatial resolution of Cassini images, the opposition surges are obtained for very narrow regions, allowing us to study the effect of the local normal optical depth (\u03c4) on the surge. For \u03c4 &gt; 0.7, A(\u03c4) and HWHM(\u03c4) are nearly constant (1.3\u00b0 and 0.25\u00b0, respectively) across the whole ring system. For \u03c4 &lt; 0.7, A(\u03c4) and HWHM(\u03c4) exhibit clear decreasing trends for the A, B and C Rings only. Conversely, points from the Cassini Division show a very large dispersion in both A and HWHM, with no visible trend. The slope S is found to be an increasing function of the optical depth across the full ring system. A trend S \u221d \u03c4<SUP>0.5</SUP> is observed, in qualitative agreement with a geometrical description of the shadow hiding effect. No strong trend of A, HWHM and S with the wavelength of observation was found. We also tabulate the fit parameters for the opposition surge of 139 regions in the clear filter for future comparison with numerical simulations and photometric models.",
+    "title": [
+      "The opposition effect in Saturn\u2019s main rings as seen by Cassini ISS: 1. Morphology of phase functions and dependence on the local optical depth"
+    ],
+    "year": "2013",
+    "citation_count": 12
+  },
+  {
+    "bibcode": "2012JMST...17..139M",
+    "abstract": "In the present study a novel modeling approach is presented to solve the combined internal sloshing and sea-keeping problem. The model deals with interesting effects arising due to the coupled interaction between the sloshing in partially filled containers of several geometries and the ship motion. The study is very important for the liquid cargo carrier operating in rough sea or under different environmental conditions. The resulting slosh characteristics that include transient pressure variation, free surface profiles and hydrodynamic pressure over the container walls have been reported in this study. In addition, the effects of coupled ship response and sloshing on ship motion parameters have also been investigated. The equations of motion of fluid, considered inviscid, irrotational, and partially compressible, are expressed in terms of the pressure variable alone. A finite difference-based iterative time-stepping technique is employed to advance the coupled solution in the time domain. Several parameters of interest, including the container parameters, level of liquid, thrusters modeling and some important environmental factors are investigated.",
+    "title": [
+      "A fully coupled ship motion and sloshing analysis in various container geometries"
+    ],
+    "year": "2012",
+    "citation_count": 8
+  },
+  {
+    "bibcode": "2020ITPD...35.2481T",
+    "abstract": "The half-wavelength ultra-high-voltage transmission system is an alternative technique for bulk-power transmission over very long distances. However, the operations and fault-characteristics of such systems are extremely different from conventional ones. Therefore, there is an urgent need to propose a protection scheme that adapts to the characteristics of the half-wavelength line. Towards this end, a local-measurement-based approach is proposed. According to the frequency-dependent model of the half-wavelength line, this paper uses the wavelet transform to decompose the arrival of the aerial-modal surge into several frequency bands. To acquire better accuracy, a weighted average approach is employed to modify the surge arrival time in each frequency band. According to the surge arrival interval between the predefined low-frequency and high-frequency bands, all types of fault, except single-line-to-ground faults when the fault inception angle is at zero-crossings, can be identified in a very short time-window. Simulation results indicate that the proposed protection scheme has satisfactory performance against internal faults and is quite secure under external fault conditions. Using local measurement only, the reach of the proposed protection scheme is no less than 80% of the entire length of the line, and the resistive coverage is also sufficiently high for UHV transmission systems.",
+    "title": [
+      "Local-Measurement-Based High-Speed Protection for Half-Wavelength UHV Lines"
+    ],
+    "year": "2020",
+    "citation_count": 6
+  },
+  {
+    "bibcode": "2020WatRM..34..579K",
+    "abstract": "Low-lying coastal urban areas are vulnerable to frequent and chronic flooding due to population growth, urbanization, and accelerated sea level rise originating from climate change. This paper is part one of a 2 paper series, however a detailed literature review on the concept and the technical aspects of both papers is presented. In the 2nd paper, the application of the concepts and the proposed methodology are utilized to set the mitigation strategies for quantification of reliability attributes. The case study is the Hunts Point wastewater treatment plant and its sewershed in Bronx, New York City. The suitability of two major rainfall stations of Central Park and LaGuardia airport in the vicinity of the case study is tested. The copula-based non-stationary 100\u2500year flood frequency analysis of rainfall and storm surge is analyzed to obtain the design values of surge and rainfall. A differential evaluation Markov Chain with Bayesian interface is used in this paper for parameter estimation. In this study, the likelihood of joint probability of co-occurring heavy rainfall and storm surge is determined to illustrate the risk of joint events. Therefore, the copula-based non-stationary 100\u2500year flood frequency analysis of rainfall and storm surge are performed to obtain the design values of surge and rainfall. A multi-criteria decision-making (MCDM) approach that incorporates the load-resistance concept is presented in Part 2 paper to assess the Margin of Safety flood reliability of a wastewater treatment plant (WWTP). The framework presented in this paper is applicable to other coastal sewersheds.",
+    "title": [
+      "Margin of Safety Based Flood Reliability Evaluation of Wastewater Treatment Plants: Part 1 \u2500 Basic Concepts and Statistical Settings"
+    ],
+    "year": "2020",
+    "citation_count": 5
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2018Sci...361..490O",
+    "abstract": "The presence of liquid water at the base of the martian polar caps has long been suspected but not observed. We surveyed the Planum Australe region using the MARSIS (Mars Advanced Radar for Subsurface and Ionosphere Sounding) instrument, a low-frequency radar on the Mars Express spacecraft. Radar profiles collected between May 2012 and December 2015 contain evidence of liquid water trapped below the ice of the South Polar Layered Deposits. Anomalously bright subsurface reflections are evident within a well-defined, 20-kilometer-wide zone centered at 193\u00b0E, 81\u00b0S, which is surrounded by much less reflective areas. Quantitative analysis of the radar signals shows that this bright feature has high relative dielectric permittivity (&gt;15), matching that of water-bearing materials. We interpret this feature as a stable body of liquid water on Mars.",
+    "title": [
+      "Radar evidence of subglacial liquid water on Mars"
+    ],
+    "year": "2018",
+    "citation_count": 354
+  },
+  {
+    "bibcode": "2007JGRE..112.5S05S",
+    "abstract": "SHARAD (SHAllow RADar) is a sounding radar provided by Agenzia Spaziale Italiana (ASI) as a Facility Instrument on the Mars Reconnaissance Orbiter mission. Its 20-MHz center frequency and 10-MHz bandwidth complement the lower-frequency, relatively narrower bandwidth capability of the MARSIS sounding radar. A joint Italian-U.S. team has guided the experiment development and is responsible for data analysis and interpretation. The radar transmits signals at a 700 Hz pulse repetition frequency (PRF) and collects reflections from both the surface and near subsurface of Mars. Vertical and horizontal resolutions are, respectively, 15 m (free-space) and 3-6 km (cross-track) by 0.3-1 km (along-track). The scientific objective of SHARAD is to map, in selected locales, dielectric interfaces to at least several hundred meters depth in the Martian subsurface and to interpret these results in terms of the occurrence and distribution of expected materials, including competent rock, soil, water, and ice. A signal-to-noise ratio of ~50 dB (for a specular surface return) is achieved with 10 W of radiated power by using range and azimuth focusing in ground data processing. Preprocessed data as well as range- and azimuth-focused data will be formatted according to Planetary Data System (PDS) standards and be made available from the ASI Science Data Center (ASDC) and from the Geosciences Node of the Planetary Data System (PDS). Important targets for SHARAD include the polar layered deposits, sedimentary stacks (especially in Terra Meridiani), buried channel systems, buried impact craters, volcanic complexes, and shallow ice deposits in equilibrium with the atmosphere.",
+    "title": [
+      "SHARAD sounding radar on the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 277
+  },
+  {
+    "bibcode": "2012JGRB..117.7402A",
+    "abstract": "The ITRF2008 velocity field is demonstrated to be of higher quality and more precise than past ITRF solutions. We estimated an absolute tectonic plate motion model made up of 14 major plates, using velocities of 206 sites of high geodetic quality (far from plate boundaries, deformation zones and Glacial Isostatic Adjustment (GIA) regions), derived from and consistent with ITRF2008. The precision of the estimated model is evaluated to be at the level of 0.3 mm/a WRMS. No GIA corrections were applied to site velocities prior to estimating plate rotation poles, as our selected sites are outside the Fennoscandia regions where the GIA models we tested are performing reasonably well, and far from GIA areas where the models would degrade the fit (Antarctica and North America). Our selected velocity field has small origin rate bias components following the three axis (X, Y, Z), respectively 0.41 \u00b1 0.54, 0.22 \u00b1 0.64 and 0.41 \u00b1 0.60 (95 per cent confidence limits). Comparing our model to NNR-NUVEL-1A and the newly available NNR-MORVEL56, we found better agreement with NNR-MORVEL56 than with NNR-NUVEL-1A for all plates, except for Australia where we observe an average residual rotation rate of 4 mm/a. Using our selection of sites, we found large global X-rotation rates between the two models (0.016\u00b0/Ma) and between our model and NNR-MORVEL56 of 0.023\u00b0/Ma, equivalent to 2.5 mm/a at the Earth surface.",
+    "title": [
+      "ITRF2008 plate motion model"
+    ],
+    "year": "2012",
+    "citation_count": 256
+  },
+  {
+    "bibcode": "2012EcolL..15.1120F",
+    "abstract": "The future of tropical forests under global environmental change is uncertain, with biodiversity and carbon stocks at risk if precipitation regimes alter. Here, we assess changes in plant functional composition and biomass in 19 plots from a variety of forest types during two decades of long-term drought in Ghana. We find a consistent increase in dry forest, deciduous, canopy species with intermediate light demand and a concomitant decrease in wet forest, evergreen, sub-canopy and shade-tolerant species. These changes in composition are accompanied by an increase in above-ground biomass. Our results indicate that by altering composition in favour of drought-tolerant species, the biomass stocks of these forests may be more resilient to longer term drought than short-term studies of severe individual droughts suggest.",
+    "title": [
+      "Drought-induced shifts in the floristic and functional composition of tropical forests in Ghana"
+    ],
+    "year": "2012",
+    "citation_count": 164
+  },
+  {
+    "bibcode": "2018AJ....156...99L",
+    "abstract": "We present an update to the EVEREST K2 pipeline that addresses various limitations in the previous version and improves the photometric precision of the light curves. We develop a fast regularization scheme for pixel-level decorrelation (PLD) and adapt the algorithm to include the PLD vectors of other stars to enhance the predictive power of the model and minimize overfitting, particularly for faint stars. We also modify PLD to work for saturated stars and improve its performance on variable stars, although some high-frequency variables may still suffer from overfitting. On average, EVEREST 2.0 light curves have 10-20% higher photometric precision than those in version 1, yielding the highest-precision light curves at all {Kp} magnitudes of any publicly available K2 catalog. For most K2 campaigns, we recover the original Kepler precision to at least {Kp} = 14, and to at least {Kp} = 15 for campaigns 1, 5, 6, and 13. We also detrend most short-cadence targets observed by K2, obtaining even higher photometric precision for these stars. Like all aggressive, flexible models, EVEREST is prone to overfitting, and may cause a decrease in transit depths by \u223c10% we urge users to mask signals of interest using our open-source software, which we show removes this bias. Light curves for campaigns 0-8 and 10-13 are available online in the EVEREST catalog, which will be updated with future campaigns. EVEREST 2.0 is open source and is coded in a framework that can be adapted to other photometric surveys, including Kepler and the upcoming TESS mission.",
+    "title": [
+      "An Update to the EVEREST K2 Pipeline: Short Cadence, Saturated Stars, and Kepler-like Photometry Down to Kp = 15"
+    ],
+    "year": "2018",
+    "citation_count": 162
+  }
+]

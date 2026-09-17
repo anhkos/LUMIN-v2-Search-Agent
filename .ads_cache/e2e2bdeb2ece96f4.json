@@ -1,0 +1,46 @@
+[
+  {
+    "bibcode": "2020JGRE..12506111M",
+    "abstract": "We have reconstructed longitude-latitude maps of column dust optical depth (CDOD) for Martian year (MY) 34 (5 May 2017- 23 March 2019), using observations by the Mars Climate Sounder (MCS) aboard NASA's Mars Reconnaissance Orbiter spacecraft. Our methodology works by gridding a combination of standard (v5.2) and novel (v5.3.2) estimates of CDOD from MCS limb observations, using an improved \"Iterative Weighted Binning.\" In this work, we have produced four gridded CDOD maps per sol, at different Mars Universal Times. Together with the seasonal and daily variability, the use of several maps per sol also allows us to explore the diurnal variability of CDOD in the MCS dataset, which is shown to be particularly strong during the MY 34 equinoctial global dust event (GDE). In order to understand whether the diurnal variability of CDOD has a physical explanation, and examine the impact of the MY 34 GDE on some aspects of the atmospheric circulation, we have carried out numerical simulations with the \"Laboratoire de M\u00e9t\u00e9orologie Dynamique\" Mars Global Climate Model. We show that the model is able to account for at least part of the observed CDOD diurnal variability. This is particularly true in the southern hemisphere where a strong diurnal wave at the time of the GDE is able to displace dust horizontally as well as vertically. The simulations also clearly show the impact of the MY 34 GDE on the mean meridional circulation and the super-rotating equatorial jet, similarly to the effects of the equinoctial GDE in MY 25.",
+    "title": [
+      "Martian Year 34 Column Dust Climatology from Mars Climate Sounder Observations: Reconstructed Maps and Model Simulations"
+    ],
+    "year": "2020",
+    "citation_count": 203
+  },
+  {
+    "bibcode": "1950RvMP...22...64M",
+    "title": [
+      "A Table of Nuclear Moments, January 1950"
+    ],
+    "year": "1950",
+    "citation_count": 200
+  },
+  {
+    "bibcode": "2019GeoRL..46...71G",
+    "abstract": "Mars Science Laboratory Curiosity rover observations of the 2018/Mars year 34 global/planet-encircling dust storm represent the first in situ measurements of a global dust storm with dedicated meteorological sensors since the Viking Landers. The Mars Science Laboratory team planned and executed a science campaign lasting approximately 100 Martian sols to study the storm involving an enhanced cadence of environmental monitoring using the rover's meteorological sensors, cameras, and spectrometers. Mast Camera 880-nm optical depth reached 8.5, and Rover Environmental Monitoring Station measurements indicated a 97% reduction in incident total ultraviolet solar radiation at the surface, 30K reduction in diurnal range of air temperature, and an increase in the semidiurnal pressure tide amplitude to 40 Pa. No active dust-lifting sites were detected within Gale Crater, and global and local atmospheric dynamics were drastically altered during the storm. This work presents an overview of the mission's storm observations and initial results.",
+    "title": [
+      "Mars Science Laboratory Observations of the 2018/Mars Year 34 Global Dust Storm"
+    ],
+    "year": "2019",
+    "citation_count": 153
+  },
+  {
+    "bibcode": "2023arXiv230703718A",
+    "abstract": "Advanced AI models hold the promise of tremendous benefits for humanity, but society needs to proactively manage the accompanying risks. In this paper, we focus on what we term \"frontier AI\" models: highly capable foundation models that could possess dangerous capabilities sufficient to pose severe risks to public safety. Frontier AI models pose a distinct regulatory challenge: dangerous capabilities can arise unexpectedly; it is difficult to robustly prevent a deployed model from being misused; and, it is difficult to stop a model's capabilities from proliferating broadly. To address these challenges, at least three building blocks for the regulation of frontier models are needed: (1) standard-setting processes to identify appropriate requirements for frontier AI developers, (2) registration and reporting requirements to provide regulators with visibility into frontier AI development processes, and (3) mechanisms to ensure compliance with safety standards for the development and deployment of frontier AI models. Industry self-regulation is an important first step. However, wider societal discussions and government intervention will be needed to create standards and to ensure compliance with them. We consider several options to this end, including granting enforcement powers to supervisory authorities and licensure regimes for frontier AI models. Finally, we propose an initial set of safety standards. These include conducting pre-deployment risk assessments; external scrutiny of model behavior; using risk assessments to inform deployment decisions; and monitoring and responding to new information about model capabilities and uses post-deployment. We hope this discussion contributes to the broader conversation on how to balance public safety risks and innovation benefits from advances at the frontier of AI development.",
+    "title": [
+      "Frontier AI Regulation: Managing Emerging Risks to Public Safety"
+    ],
+    "year": "2023",
+    "citation_count": 148
+  },
+  {
+    "bibcode": "2019Natur.568..517K",
+    "abstract": "The detection of methane on Mars has been interpreted as indicating that geochemical or biotic activities could persist on Mars today<SUP>1</SUP>. A number of different measurements of methane show evidence of transient, locally elevated methane concentrations and seasonal variations in background methane concentrations<SUP>2-5</SUP>. These measurements, however, are difficult to reconcile with our current understanding of the chemistry and physics of the Martian atmosphere<SUP>6,7</SUP>, which\u2014given methane's lifetime of several centuries\u2014predicts an even, well mixed distribution of methane<SUP>1,6,8</SUP>. Here we report highly sensitive measurements of the atmosphere of Mars in an attempt to detect methane, using the ACS and NOMAD instruments onboard the ESA-Roscosmos ExoMars Trace Gas Orbiter from April to August 2018. We did not detect any methane over a range of latitudes in both hemispheres, obtaining an upper limit for methane of about 0.05 parts per billion by volume, which is 10 to 100 times lower than previously reported positive detections<SUP>2,4</SUP>. We suggest that reconciliation between the present findings and the background methane concentrations found in the Gale crater<SUP>4</SUP> would require an unknown process that can rapidly remove or sequester methane from the lower atmosphere before it spreads globally.",
+    "title": [
+      "No detection of methane on Mars from early ExoMars Trace Gas Orbiter observations"
+    ],
+    "year": "2019",
+    "citation_count": 123
+  }
+]

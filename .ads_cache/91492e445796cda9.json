@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1997MNRAS.289..225S",
+    "abstract": "We present the results of a survey of neutral hydrogen emission in the Small Magellanic Cloud (SMC) with the Australia Telescope Compact Array (ATCA). The survey consists of a mosaic of 320 separate pointings of the 375-m array, resulting in a resolution of 1.6 arcmin (28 pc, for a distance of 60 kpc) over a field of 20 deg^2. The rms brightness temperature sensitivity is 1.4 K, corresponding to an Hi column density sensitivity of 4x10^18 cm^-2 for each velocity channel of width 1.6kms^-1. The Hi distribution is complex and, on scales &lt;~1 kpc, appears to be dominated by the effects of expanding Hi shells, which are probably driven by the combined effects of supernovae and stellar winds from massive stars. The picture of the SMC that arises from the current data seems to challenge the earlier belief that the SMC consists of two or more spatially separate structures with different systemic velocities. We find that the observed multiple components are, in many cases, caused by the combined effects of the numerous shells and supershells. Altogether, we identify six supershells (defined here as those with radii greater than 300 pc) and 495 giant shells. For each of these, we measure positions, radii, velocities and expansion rates, and derive ages and kinetic energy requirements. The apparent age distribution of shells is remarkably narrow, with a mean age of 5.4Myr and an intrinsic dispersion of 2Myr. Southern shells appear to be older, on average, by 2.5Myr. The kinetic energy of the shells is a large fraction of the gravitational binding energy of the SMC, implying that further disintegration of the SMC will occur with time, and especially at the next close passage with the Large Magellanic Cloud (LMC) or the Galaxy, unless the SMC possesses a massive halo. Because of their interferometric nature, the images presented here are insensitive to structures of size &gt;~0 deg.6, and should not be used for deriving total Hi column densities.",
+    "title": [
+      "An HI aperture synthesis mosaic of the Small Magellanic Cloud"
+    ],
+    "year": "1997",
+    "citation_count": 178
+  },
+  {
+    "bibcode": "1981Icar...45..468F",
+    "abstract": "Mariner 9 images and all Viking orbiter images through July 1979 were searched for cloud forms. A computer-accessible catalog was assembled, consisting of a classification of cloud type (lee wav wave, for example) and properties (directionality, wavelength, for example). Lee wave directionality shows a pattern and seasonal variation at high latitudes which is consistent with predictions of theoretical modeling. Fog and haze occurrence shows no obvious correlation with water abundance or any other simple causal factor. Lee waves are rare at equatorial latitudes. Plumes (probably dust) occur preferentially at locations where strong boundary layer convection is expected.",
+    "title": [
+      "Global patterns in cloud forms on Mars"
+    ],
+    "year": "1981",
+    "citation_count": 54
+  },
+  {
+    "bibcode": "2011MNRAS.412.2033B",
+    "abstract": "The mass distribution index of sporadic meteors and the indices of specific sporadic sources have been measured using data from 2007 to 2010 from the Canadian Meteor Orbit Radar. Single-station data from the 29.85-MHz system were used and the trends throughout the year are examined. We find that the average values for the sources are approximately equal, but the annual variation of each source is unique. We find that the overall average sporadic mass index is 2.17 \u00b1 0.07, less than the frequently cited 2.34. The variation in the mass index throughout the year can provide information about the meteoroid populations that the Earth is encountering at different parts of its orbit.",
+    "title": [
+      "Mass distribution indices of sporadic meteors using radar data"
+    ],
+    "year": "2011",
+    "citation_count": 45
+  },
+  {
+    "bibcode": "2016Icar..274..195P",
+    "abstract": "Linear dune gullies are a sub-type of martian gullies. As their name suggests they only occur on sandy substrates and comprise very long (compared to their width) straight or sinuous channels, with relatively small source areas and almost non-existent visible deposits. Linear dune gullies have never been observed on terrestrial dunes and their formation process on Mars is unclear. Here, we present the results of the first systematic survey of these features in Mars' southern hemisphere and an in-depth study of six dunefields where repeat-imaging allows us to monitor the changes in these gullies over time. This study was undertaken with HiRISE images at 25-30 cm/pix and 1 m/pix elevation data derived from HiRISE stereo images. We find the latitudinal distribution and orientation of linear dune gullies broadly consistent with the general population of martian gullies. They occur predominantly between 36.3\u00b0S and 54.3\u00b0S, and occasionally between 64.6\u00b0S and 70.4\u00b0S. They are generally oriented toward SSW (at bearings between 150\u00b0 and 260\u00b0). We find that these gullies are extremely active over the most recent 5 Martian years of images. Activity comprises: (1) appearance of new channels, (2) lengthening of existing channels, (3) complete or partial reactivation, and (4) disappearance of gullies. We find that gully channels lengthen by \u223c100 m per year. The intense activity and the progressive disappearance of linear dune gullies argues against the hypothesis that these are remnant morphologies left over from previous periods of high obliquity millions of years ago. The activity of linear dune gullies reoccurs every year between the end of winter and the beginning of spring (Ls 167.4\u00b0-216.6\u00b0), and coincides with the final stages of the sublimation of annual CO\u2082 ice deposit. This activity often coincides spatially and temporally with the appearance of recurrent diffusing flows (RDFs)-digitate-shaped, dark patches with low relative albedo (up to 48% lower than the adjacent dune) that encompass the active site. South- and SSW-facing dune slopes are those which preferentially host CO<SUB>2</SUB> frost deposits, however, it is only those with angles of \u223c20\u00b0 just below the crest which possess linear dune gullies, suggesting a slope-limited formation process. These observations provide a wealth of temporal and morphometric data that can be used to undertake numerical modeling, to direct future image monitoring and guide laboratory experiments that can be used to better constrain the formation process of these features.",
+    "title": [
+      "Present-day formation and seasonal evolution of linear dune gullies on Mars"
+    ],
+    "year": "2016",
+    "citation_count": 43
+  },
+  {
+    "bibcode": "2021NatGe..14...67O",
+    "abstract": "Carbon monoxide (CO) is the main product of CO<SUB>2</SUB> photolysis in the Martian atmosphere. Production of CO is balanced by its loss reaction with OH, which recycles CO into CO<SUB>2</SUB>. CO is therefore a sensitive tracer of the OH-catalysed chemistry that contributes to the stability of CO<SUB>2</SUB> in the atmosphere of Mars. To date, CO has been measured only in terms of vertically integrated column abundances, and the upper atmosphere, where CO is produced, is largely unconstrained by observations. Here we report vertical profiles of CO from 10 to 120 km, and from a broad range of latitudes, inferred from the Atmospheric Chemistry Suite on board the ExoMars Trace Gas Orbiter. At solar longitudes 164-190\u00b0, we observe an equatorial CO mixing ratio of ~1,000 ppmv (10-80 km), increasing towards the polar regions to more than 3,000 ppmv under the influence of downward transport of CO from the upper atmosphere, providing a view of the Hadley cell circulation at Mars's equinox. Observations also cover the 2018 global dust storm, during which we observe a prominent depletion in the CO mixing ratio up to 100 km. This is indicative of increased CO oxidation in a context of unusually large high-altitude water vapour, boosting OH abundance.",
+    "title": [
+      "The vertical structure of CO in the Martian atmosphere from the ExoMars Trace Gas Orbiter"
+    ],
+    "year": "2021",
+    "citation_count": 43
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1987RvMP...59....1L",
+    "abstract": "This paper presents the results of a functional-integral approach to the dynamics of a two-state system coupled to a dissipative environment. It is primarily an extended account of results obtained over the last four years by the authors; while they try to provide some background for orientation, it is emphatically not intended as a comprehensive review of the literature on the subject. Its contents include (1) an exact and general prescription for the reduction, under appropriate circumstances, of the problem of a system tunneling between two wells in the presence of a dissipative environment to the \"spin-boson\" problem; (2) the derivation of an exact formula for the dynamics of the latter problem; (3) the demonstration that there exists a simple approximation to this exact formula which is controlled, in the sense that we can put explicit bounds on the errors incurred in it, and that for almost all regions of the parameter space these errors are either very small in the limit of interest to us (the \"slow-tunneling\" limit) or can themselves be evaluated with satisfactory accuracy; (4) use of these results to obtain quantitative expressions for the dynamics of the system as a function of the spectral density J(\u03c9) of its coupling to the environment. If J(\u03c9) behaves as \u03c9<SUP>s</SUP> for frequencies of the order of the tunneling frequency or smaller, the authors find for the \"unbiased\" case the following results: For s&lt;1 the system is localized at zero temperature, and at finite T relaxes incoherently at a rate proportional to exp-(T<SUB>0</SUB>T)<SUP>1-s</SUP>. For s&gt;2 it undergoes underdamped coherent oscillations for all relevant temperatures, while for 1&lt;s&lt;2 there is a crossover from coherent oscillation to overdamped relaxation as T increases. Exact expressions for the oscillation and/or relaxation rates are presented in all these cases. For the \"ohmic\" case, s=1, the qualitative nature of the behavior depends critically on the dimensionless coupling strength \u03b1 as well as the temperature T: over most of the (\u03b1,T) plane (including the whole region \u03b1&gt;1) the behavior is an incoherent relaxation at a rate proportional to T<SUP>2\u03b1-1</SUP>, but for low T and 0&lt;\u03b1&lt;12 the authors predict a combination of damped coherent oscillation and incoherent background which appears to disagree with the results of all previous approximations. The case of finite bias is also discussed.",
+    "title": [
+      "Dynamics of the dissipative two-state system"
+    ],
+    "year": "1987",
+    "citation_count": 4079
+  },
+  {
+    "bibcode": "2017ISPM...34...26A",
+    "abstract": "Deep reinforcement learning (DRL) is poised to revolutionize the field of artificial intelligence (AI) and represents a step toward building autonomous systems with a higherlevel understanding of the visual world. Currently, deep learning is enabling reinforcement learning (RL) to scale to problems that were previously intractable, such as learning to play video games directly from pixels. DRL algorithms are also applied to robotics, allowing control policies for robots to be learned directly from camera inputs in the real world. In this survey, we begin with an introduction to the general field of RL, then progress to the main streams of value-based and policy-based methods. Our survey will cover central algorithms in deep RL, including the deep <inline-formula><tex-math>$Q$</tex-math></inline-formula>-network (DQN), trust region policy optimization (TRPO), and asynchronous advantage actor critic. In parallel, we highlight the unique advantages of deep neural networks, focusing on visual understanding via RL. To conclude, we describe several current areas of research within the field.",
+    "title": [
+      "Deep Reinforcement Learning: A Brief Survey"
+    ],
+    "year": "2017",
+    "citation_count": 1704
+  },
+  {
+    "bibcode": "2013RvMP...85..961Z",
+    "abstract": "This review describes recent groundbreaking results in Si, Si/SiGe, and dopant-based quantum dots, and it highlights the remarkable advances in Si-based quantum physics that have occurred in the past few years. This progress has been possible thanks to materials development of Si quantum devices, and the physical understanding of quantum effects in silicon. Recent critical steps include the isolation of single electrons, the observation of spin blockade, and single-shot readout of individual electron spins in both dopants and gated quantum dots in Si. Each of these results has come with physics that was not anticipated from previous work in other material systems. These advances underline the significant progress toward the realization of spin quantum bits in a material with a long spin coherence time, crucial for quantum computation and spintronics.",
+    "title": [
+      "Silicon quantum electronics"
+    ],
+    "year": "2013",
+    "citation_count": 1031
+  },
+  {
+    "bibcode": "2023arXiv230907864X",
+    "abstract": "For a long time, humanity has pursued artificial intelligence (AI) equivalent to or surpassing the human level, with AI agents considered a promising vehicle for this pursuit. AI agents are artificial entities that sense their environment, make decisions, and take actions. Many efforts have been made to develop intelligent agents, but they mainly focus on advancement in algorithms or training strategies to enhance specific capabilities or performance on particular tasks. Actually, what the community lacks is a general and powerful model to serve as a starting point for designing AI agents that can adapt to diverse scenarios. Due to the versatile capabilities they demonstrate, large language models (LLMs) are regarded as potential sparks for Artificial General Intelligence (AGI), offering hope for building general AI agents. Many researchers have leveraged LLMs as the foundation to build AI agents and have achieved significant progress. In this paper, we perform a comprehensive survey on LLM-based agents. We start by tracing the concept of agents from its philosophical origins to its development in AI, and explain why LLMs are suitable foundations for agents. Building upon this, we present a general framework for LLM-based agents, comprising three main components: brain, perception, and action, and the framework can be tailored for different applications. Subsequently, we explore the extensive applications of LLM-based agents in three aspects: single-agent scenarios, multi-agent scenarios, and human-agent cooperation. Following this, we delve into agent societies, exploring the behavior and personality of LLM-based agents, the social phenomena that emerge from an agent society, and the insights they offer for human society. Finally, we discuss several key topics and open problems within the field. A repository for the related papers at https://github.com/WooooDyy/LLM-Agent-Paper-List.",
+    "title": [
+      "The Rise and Potential of Large Language Model Based Agents: A Survey"
+    ],
+    "year": "2023",
+    "citation_count": 964
+  },
+  {
+    "bibcode": "1993PQE....17..299T",
+    "abstract": "We review nonlinear optical processes in various materials which can be utilized in passive optical limiting devices. Specifically, the mechanisms of reverse saturable absorption, two-photon and free-carrier absorption, nonlinear refraction and induced scattering are examined, and the implementation of these processes in optical limiting devices is discussed. The effectiveness of each approach depends on the specific application for the optical limiting device, and the advantages and limitations of each are addressed. Different materials, such as fullerenes, organometallics, carbon black suspensions, semiconductors and liquid crystals, all of which have been used in optical limiting devices, are discussed. In spite of the variety of nonlinearities, materials, and device configurations that have been used to implement passive optical limiters, no single device or combination of devices has yet been identified that will protect any given sensor from all potential optical threats.",
+    "title": [
+      "A review of optical limiting mechanisms and devices using organics, fullerenes, semiconductors and other materials"
+    ],
+    "year": "1993",
+    "citation_count": 865
+  }
+]

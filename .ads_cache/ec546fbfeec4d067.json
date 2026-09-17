@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "1999Sci...284..790A",
+    "abstract": "Vector magnetic field observations of the martian crust were acquired by the Mars Global Surveyor (MGS) magnetic field experiment/electron reflectometer (MAG/ER) during the aerobraking and science phasing orbits, at altitudes between \u223c100 and 200 kilometers. Magnetic field sources of multiple scales, strength, and geometry were observed. There is a correlation between the location of the sources and the ancient cratered terrain of the martian highlands. The absence of crustal magnetism near large impact basins such as Hellas and Argyre implies cessation of internal dynamo action during the early Naochian epoch (\u223c4 billion years ago). Sources with equivalent magnetic moments as large as 1.3 \u00d7 10<SUP>17</SUP> ampere-meter<SUP>2</SUP> in the Terra Sirenum region contribute to the development of an asymmetrical, time-variable obstacle to solar wind flow around Mars.",
+    "title": [
+      "Global Distribution of Crustal Magnetization Discovered by the Mars Global Surveyor MAG/ER Experiment"
+    ],
+    "year": "1999",
+    "citation_count": 957
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2000ARA&A..38..427E",
+    "abstract": "Our understanding of the evolution of organic molecules, and their voyage from molecular clouds to the early solar system and Earth, has changed dramatically. Incorporating recent observational results from the ground and space, as well as laboratory simulation experiments and new methods for theoretical modeling, this review recapitulates the inventory and distribution of organic molecules in different environments. The evolution, survival, transport, and transformation of organics is monitored, from molecular clouds and the diffuse interstellar medium to their incorporation into solar system material such as comets and meteorites. We constrain gas phase and grain surface formation pathways to organic molecules in dense interstellar clouds, using recent observations with the Infrared Space Observatory (ISO) and ground-based radiotelescopes. The main spectroscopic evidence for carbonaceous compounds in the diffuse interstellar medium is discussed (UV bump at 2200 \u00c5, diffuse interstellar bands, extended red emission, and infrared absorption and emission bands). We critically review the signatures and unsolved problemsrelated to the main organic components suggested to be present in the diffuse gas, such as polycyclic aromatic hydrocarbons (PAHs), fullerenes, diamonds, and carbonaceous solids. We also briefly discuss the circumstellar formation of organics around late-typestars. In the solar system, space missions to comet Halley and observations of the bright comets Hyakutake and Hale-Bopp have recently allowed a reexamination of the organic chemistry of dust and volatiles in long-period comets. We review the advances in this area and also discuss progress being made in elucidating the complex organic inventory of carbonaceous meteorites. The knowledge of organic chemistry in molecular clouds, comets, and meteorites and their common link provides constraints for the processes that lead to the origin, evolution, and distribution of life in the Galaxy.",
+    "title": [
+      "Organic Molecules in the Interstellar Medium, Comets, and Meteorites: A Voyage from Dark Clouds to the Early Earth"
+    ],
+    "year": "2000",
+    "citation_count": 816
+  },
+  {
+    "bibcode": "2007JGRE..112.5S03M",
+    "abstract": "The Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) is a hyperspectral imager on the Mars Reconnaissance Orbiter (MRO) spacecraft. CRISM consists of three subassemblies, a gimbaled Optical Sensor Unit (OSU), a Data Processing Unit (DPU), and the Gimbal Motor Electronics (GME). CRISM's objectives are (1) to map the entire surface using a subset of bands to characterize crustal mineralogy, (2) to map the mineralogy of key areas at high spectral and spatial resolution, and (3) to measure spatial and seasonal variations in the atmosphere. These objectives are addressed using three major types of observations. In multispectral mapping mode, with the OSU pointed at planet nadir, data are collected at a subset of 72 wavelengths covering key mineralogic absorptions and binned to pixel footprints of 100 or 200 m/pixel. Nearly the entire planet can be mapped in this fashion. In targeted mode the OSU is scanned to remove most along-track motion, and a region of interest is mapped at full spatial and spectral resolution (15-19 m/pixel, 362-3920 nm at 6.55 nm/channel). Ten additional abbreviated, spatially binned images are taken before and after the main image, providing an emission phase function (EPF) of the site for atmospheric study and correction of surface spectra for atmospheric effects. In atmospheric mode, only the EPF is acquired. Global grids of the resulting lower data volume observations are taken repeatedly throughout the Martian year to measure seasonal variations in atmospheric properties. Raw, calibrated, and map-projected data are delivered to the community with a spectral library to aid in interpretation.",
+    "title": [
+      "Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) on Mars Reconnaissance Orbiter (MRO)"
+    ],
+    "year": "2007",
+    "citation_count": 785
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1984AnPhy.158..142G",
+    "abstract": "The Green's functions of QCD are expanded in powers of the external momenta and of the quark masses. The Ward identities of chiral symmetry determine the expansion up to and including terms of order p<SUP>4</SUP> (at fixed ratio m <SUB>quark</SUB>/p <SUP>2</SUP>) in terms of a few constants, which may be identified with the coupling constants of a unique effective low energy Lagrangian. The low energy representation of several Green's functions and form factors and of the \u03c0\u03c0 scattering amplitude are then calculated. The values of the low energy coupling constants are extracted from available experimental data. The corrections of order M<SUB>\u03c0</SUB><SUP>2</SUP> to the \u03c0\u03c0 scattering lengths and effective ranges turn out to be substantial and the improved low energy theorems agree very well with the measured phase shifts. The observed differences between the data and the uncorrected soft pion theorems may even be used to measure the scalar radius of the pion, which plays a central role in the low energy expansion.",
+    "title": [
+      "Chiral perturbation theory to one loop"
+    ],
+    "year": "1984",
+    "citation_count": 3879
+  },
+  {
+    "bibcode": "1975RvMP...47..773W",
+    "abstract": "This review covers several topics involving renormalization group ideas. The solution of the s-wave Kondo Hamiltonian, describing a single magnetic impurity in a nonmagnetic metal, is explained in detail. See Secs. VII-IX. \"Block spin\" methods, applied to the two dimensional Ising model, are explained in Sec. VI. The first three sections give a relatively short review of basic renormalization group ideas, mainly in the context of critical phenomena. The relationship of the modern renormalization group to the older problems of divergences in statistical mechanics and field theory and field theoretic renormalization is discussed in Sec. IV. In Sec. V the special case of \"marginal variables\" is discussed in detail, along with the relationship of the modern renormalization group to its original formulation by Gell-Mann and Low and others.",
+    "title": [
+      "The renormalization group: Critical phenomena and the Kondo problem"
+    ],
+    "year": "1975",
+    "citation_count": 3806
+  },
+  {
+    "bibcode": "1979JCoPh..32..101V",
+    "abstract": "A method of second-order accuracy is described for integrating the equations of ideal compressible flow. The method is based on the integral conservation laws and is dissipative, so that it can be used across shocks. The heart of the method is a one-dimensional Lagrangean scheme that may be regarded as a second-order sequel to Godunov's method. The second-order accuracy is achieved by taking the distributions of the state quantities inside a gas slab to be linear, rather than uniform as in Godunov's method. The Lagrangean results are remapped with least-squares accuracy onto the desired Euler grid in a separate step. Several monotonicity algorithms are applied to ensure positivity, monotonicity and nonlinear stability. Higher dimensions are covered through time splitting. Numerical results for one-dimensional and two-dimensional flows are presented, demonstrating the efficiency of the method. The paper concludes with a summary of the results of the whole series \"Towards the Ultimate Conservative Difference Scheme.\"",
+    "title": [
+      "Towards the Ultimate Conservative Difference Scheme. V. A Second-Order Sequel to Godunov's Method"
+    ],
+    "year": "1979",
+    "citation_count": 3280
+  },
+  {
+    "bibcode": "1958ApJS....3..211A",
+    "abstract": "A catalogue is prepared of 2712 rich clusters of galaxies found on the National Geographic Society Palomar Observatory Sky Survey. From the catalogue, 1682 clusters are selected which meet specific criteria for inclusion in a homogeneous statistical sample. An investigation of the sample leads to the following conclusions: (1) the distribution function of clusters according to richness, N(n), increases rapidly as n decreases; (2) the data allow no significant decision that the spatial density of cluster centers varies with distance; (3) galactic obscuration of the order of a few tenths of a magnitude (photored) exists at high northern galactic latitudes around galactic longitude 300 (4) there is a highiy significant non- random surface distribution of clusters, both when clusters at all distances and when clusters at various distances are considered. An analysis of the distribution yields evidence that suggests the existence of second-order clusters, that is, clusters of clusters of galaxies. A statistical test reveals no incompatibilities between the observed distribution and one of complete second-order clustering of galaxies.",
+    "title": [
+      "The Distribution of Rich Clusters of Galaxies."
+    ],
+    "year": "1958",
+    "citation_count": 1930
+  },
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  }
+]

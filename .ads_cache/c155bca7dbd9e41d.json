@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2003astro.ph.12347L",
+    "abstract": "(Abridged) We interpret gamma ray bursts as relativistic, electromagnetic explosions. Specifically, we propose that they are created when a rotating, relativistic, stellar-mass progenitor loses much of its rotational energy in the form of a Poynting flux during an active period lasting $\\sim 100$ s. Initially, a non-spherically symmetric, electromagnetically-dominated bubble expands non-relativistically inside the star, most rapidly along the rotational axis of the progenitor. After the bubble breaks out from the stellar surface and most of the electron-positron pairs annihilate, the bubble expansion becomes highly relativistic. After the end of the source activity most of the electromagnetic energy is concentrated in a thin shell inside the contact discontinuity between the ejecta and the shocked circumstellar material. This electromagnetic shell pushes a relativistic blast wave into the circumstellar medium. Current-driven instabilities develop in this shell at a radius $\\sim3\\times10^{16}$ cm and lead to dissipation of magnetic field and acceleration of pairs which are responsible for the $\\gamma$-ray burst. At larger radii, the energy contained in the electromagnetic shell is mostly transferred to the preceding blast wave. Particles accelerated at the forward shock may combine with electromagnetic field from the electromagnetic shell to produce the afterglow emission.",
+    "title": [
+      "Gamma Ray Bursts as Electromagnetic Outflows"
+    ],
+    "year": "2003",
+    "citation_count": 325
+  },
+  {
+    "bibcode": "1987RvMP...59..941G",
+    "abstract": "This review is devoted to the physics of current-carrying superconductors and normal metals having two or more stable states sustained by Joule self-heating. The creation, propagation, and localization of electrothermal domains and switching waves leading to the transition from one stable state to another in uniform and nonuniform samples are treated in detail. The connection between thermal bistability and hysteresis, dropping and stepped current-voltage characteristics, self-induced oscillations of current and voltage, selfreplication of electrothermal domains, and the formation of periodic and stochastic resistive structures are considered.",
+    "title": [
+      "Self-heating in normal metals and superconductors"
+    ],
+    "year": "1987",
+    "citation_count": 316
+  },
+  {
+    "bibcode": "1988PhR...161...43V",
+    "abstract": "We review the theory and applications of the photoacoustic and related methods belonging to the general area of photothermal measurement techniques. This essay is intended for researchers especially unfamiliar with the basic ideas and potentialities of this rapidly developing field. The applications of photothermal techniques include spectroscopic applications, such as infrared and microwave spectroscopies, monitoring of non-radiative deexcitation processes, biological applications, and measurements of thermal properties.",
+    "title": [
+      "Photoacoustic and related photothermal techniques"
+    ],
+    "year": "1988",
+    "citation_count": 309
+  },
+  {
+    "bibcode": "1997Geode..77..137I",
+    "abstract": "Numerical classification methods may provide an alternative to manual landform delineation using aerial photographs, a subjective process that requires much knowledge of the landscape in question. Continuous classification (fuzzy set) methods and unsupervised (ISODATA) classification techniques were used to classify the landscape of a study area in southwestern Wisconsin, USA. Each pixel of a 10-m resolution digital elevation model (DEM) was grouped according to its membership in a continuous landform class. These classes were determined by the natural clustering of the data in attribute space. Attributes used for the classification were elevation, slope, profile and tangent (related to plan) curvature, compound topographic (wetness) index, and incident solar radiation. The ISODATA classification assigned pixels to one, and only one, landform class while the continuous classification allocated relative class memberships to each pixel. The resulting classifications roughly follow subjective manual delineation lines but give more detailed results. These classification methods may prove useful for statistical analyses and determination of sample schemes.",
+    "title": [
+      "Fuzzy and isodata classification of landform elements from digital terrain data in Pleasant Valley, Wisconsin"
+    ],
+    "year": "1997",
+    "citation_count": 154
+  },
+  {
+    "bibcode": "2016SciA....2E0370B",
+    "abstract": "Multiple scattering of waves in disordered media is a nightmare whether it be for detection or imaging purposes. The best approach so far to get rid of multiple scattering is optical coherence tomography. It basically combines confocal microscopy and coherence time-gating to discriminate ballistic photons from a predominant multiple scattering background. Nevertheless, the imaging depth range remains limited to 1 mm at best in human soft tissues. Here we propose a matrix approach of optical imaging to push back this fundamental limit. By combining a matrix discrimination of ballistic waves and iterative time-reversal, we show both theoretically and experimentally an extension of the imaging-depth limit by at least a factor two compared to optical coherence tomography. In particular, the reported experiment demonstrates imaging through a strongly scattering layer from which only one reflected photon over 1000 billion is ballistic. This approach opens a new route towards ultra-deep tissue imaging.",
+    "title": [
+      "Smart optical coherence tomography for ultra-deep imaging through highly scattering media"
+    ],
+    "year": "2016",
+    "citation_count": 151
+  }
+]

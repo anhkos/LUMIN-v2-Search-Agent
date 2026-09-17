@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2004Icar..167..148S",
+    "abstract": "We use infrared spectra returned by the Mars Global Surveyor Thermal Emission Spectrometer (TES) to retrieve atmospheric and surface temperature, dust and water ice aerosol optical depth, and water vapor column abundance. The data presented here span more than two martian years (Mars Year 24, L<SUB>s</SUB>=104\u00b0, 1 March 1999 to Mars Year 26, L<SUB>s</SUB>=180\u00b0, 4 May 2003). We present an overview of the seasonal ( L<SUB>s</SUB>), latitudinal, and longitudinal dependence of atmospheric quantities during this period, as well as an initial assessment of the interannual variability in the current martian climate. We find that the perihelion season ( L<SUB>s</SUB>=180\u00b0-360\u00b0) is relatively warm, dusty, free of water ice clouds, and shows a relatively high degree of interannual variability in dust optical depth and atmospheric temperature. On the other hand, the aphelion season ( L<SUB>s</SUB>=0\u00b0-180\u00b0) is relatively cool, cloudy, free of dust, and shows a low degree of interannual variability. Water vapor abundance shows a moderate amount of interannual variability at all seasons, but the most in the perihelion season. Much of the small amount of interannual variability that is observed in the aphelion season appears to be caused by perihelion-season planet-encircling dust storms. These dust storms increase albedo through deposition of bright dust on the surface causing cooler daytime surface and atmospheric temperatures well after dust optical depth returns to prestorm values.",
+    "title": [
+      "Interannual variability in TES atmospheric observations of Mars during 1999-2003"
+    ],
+    "year": "2004",
+    "citation_count": 685
+  },
+  {
+    "bibcode": "2001hep.ph....9166A",
+    "abstract": "ACFA Linear Collider Working Group report",
+    "title": [
+      "Particle Physics Experiments at JLC"
+    ],
+    "year": "2001",
+    "citation_count": 356
+  },
+  {
+    "bibcode": "2018JQSRT.217...86V",
+    "abstract": "We have developed an online radiative-transfer suite (https://psg.gsfc.nasa.gov) applicable to a broad range of planetary objects (e.g., planets, moons, comets, asteroids, TNOs, KBOs, exoplanets). The Planetary Spectrum Generator (PSG) can synthesize planetary spectra (atmospheres and surfaces) for a broad range of wavelengths (UV/Vis/near-IR/IR/far-IR/THz/sub-mm/Radio) from any observatory (e.g., JWST, ALMA, Keck, SOFIA), any orbiter (e.g., ExoMars, Juno), or any lander (e.g., MSL). This is achieved by combining several state-of-the-art radiative transfer models, spectroscopic databases and planetary databases (i.e., climatological and orbital). PSG has a 3D (three-dimensional) orbital calculator for most bodies in the solar system, and all confirmed exoplanets, while the radiative-transfer models can ingest billions of spectral signatures for hundreds of species from several spectroscopic repositories. It integrates the latest radiative-transfer and scattering methods in order to compute high resolution spectra via line-by-line calculations, and utilizes the efficient correlated-k method at moderate resolutions, while for computing cometary spectra, PSG handles non-LTE and LTE excitation processes. PSG includes a realistic noise calculator that integrates several telescope/instrument configurations (e.g., interferometry, coronagraphs) and detector technologies (e.g., CCD, heterodyne detectors, bolometers). Such an integration of advanced spectroscopic methods into an online tool can greatly serve the planetary community, ultimately enabling the retrieval of planetary parameters from remote sensing data, efficient mission planning strategies, interpretation of current and future planetary data, calibration of spectroscopic data, and development of new instrument/spacecraft concepts.",
+    "title": [
+      "Planetary Spectrum Generator: An accurate online radiative transfer suite for atmospheres, comets, small bodies and exoplanets"
+    ],
+    "year": "2018",
+    "citation_count": 332
+  },
+  {
+    "bibcode": "1954ApJ...120..484K",
+    "abstract": "In this survey, spectra of type S are defined as those having bands of ZrO strong enough to he detected with low dispersion. This limitation is made because the group will be a useful one only if most or all of the members can be recognized on slitless spectrograms and if they are enough alike to give significance to their statistical properties. Stars with weaker ZrO bands are termed \"MS\" stars, and 14 of these are tabulated. Seven other stars showing neither ZrO nor TiO bands in their spectra are set aside as related more distantly to the S-type stars. The 69 S-type stars of the main catalogue are classified from the relative intensities of their ZrO and TiO bands into a two-dimensional system, in which the variables appear to be temperature and chemical composition. The lines of evidence bearing on the luminosities of the S stars-their motions and galactic distribution, as well as the classification by Feast of the faint companion of Pi' Gruis-suggest that these stars belong among the giants and bright giants (luminosity classes III and II), possibly spanning a considerable range in absolute magnitude. Preliminary counts of M, MS, S, and C stars in the giant branch of the cooler stars with banded spectra show that roughly 10 per cent of them show appreciable strengthening of the S characteristics-the lines of the heavier metals and the bands of their oxides.",
+    "title": [
+      "Classification of the S-Type Stars."
+    ],
+    "year": "1954",
+    "citation_count": 193
+  },
+  {
+    "bibcode": "2006Natur.442..793K",
+    "abstract": "The martian polar caps are among the most dynamic regions on Mars, growing substantially in winter as a significant fraction of the atmosphere freezes out in the form of CO<SUB>2</SUB> ice. Unusual dark spots, fans and blotches form as the south-polar seasonal CO<SUB>2</SUB> ice cap retreats during spring and summer. Small radial channel networks are often associated with the location of spots once the ice disappears. The spots have been proposed to be simply bare, defrosted ground; the formation of the channels has remained uncertain. Here we report infrared and visible observations that show that the spots and fans remain at CO<SUB>2</SUB> ice temperatures well into summer, and must be granular materials that have been brought up to the surface of the ice, requiring a complex suite of processes to get them there. We propose that the seasonal ice cap forms an impermeable, translucent slab of CO<SUB>2</SUB> ice that sublimates from the base, building up high-pressure gas beneath the slab. This gas levitates the ice, which eventually ruptures, producing high-velocity CO<SUB>2</SUB> vents that erupt sand-sized grains in jets to form the spots and erode the channels. These processes are unlike any observed on Earth.",
+    "title": [
+      "CO<SUB>2</SUB> jets formed by sublimation beneath translucent slab ice in Mars' seasonal south polar ice cap"
+    ],
+    "year": "2006",
+    "citation_count": 154
+  }
+]

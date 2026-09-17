@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2005Natur.438..623P",
+    "abstract": "The recent identification of large deposits of sulphates by remote sensing and in situ observations has been considered evidence of the past presence of liquid water on Mars. Here we report the unambiguous detection of diverse phyllosilicates, a family of aqueous alteration products, on the basis of observations by the OMEGA imaging spectrometer on board the Mars Express spacecraft. These minerals are mainly associated with Noachian outcrops, which is consistent with an early active hydrological system, sustaining the long-term contact of igneous minerals with liquid water. We infer that the two main families of hydrated alteration products detected-phyllosilicates and sulphates-result from different formation processes. These occurred during two distinct climatic episodes: an early Noachian Mars, resulting in the formation of hydrated silicates, followed by a more acidic environment, in which sulphates formed.",
+    "title": [
+      "Phyllosilicates on Mars and implications for early martian climate"
+    ],
+    "year": "2005",
+    "citation_count": 879
+  },
+  {
+    "bibcode": "2007JGRE..112.5S03M",
+    "abstract": "The Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) is a hyperspectral imager on the Mars Reconnaissance Orbiter (MRO) spacecraft. CRISM consists of three subassemblies, a gimbaled Optical Sensor Unit (OSU), a Data Processing Unit (DPU), and the Gimbal Motor Electronics (GME). CRISM's objectives are (1) to map the entire surface using a subset of bands to characterize crustal mineralogy, (2) to map the mineralogy of key areas at high spectral and spatial resolution, and (3) to measure spatial and seasonal variations in the atmosphere. These objectives are addressed using three major types of observations. In multispectral mapping mode, with the OSU pointed at planet nadir, data are collected at a subset of 72 wavelengths covering key mineralogic absorptions and binned to pixel footprints of 100 or 200 m/pixel. Nearly the entire planet can be mapped in this fashion. In targeted mode the OSU is scanned to remove most along-track motion, and a region of interest is mapped at full spatial and spectral resolution (15-19 m/pixel, 362-3920 nm at 6.55 nm/channel). Ten additional abbreviated, spatially binned images are taken before and after the main image, providing an emission phase function (EPF) of the site for atmospheric study and correction of surface spectra for atmospheric effects. In atmospheric mode, only the EPF is acquired. Global grids of the resulting lower data volume observations are taken repeatedly throughout the Martian year to measure seasonal variations in atmospheric properties. Raw, calibrated, and map-projected data are delivered to the community with a spectral library to aid in interpretation.",
+    "title": [
+      "Compact Reconnaissance Imaging Spectrometer for Mars (CRISM) on Mars Reconnaissance Orbiter (MRO)"
+    ],
+    "year": "2007",
+    "citation_count": 785
+  },
+  {
+    "bibcode": "2012IJAEO..14..112V",
+    "abstract": "Geologists have used remote sensing data since the advent of the technology for regional mapping, structural interpretation and to aid in prospecting for ores and hydrocarbons. This paper provides a review of multispectral and hyperspectral remote sensing data, products and applications in geology. During the early days of Landsat Multispectral scanner and Thematic Mapper, geologists developed band ratio techniques and selective principal component analysis to produce iron oxide and hydroxyl images that could be related to hydrothermal alteration. The advent of the Advanced Spaceborne Thermal Emission and Reflectance Radiometer (ASTER) with six channels in the shortwave infrared and five channels in the thermal region allowed to produce qualitative surface mineral maps of clay minerals (kaolinite, illite), sulfate minerals (alunite), carbonate minerals (calcite, dolomite), iron oxides (hematite, goethite), and silica (quartz) which allowed to map alteration facies (propylitic, argillic etc.). The step toward quantitative and validated (subpixel) surface mineralogic mapping was made with the advent of high spectral resolution hyperspectral remote sensing. This led to a wealth of techniques to match image pixel spectra to library and field spectra and to unravel mixed pixel spectra to pure endmember spectra to derive subpixel surface compositional information. These products have found their way to the mining industry and are to a lesser extent taken up by the oil and gas sector. The main threat for geologic remote sensing lies in the lack of (satellite) data continuity. There is however a unique opportunity to develop standardized protocols leading to validated and reproducible products from satellite remote sensing for the geology community. By focusing on geologic mapping products such as mineral and lithologic maps, geochemistry, P-T paths, fluid pathways etc. the geologic remote sensing community can bridge the gap with the geosciences community. Increasingly workflows should be multidisciplinary and remote sensing data should be integrated with field observations and subsurface geophysical data to monitor and understand geologic processes.",
+    "title": [
+      "Multi- and hyperspectral geologic remote sensing: A review"
+    ],
+    "year": "2012",
+    "citation_count": 748
+  }
+]

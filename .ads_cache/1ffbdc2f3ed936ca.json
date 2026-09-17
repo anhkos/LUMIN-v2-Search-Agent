@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2023stpp.conf..217V",
+    "abstract": "When determining geographic coordinates on Earth, the longitude at which the Royal Observatory in Greenwich (Great Britain) is located is considered to be the starting point. Astronomer Medler proposed to calculate the longitude on Mars from a clear dark detail at the bottom of the Airy crater with a diameter of 56 km. In 1958, the International Astronomical Union approved the nomenclature of names of details on the map of Mars. It is based on the naming system proposed by Schiaparelli. Heavily cratered areas of the surface received the names of Terra (Terra Prometheus, Noahis, etc.). The valleys are named after the planet Mars in various languages of the peoples of the world. For example, Hrad Vallis means Mars in Armenian, Maadim Vallis \u2500 in Hebrew. An exception to this rule was made only for the giant Mariner Valleys, named in honor of photographing the entire surface of Mars from the \"Mariner-9\" spacecraft. Smaller valleys are named after rivers on Earth. Iapigia is the ancient name of the Italian province of Apulia; Aeria is the Greek name for \"Far country beyond the mists\"; the Atsidalian sea \u2500 by analogy with the Atsidalian source, where Aphrodite bathed with the Graces; Pearl Bay is named after the Hindustan peninsula, where pearls are mined. Small craters bear the names of settlements on Earth. Large craters now continue to be named after scientists (posthumously) who made significant contributions to the study of Mars. The names of the craters to the east of the Hellas Planitia are associated with the names of scientists who speculated about the possibility of life on Mars. Craters with a diameter of 10-100 km are given names consisting of two or three syllables; smaller craters have names consisting of one syllable. Now the entire surface of Mars has been divided into 30 regions limited by parallels and meridians (8 equatorial, 5 temperate and 1 polar in each hemisphere); each area is assigned the name of the classic albedo feature found in the area and a three-letter abbreviated code that begins the names of all craters in the area. All craters in each district with a diameter of more than 20 km (about 6000 in total) are marked with two letters from Aa to Zz. The first letter is placed in order of increasing longitude from east to west, and the second \u2500 in order of increasing latitude from south to north. A three-letter designation is used for areas with the highest density of craters. Separate classes of objects received the following definitions. Catena \u2500 a chain of craters; Chasma \u2500 canyon; Dorsum (Dorsa) \u2500 spine; Fossa (Fossae) are narrow, long depressions that usually occur in groups; Labyrintus \u2500 a group of intersecting valleys; Mensa (Mensae) is a plateau with steep slopes; Mons (Montes) \u2500 mountain; Patera \u2500 a crater of an irregular shape or a group of such craters; Planitia is a low plain. In general, based on data from the \"Mariner-9\" spacecraft, a map of the planet's surface was constructed with a spatial resolution of up to 3 km.",
+    "title": [
+      "Coordinates and names of surface details on Mars"
+    ],
+    "year": "2023",
+    "citation_count": 7
+  },
+  {
+    "bibcode": "2003visu.conf...18C",
+    "abstract": "We describe an efficient technique for out-of-core management and interactive rendering of planet sized textured terrain surfaces. The technique, called planet-sized batched dynamic adaptive meshes (P-BDAM), extends the BDAM approach by using as basic primitive a general triangulation of points on a displaced triangle. The proposed framework introduces several advances with respect to the state of the art: thanks to a batched host-to-graphics communication model, we outperform current adaptive tessellation solutions in terms of rendering speed; we guarantee overall geometric continuity, exploiting programmable graphics hardware to cope with the accuracy issues introduced by single precision floating points; we exploit a compressed out of core representation and speculative prefetching for hiding disk latency during rendering of out-of-core data; we efficiently construct high quality simplified representations with a novel distributed out of core simplification algorithm working on a standard PC network.",
+    "title": [
+      "Planet-sized batched dynamic adaptive meshes (P-BDAM)"
+    ],
+    "year": "2003",
+    "citation_count": 6
+  },
+  {
+    "bibcode": "2011P&SS...59..889T",
+    "abstract": "Spacecraft studies of the three terrestrial planets with atmospheres have made it possible to make meaningful comparisons that shed light on their common origin and divergent evolutionary paths. Early in their histories, all three apparently had oceans and extensive volcanism; Mars and Earth, at least, had magnetic fields, and Earth, at least, had life. All three currently have climates determined by energy balance relationships involving carbon dioxide, water and aerosols, regulated by solar energy deposition, atmospheric and ocean circulation, composition, and cloud physics and chemistry. This paper addresses the extent to which current knowledge allows us to explain the observed state of each planet, its planetology, climatology and biology, within a common framework. Areas of ignorance and mysteries are explored, and prospects for advances in resolving these with missions within the present planning horizon of the space agencies are considered and assessed.",
+    "title": [
+      "Comparative planetology, climatology and biology of Venus, Earth and Mars"
+    ],
+    "year": "2011",
+    "citation_count": 5
+  },
+  {
+    "bibcode": "2019IzPSE..55..688B",
+    "abstract": "We analyze nonhydrostatic stress field in the Martian interior for two types of heterogeneous elastic models: the ones with a lithosphere and the ones with a lithosphere and probable melting zones within it. Numerical modeling of the system of elastic equilibrium equations for a gravitating planet is carried out on a 1 \u00d7 1 arc degree spherical grid down to a depth of 1000 km. The boundary conditions are specified by the topography and gravity field data determined relative to a hydrostatic equilibrium spheroid taken as the reference surface. High maximum shear stresses in the zones of high tensile stresses are assumed as the criterion for selecting the probable marsquake sources. Irrespective of the type of rheological model, the zones of the high shear and tensile stresses in the crust and mantle of the Mars arc revealed beneath Hellas Planitia, Argyre Planitia, Mare Acidalia, Arcadia Planitia plain, and Valles Marineris.",
+    "title": [
+      "Nonhydrostatic Stress State in the Martian Interior for Different Rheological Models"
+    ],
+    "year": "2019",
+    "citation_count": 2
+  },
+  {
+    "bibcode": "2007LPICo1353.3002Z",
+    "abstract": "Sinuous ridges, 270 km long and 200 m high, cross the Hesperian lavas above Echus Chasma. The eastern edge of Echus Plateau is bounded by glacial outwash extending along the edge of Echus Chasma. The presence of volcanic and glacial structures indicates a subglacial volcanic origin for the ridges.",
+    "title": [
+      "Glacial, Periglacial and Glacio-Volcanic Structures on the Echus Plateau, Upper Kasei Vallis"
+    ],
+    "year": "2007",
+    "citation_count": 1
+  }
+]

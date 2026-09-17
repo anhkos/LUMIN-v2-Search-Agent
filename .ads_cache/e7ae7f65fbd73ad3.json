@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2018Sci...361..490O",
+    "abstract": "The presence of liquid water at the base of the martian polar caps has long been suspected but not observed. We surveyed the Planum Australe region using the MARSIS (Mars Advanced Radar for Subsurface and Ionosphere Sounding) instrument, a low-frequency radar on the Mars Express spacecraft. Radar profiles collected between May 2012 and December 2015 contain evidence of liquid water trapped below the ice of the South Polar Layered Deposits. Anomalously bright subsurface reflections are evident within a well-defined, 20-kilometer-wide zone centered at 193\u00b0E, 81\u00b0S, which is surrounded by much less reflective areas. Quantitative analysis of the radar signals shows that this bright feature has high relative dielectric permittivity (&gt;15), matching that of water-bearing materials. We interpret this feature as a stable body of liquid water on Mars.",
+    "title": [
+      "Radar evidence of subglacial liquid water on Mars"
+    ],
+    "year": "2018",
+    "citation_count": 354
+  },
+  {
+    "bibcode": "2007JGRE..112.5S05S",
+    "abstract": "SHARAD (SHAllow RADar) is a sounding radar provided by Agenzia Spaziale Italiana (ASI) as a Facility Instrument on the Mars Reconnaissance Orbiter mission. Its 20-MHz center frequency and 10-MHz bandwidth complement the lower-frequency, relatively narrower bandwidth capability of the MARSIS sounding radar. A joint Italian-U.S. team has guided the experiment development and is responsible for data analysis and interpretation. The radar transmits signals at a 700 Hz pulse repetition frequency (PRF) and collects reflections from both the surface and near subsurface of Mars. Vertical and horizontal resolutions are, respectively, 15 m (free-space) and 3-6 km (cross-track) by 0.3-1 km (along-track). The scientific objective of SHARAD is to map, in selected locales, dielectric interfaces to at least several hundred meters depth in the Martian subsurface and to interpret these results in terms of the occurrence and distribution of expected materials, including competent rock, soil, water, and ice. A signal-to-noise ratio of ~50 dB (for a specular surface return) is achieved with 10 W of radiated power by using range and azimuth focusing in ground data processing. Preprocessed data as well as range- and azimuth-focused data will be formatted according to Planetary Data System (PDS) standards and be made available from the ASI Science Data Center (ASDC) and from the Geosciences Node of the Planetary Data System (PDS). Important targets for SHARAD include the polar layered deposits, sedimentary stacks (especially in Terra Meridiani), buried channel systems, buried impact craters, volcanic complexes, and shallow ice deposits in equilibrium with the atmosphere.",
+    "title": [
+      "SHARAD sounding radar on the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 277
+  },
+  {
+    "bibcode": "2022ITPAM..44.4555W",
+    "abstract": "Curriculum learning (CL) is a training strategy that trains a machine learning model from easier data to harder data, which imitates the meaningful learning order in human curricula. As an easy-to-use plug-in, the CL strategy has demonstrated its power in improving the generalization capacity and convergence rate of various models in a wide range of scenarios such as computer vision and natural language processing etc. In this survey article, we comprehensively review CL from various aspects including motivations, definitions, theories, and applications. We discuss works on curriculum learning within a general CL framework, elaborating on how to design a manually predefined curriculum or an automatic curriculum. In particular, we summarize existing CL designs based on the general framework of Difficulty Measurer <inline-formula><mml:math><mml:mo>+</mml:mo></mml:math></inline-formula> Training Scheduler and further categorize the methodologies for automatic CL into four groups, i.e., Self-paced Learning, Transfer Teacher, RL Teacher, and Other Automatic CL. We also analyze principles to select different CL designs that may benefit practical applications. Finally, we present our insights on the relationships connecting CL and other machine learning concepts including transfer learning, meta-learning, continual learning and active learning, etc., then point out challenges in CL as well as potential future research directions deserving further investigations.",
+    "title": [
+      "A Survey on Curriculum Learning"
+    ],
+    "year": "2022",
+    "citation_count": 270
+  },
+  {
+    "bibcode": "2010Icar..205....2M",
+    "abstract": "The High Resolution Imaging Science Experiment (HiRISE) on the Mars Reconnaissance Orbiter (MRO) acquired 8 terapixels of data in 9137 images of Mars between October 2006 and December 2008, covering \u223c0.55% of the surface. Images are typically 5-6 km wide with 3-color coverage over the central 20% of the swath, and their scales usually range from 25 to 60 cm/pixel. Nine hundred and sixty stereo pairs were acquired and more than 50 digital terrain models (DTMs) completed; these data have led to some of the most significant science results. New methods to measure and correct distortions due to pointing jitter facilitate topographic and change-detection studies at sub-meter scales. Recent results address Noachian bedrock stratigraphy, fluvially deposited fans in craters and in or near Valles Marineris, groundwater flow in fractures and porous media, quasi-periodic layering in polar and non-polar deposits, tectonic history of west Candor Chasma, geometry of clay-rich deposits near and within Mawrth Vallis, dynamics of flood lavas in the Cerberus Palus region, evidence for pyroclastic deposits, columnar jointing in lava flows, recent collapse pits, evidence for water in well-preserved impact craters, newly discovered large rayed craters, and glacial and periglacial processes. Of particular interest are ongoing processes such as those driven by the wind, impact cratering, avalanches of dust and/or frost, relatively bright deposits on steep gullied slopes, and the dynamic seasonal processes over polar regions. HiRISE has acquired hundreds of large images of past, present and potential future landing sites and has contributed to scientific and engineering studies of those sites. Warming the focal-plane electronics prior to imaging has mitigated an instrument anomaly that produces bad data under cold operating conditions.",
+    "title": [
+      "The High Resolution Imaging Science Experiment (HiRISE) during MRO\u2019s Primary Science Phase (PSP)"
+    ],
+    "year": "2010",
+    "citation_count": 154
+  },
+  {
+    "bibcode": "2009AREPS..37..535B",
+    "abstract": "The tantalizing prospect of a readable record of martian climatic variations has driven decades of work toward deciphering the stratigraphy of the martian polar layered deposits and understanding the role of the residual ice caps that cover them. Spacecraft over the past decade have provided a massive infusion of new data into Mars science. Polar science has benefited immensely due to the near-polar orbits of most of the orbiting missions and the successful landing of the Phoenix spacecraft in the northern high latitudes. Topographic, thermal, radar, hyperspectral, and high-resolution imaging data are among the datasets that have allowed characterization of the stratigraphy of the polar layered deposits in unprecedented detail. Additionally, change within the residual ice caps has been monitored with spacecraft instruments for several years. These new data have provided a golden opportunity to understand the interplay between the martian orbit, climate, and polar ice.",
+    "title": [
+      "The Polar Deposits of Mars"
+    ],
+    "year": "2009",
+    "citation_count": 145
+  }
+]
