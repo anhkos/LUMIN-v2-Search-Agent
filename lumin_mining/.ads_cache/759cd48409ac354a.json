@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2010PlPB...48..909G",
+    "abstract": "Various abiotic stresses lead to the overproduction of reactive oxygen species (ROS) in plants which are highly reactive and toxic and cause damage to proteins, lipids, carbohydrates and DNA which ultimately results in oxidative stress. The ROS comprises both free radical (O <SUB loc=\"post\">2</SUB> <SUP loc=\"post\">\u2212</SUP>, superoxide radicals; OH , hydroxyl radical; HO <SUB loc=\"post\">2</SUB> , perhydroxy radical and RO , alkoxy radicals) and non-radical (molecular) forms (H <SUB loc=\"post\">2</SUB>O <SUB loc=\"post\">2</SUB>, hydrogen peroxide and <SUP loc=\"pre\">1</SUP>O <SUB loc=\"post\">2</SUB>, singlet oxygen). In chloroplasts, photosystem I and II (PSI and PSII) are the major sites for the production of <SUP loc=\"pre\">1</SUP>O <SUB loc=\"post\">2</SUB> and O <SUB loc=\"post\">2</SUB> <SUP loc=\"post\">\u2212</SUP>. In mitochondria, complex I, ubiquinone and complex III of electron transport chain (ETC) are the major sites for the generation of O <SUB loc=\"post\">2</SUB> <SUP loc=\"post\">\u2212</SUP>. The antioxidant defense machinery protects plants against oxidative stress damages. Plants possess very efficient enzymatic (superoxide dismutase, SOD; catalase, CAT; ascorbate peroxidase, APX; glutathione reductase, GR; monodehydroascorbate reductase, MDHAR; dehydroascorbate reductase, DHAR; glutathione peroxidase, GPX; guaicol peroxidase, GOPX and glutathione- S- transferase, GST) and non-enzymatic (ascorbic acid, ASH; glutathione, GSH; phenolic compounds, alkaloids, non-protein amino acids and \u03b1-tocopherols) antioxidant defense systems which work in concert to control the cascades of uncontrolled oxidation and protect plant cells from oxidative damage by scavenging of ROS. ROS also influence the expression of a number of genes and therefore control the many processes like growth, cell cycle, programmed cell death (PCD), abiotic stress responses, pathogen defense, systemic signaling and development. In this review, we describe the biochemistry of ROS and their production sites, and ROS scavenging antioxidant defense machinery.",
+    "title": [
+      "Reactive oxygen species and antioxidant machinery in abiotic stress tolerance in crop plants"
+    ],
+    "year": "2010",
+    "citation_count": 4797
+  },
+  {
+    "bibcode": "2004TPS.....9..490M",
+    "abstract": "Reactive oxygen species (ROS) control many different processes in plants. However, being toxic molecules, they are also capable of injuring cells. How this conflict is resolved in plants is largely unknown. Nonetheless, it is clear that the steady-state level of ROS in cells needs to be tightly regulated. In Arabidopsis, a network of at least 152 genes is involved in managing the level of ROS. This network is highly dynamic and redundant, and encodes ROS-scavenging and ROS-producing proteins. Although recent studies have unraveled some of the key players in the network, many questions related to its mode of regulation, its protective roles and its modulation of signaling networks that control growth, development and stress response remain unanswered.",
+    "title": [
+      "Questions and future challenges"
+    ],
+    "year": "2004",
+    "citation_count": 2267
+  },
+  {
+    "bibcode": "2010PCEnv..33..453M",
+    "abstract": "Water deficit and salinity, especially under high light intensity or in combination with other stresses, disrupt photosynthesis and increase photorespiration, altering the normal homeostasis of cells and cause an increased production of reactive oxygen species (ROS). ROS play a dual role in the response of plants to abiotic stresses functioning as toxic by-products of stress metabolism, as well as important signal transduction molecules. In this review, we provide an overview of ROS homeostasis and signalling in response to drought and salt stresses and discuss the current understanding of ROS involvement in stress sensing, stress signalling and regulation of acclimation responses.",
+    "title": [
+      "Reactive oxygen species homeostasis and signalling during drought and salinity stresses"
+    ],
+    "year": "2010",
+    "citation_count": 1633
+  },
+  {
+    "bibcode": "2017PlJ....90..856C",
+    "abstract": "Summary Reactive oxygen species (ROS) play a key role in the acclimation process of plants to abiotic stress. They primarily function as signal transduction molecules that regulate different pathways during plant acclimation to stress, but are also toxic byproducts of stress metabolism. Because each subcellular compartment in plants contains its own set of ROS-producing and ROS-scavenging pathways, the steady-state level of ROS, as well as the redox state of each compartment, is different at any given time giving rise to a distinct signature of ROS levels at the different compartments of the cell. Here we review recent studies on the role of ROS in abiotic stress in plants, and propose that different abiotic stresses, such as drought, heat, salinity and high light, result in different ROS signatures that determine the specificity of the acclimation response and help tailor it to the exact stress the plant encounters. We further address the role of ROS in the acclimation of plants to stress combination as well as the role of ROS in mediating rapid systemic signaling during abiotic stress. We conclude that as long as cells maintain high enough energy reserves to detoxify ROS, ROS is beneficial to plants during abiotic stress enabling them to adjust their metabolism and mount a proper acclimation response.",
+    "title": [
+      "Reactive oxygen species, abiotic stress and stress combination"
+    ],
+    "year": "2017",
+    "citation_count": 1310
+  },
+  {
+    "bibcode": "2014FrPS....5...86O",
+    "abstract": "Water stress adversely impacts many aspects of the physiology of plants, especially photosynthetic capacity. If the stress is prolonged, plant growth, and productivity are severely diminished. Plants have evolved complex physiological and biochemical adaptations to adjust and adapt to a variety of environmental stresses. The molecular and physiological mechanisms associated with water-stress tolerance and water-use efficiency have been extensively studied. The systems that regulate plant adaptation to water stress through a sophisticated regulatory network are the subject of the current review. Molecular mechanisms that plants use to increase stress tolerance, maintain appropriate hormone homeostasis and responses and prevent excess light damage, are also discussed. An understanding of how these systems are regulated and ameliorate the impact of water stress on plant productivity will provide the information needed to improve plant stress tolerance using biotechnology, while maintaining the yield and quality of crops.",
+    "title": [
+      "Response of plants to water stress"
+    ],
+    "year": "2014",
+    "citation_count": 650
+  }
+]

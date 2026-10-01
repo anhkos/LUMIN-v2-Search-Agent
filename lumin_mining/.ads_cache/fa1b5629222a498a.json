@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2012SSRv..170..583G",
+    "abstract": "The Rover Environmental Monitoring Station (REMS) will investigate environmental factors directly tied to current habitability at the Martian surface during the Mars Science Laboratory (MSL) mission. Three major habitability factors are addressed by REMS: the thermal environment, ultraviolet irradiation, and water cycling. The thermal environment is determined by a mixture of processes, chief amongst these being the meteorological. Accordingly, the REMS sensors have been designed to record air and ground temperatures, pressure, relative humidity, wind speed in the horizontal and vertical directions, as well as ultraviolet radiation in different bands. These sensors are distributed over the rover in four places: two booms located on the MSL Remote Sensing Mast, the ultraviolet sensor on the rover deck, and the pressure sensor inside the rover body. Typical daily REMS observations will collect 180 minutes of data from all sensors simultaneously (arranged in 5 minute hourly samples plus 60 additional minutes taken at times to be decided during the course of the mission). REMS will add significantly to the environmental record collected by prior missions through the range of simultaneous observations including water vapor; the ability to take measurements routinely through the night; the intended minimum of one Martian year of observations; and the first measurement of surface UV irradiation. In this paper, we describe the scientific potential of REMS measurements and describe in detail the sensors that constitute REMS and the calibration procedures.",
+    "title": [
+      "REMS: The Environmental Sensor Suite for the Mars Science Laboratory Rover"
+    ],
+    "year": "2012",
+    "citation_count": 263
+  },
+  {
+    "bibcode": "2012SSRv..170..259E",
+    "abstract": "The Mars Science Laboratory (MSL) Mars Hand Lens Imager (MAHLI) investigation will use a 2-megapixel color camera with a focusable macro lens aboard the rover, Curiosity, to investigate the stratigraphy and grain-scale texture, structure, mineralogy, and morphology of geologic materials in northwestern Gale crater. Of particular interest is the stratigraphic record of a \u223c5 km thick layered rock sequence exposed on the slopes of Aeolis Mons (also known as Mount Sharp). The instrument consists of three parts, a camera head mounted on the turret at the end of a robotic arm, an electronics and data storage assembly located inside the rover body, and a calibration target mounted on the robotic arm shoulder azimuth actuator housing. MAHLI can acquire in-focus images at working distances from \u223c2.1 cm to infinity. At the minimum working distance, image pixel scale is \u223c14 \u03bcm per pixel and very coarse silt grains can be resolved. At the working distance of the Mars Exploration Rover Microscopic Imager cameras aboard Spirit and Opportunity, MAHLI's resolution is comparable at \u223c30 \u03bcm per pixel. Onboard capabilities include autofocus, auto-exposure, sub-framing, video imaging, Bayer pattern color interpolation, lossy and lossless compression, focus merging of up to 8 focus stack images, white light and longwave ultraviolet (365 nm) illumination of nearby subjects, and 8 gigabytes of non-volatile memory data storage.",
+    "title": [
+      "Curiosity's Mars Hand Lens Imager (MAHLI) Investigation"
+    ],
+    "year": "2012",
+    "citation_count": 213
+  },
+  {
+    "bibcode": "2019GeoRL..46...71G",
+    "abstract": "Mars Science Laboratory Curiosity rover observations of the 2018/Mars year 34 global/planet-encircling dust storm represent the first in situ measurements of a global dust storm with dedicated meteorological sensors since the Viking Landers. The Mars Science Laboratory team planned and executed a science campaign lasting approximately 100 Martian sols to study the storm involving an enhanced cadence of environmental monitoring using the rover's meteorological sensors, cameras, and spectrometers. Mast Camera 880-nm optical depth reached 8.5, and Rover Environmental Monitoring Station measurements indicated a 97% reduction in incident total ultraviolet solar radiation at the surface, 30K reduction in diurnal range of air temperature, and an increase in the semidiurnal pressure tide amplitude to 40 Pa. No active dust-lifting sites were detected within Gale Crater, and global and local atmospheric dynamics were drastically altered during the storm. This work presents an overview of the mission's storm observations and initial results.",
+    "title": [
+      "Mars Science Laboratory Observations of the 2018/Mars Year 34 Global Dust Storm"
+    ],
+    "year": "2019",
+    "citation_count": 153
+  },
+  {
+    "bibcode": "2014JGRE..119.1680G",
+    "abstract": "In the first 100 Martian solar days (sols) of the Mars Science Laboratory mission, the Rover Environmental Monitoring Station (REMS) measured the seasonally evolving diurnal cycles of ultraviolet radiation, atmospheric pressure, air temperature, ground temperature, relative humidity, and wind within Gale Crater on Mars. As an introduction to several REMS-based articles in this issue, we provide an overview of the design and performance of the REMS sensors and discuss our approach to mitigating some of the difficulties we encountered following landing, including the loss of one of the two wind sensors. We discuss the REMS data set in the context of other Mars Science Laboratory instruments and observations and describe how an enhanced observing strategy greatly increased the amount of REMS data returned in the first 100 sols, providing complete coverage of the diurnal cycle every 4 to 6 sols. Finally, we provide a brief overview of key science results from the first 100 sols. We found Gale to be very dry, never reaching saturation relative humidities, subject to larger diurnal surface pressure variations than seen by any previous lander on Mars, air temperatures consistent with model predictions and abundant short timescale variability, and surface temperatures responsive to changes in surface properties and suggestive of subsurface layering.",
+    "title": [
+      "Curiosity's rover environmental monitoring station: Overview of the first 100 sols"
+    ],
+    "year": "2014",
+    "citation_count": 116
+  },
+  {
+    "bibcode": "2014JGRE..119...82H",
+    "abstract": "REMS-P, the pressure measurement subsystem of the Mars Science Laboratory (MSL) Rover Environmental Measurement Station (REMS), is performing accurate observations of the Martian atmospheric surface pressure. It has demonstrated high data quality and good temporal coverage, carrying out the first in situ pressure observations in the Martian equatorial regions. We describe the REMS-P initial results by MSL mission sol 100 including the instrument performance and data quality and illustrate some initial interpretations of the observed features. The observations show both expected and new phenomena at various spatial and temporal scales, e.g., the gradually increasing pressure due to the advancing Martian season signals from the diurnal tides as well as various local atmospheric phenomena and thermal vortices. Among the unexpected new phenomena discovered in the pressure data are a small regular pressure drop at every sol and pressure oscillations occurring in the early evening. We look forward to continued high-quality observations by REMS-P, extending the data set to reveal characteristics of seasonal variations and improved insights into regional and local phenomena.",
+    "title": [
+      "Pressure observations by the Curiosity rover: Initial results"
+    ],
+    "year": "2014",
+    "citation_count": 96
+  }
+]

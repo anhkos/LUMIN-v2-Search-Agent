@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2012SSRv..170..167W",
+    "abstract": "The ChemCam instrument suite on the Mars Science Laboratory (MSL) rover Curiosity provides remote compositional information using the first laser-induced breakdown spectrometer (LIBS) on a planetary mission, and provides sample texture and morphology data using a remote micro-imager (RMI). Overall, ChemCam supports MSL with five capabilities: remote classification of rock and soil characteristics; quantitative elemental compositions including light elements like hydrogen and some elements to which LIBS is uniquely sensitive (e.g., Li, Be, Rb, Sr, Ba); remote removal of surface dust and depth profiling through surface coatings; context imaging; and passive spectroscopy over the 240-905 nm range. ChemCam is built in two sections: The mast unit, consisting of a laser, telescope, RMI, and associated electronics, resides on the rover's mast, and is described in a companion paper. ChemCam's body unit, which is mounted in the body of the rover, comprises an optical demultiplexer, three spectrometers, detectors, their coolers, and associated electronics and data handling logic. Additional instrument components include a 6 m optical fiber which transfers the LIBS light from the telescope to the body unit, and a set of onboard calibration targets. ChemCam was integrated and tested at Los Alamos National Laboratory where it also underwent LIBS calibration with 69 geological standards prior to integration with the rover. Post-integration testing used coordinated mast and instrument commands, including LIBS line scans on rock targets during system-level thermal-vacuum tests. In this paper we describe the body unit, optical fiber, and calibration targets, and the assembly, testing, and verification of the instrument prior to launch.",
+    "title": [
+      "The ChemCam Instrument Suite on the Mars Science Laboratory (MSL) Rover: Body Unit and Combined System Tests"
+    ],
+    "year": "2012",
+    "citation_count": 463
+  },
+  {
+    "bibcode": "2014JGRE..119.1991N",
+    "abstract": "The Curiosity rover has analyzed abundant light-toned fracture-fill material within the Yellowknife Bay sedimentary deposits. The ChemCam instrument, coupled with Mastcam and ChemCam/Remote Micro Imager images, was able to demonstrate that these fracture fills consist of calcium sulfate veins, many of which appear to be hydrated at a level expected for gypsum and bassanite. Anhydrite is locally present and is found in a location characterized by a nodular texture. An intricate assemblage of veins crosses the sediments, which were likely formed by precipitation from fluids circulating through fractures. The presence of veins throughout the entire ~5 m thick Yellowknife Bay sediments suggests that this process occurred well after sedimentation and cementation/lithification of those sediments. The sulfur-rich fluids may have originated in previously precipitated sulfate-rich layers, either before the deposition of the Sheepbed mudstones or from unrelated units such as the sulfates at the base of Mount Sharp. The occurrence of these veins after the episodes of deposition of fluvial sediments at the surface suggests persistent aqueous activity in relatively nonacidic conditions.",
+    "title": [
+      "Calcium sulfate veins characterized by ChemCam/Curiosity at Gale crater, Mars"
+    ],
+    "year": "2014",
+    "citation_count": 239
+  },
+  {
+    "bibcode": "2015NatGe...8..605S",
+    "abstract": "Understanding of the geologic evolution of Mars has been greatly improved by recent orbital, in situ and meteorite data, but insights into the earliest period of Martian magmatism (4.1 to 3.7 billion years ago) remain scarce. The landing site of NASA\u2019s Curiosity rover, Gale crater, which formed 3.61 billion years ago within older terrain, provides a window into this earliest igneous history. Along its traverse, Curiosity has discovered light-toned rocks that contrast with basaltic samples found in younger regions. Here we present geochemical data and images of 22 specimens analysed by Curiosity that demonstrate that these light-toned materials are feldspar-rich magmatic rocks. The rocks belong to two distinct geochemical types: alkaline compositions containing up to 67 wt% SiO<SUB>2</SUB> and 14 wt% total alkalis (Na<SUB>2</SUB>O + K<SUB>2</SUB>O) with fine-grained to porphyritic textures on the one hand, and coarser-grained textures consistent with quartz diorite and granodiorite on the other hand. Our analysis reveals unexpected magmatic diversity and the widespread presence of silica- and feldspar-rich materials in the vicinity of the landing site at Gale crater. Combined with the identification of feldspar-rich rocks elsewhere and the low average density of the crust in the Martian southern hemisphere, we conclude that silica-rich magmatic rocks may constitute a significant fraction of ancient Martian crust and may be analogous to the earliest continental crust on Earth.",
+    "title": [
+      "In situ evidence for continental crust on early Mars"
+    ],
+    "year": "2015",
+    "citation_count": 216
+  },
+  {
+    "bibcode": "2013AcSpB..82....1W",
+    "abstract": "The ChemCam instrument package on the Mars Science Laboratory rover, Curiosity, is the first planetary science instrument to employ laser-induced breakdown spectroscopy (LIBS) to determine the compositions of geological samples on another planet. Pre-processing of the spectra involves subtracting the ambient light background, removing noise, removing the electron continuum, calibrating for the wavelength, correcting for the variable distance to the target, and applying a wavelength-dependent correction for the instrument response. Further processing of the data uses multivariate and univariate comparisons with a LIBS spectral library developed prior to launch as well as comparisons with several on-board standards post-landing. The level-2 data products include semi-quantitative abundances derived from partial least squares regression. A LIBS spectral library was developed using 69 rock standards in the form of pressed powder disks, glasses, and ceramics to minimize heterogeneity on the scale of the observation (350\u2500550\u03bcm dia.). The standards covered typical compositional ranges of igneous materials and also included sulfates, carbonates, and phyllosilicates. The provenance and elemental and mineralogical compositions of these standards are described. Spectral characteristics of this data set are presented, including the size distribution and integrated irradiances of the plasmas, and a proxy for plasma temperature as a function of distance from the instrument. Two laboratory-based clones of ChemCam reside in Los Alamos and Toulouse for the purpose of adding new spectra to the database as the need arises. Sensitivity to differences in wavelength correlation to spectral channels and spectral resolution has been investigated, indicating that spectral registration needs to be within half a pixel and resolution needs to match within 1.5 to 2.6pixels. Absolute errors are tabulated for derived compositions of each major element in each standard using PLS regression. Sources of errors are investigated and discussed, and methods for improving the analytical accuracy of compositions derived from ChemCam spectra are discussed.",
+    "title": [
+      "Pre-flight calibration and initial data processing for the ChemCam laser-induced breakdown spectroscopy instrument on the Mars Science Laboratory rover"
+    ],
+    "year": "2013",
+    "citation_count": 187
+  },
+  {
+    "bibcode": "2017E&SS....4..396B",
+    "abstract": "The NASA Curiosity rover Mast Camera (Mastcam) system is a pair of fixed-focal length, multispectral, color CCD imagers mounted 2 m above the surface on the rover's remote sensing mast, along with associated electronics and an onboard calibration target. The left Mastcam (M-34) has a 34 mm focal length, an instantaneous field of view (IFOV) of 0.22 mrad, and a FOV of 20\u00b0 \u00d7 15\u00b0 over the full 1648 \u00d7 1200 pixel span of its Kodak KAI-2020 CCD. The right Mastcam (M-100) has a 100 mm focal length, an IFOV of 0.074 mrad, and a FOV of 6.8\u00b0 \u00d7 5.1\u00b0 using the same detector. The cameras are separated by 24.2 cm on the mast, allowing stereo images to be obtained at the resolution of the M-34 camera. Each camera has an eight-position filter wheel, enabling it to take Bayer pattern red, green, and blue (RGB) \"true color\" images, multispectral images in nine additional bands spanning 400-1100 nm, and images of the Sun in two colors through neutral density-coated filters. An associated Digital Electronics Assembly provides command and data interfaces to the rover, 8 Gb of image storage per camera, 11 bit to 8 bit companding, JPEG compression, and acquisition of high-definition video. Here we describe the preflight and in-flight calibration of Mastcam images, the ways that they are being archived in the NASA Planetary Data System, and the ways that calibration refinements are being developed as the investigation progresses on Mars. We also provide some examples of data sets and analyses that help to validate the accuracy and precision of the calibration.",
+    "title": [
+      "The Mars Science Laboratory Curiosity rover Mastcam instruments: Preflight and in-flight calibration, validation, and data archiving"
+    ],
+    "year": "2017",
+    "citation_count": 136
+  }
+]

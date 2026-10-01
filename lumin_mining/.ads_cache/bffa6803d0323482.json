@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2024ITGRS..6243109L",
+    "abstract": "Martian terrain segmentation aims to assign all pixels of an input image with various terrain labels, which provides a firm support for the downstream research on rover traversing and geologic analysis tasks. However, existing studies in this field suffer from limitations in two aspects: one is the lack of large-scale and high-quality Martian terrain datasets, and the other is the over-reliance on purely supervised learning that is very data-hungry and sensitive to domain shifts among different datasets. In this article, we overcome these from the perspective of both data and methodology. First, we publish MarsScapes, a panorama dataset with appreciable data volume and fine-grained annotations for Martian terrain understanding. The dataset contains 195 terrain panoramas composed of 3779 subimages, and all pixels in the panoramas are split into nine semantic categories. Then, we propose the first transformer-based unsupervised domain adaptation (UDA) framework (UDAFormer) for the cross-domain terrain segmentation on Mars, which consists of a teacher-student model and an output-guided biased sampling (OGBS) module. The teacher-student model performs knowledge distillation to explore robust cross-domain features, where a modified augmentation regularization (MAR) is designed to alleviate the interference of undesirable augmentations to domain adaption. The OGBS helps the teacher-student network to emphasize the categories that tend to be ambiguous or submerged during the training, elevating the overall accuracy for the UDA segmentation of Martian terrains. Extensive experiments on the MarsScapes and another dataset called Mars-Seg demonstrate the superiority of UDAFormer over the state-of-the-art methods in UDA Martian terrain segmentation.",
+    "title": [
+      "MarsScapes and UDAFormer: A Panorama Dataset and a Transformer-Based Unsupervised Domain Adaptation Framework for Martian Terrain Segmentation"
+    ],
+    "year": "2024",
+    "citation_count": 17
+  },
+  {
+    "bibcode": "2022aero.conf..346E",
+    "abstract": "Highly accurate localization of planetary robotic explorers is crucial for robust, efficient, and safe path planning in unknown and extreme planetary environments. In these environments, where satellite-based radio-navigation systems are unavailable, global localization can be achieved by relying on registration of ground imagery to an orbital map, X-band Doppler radio transmissions, or direct observation in satellite imagery. While these methods have proven to be effective, they rely heavily on a human-in-the-loop. This paper is concerned with autonomous global localization of planetary robotic explorers in extreme and GPS-denied environments by relying on semantic segmentation of ground imagery. Using a trained convolutional neural network (CNN), saliency maps are obtained from semantic segmentation of ground imagery. These maps are then registered to projected views of the terrain elevation maps in the rover's general region of operation to find the optimal match that places tight constraints on the pose of the robot in a Mars body-fixed coordinate system. We provide details on the use of the DeepLab V3+ framework for semantic image segmentation of Martian landscape imagery, including fine-tune training of existing models on domain specific data. Furthermore, we provide performance analysis of the proposed method on a Martian landscape dataset obtained by NASA's Perseverance rover, and discuss the limitations of the proposed method and future research directions.",
+    "title": [
+      "Toward Autonomous Localization of Planetary Robotic Explorers by Relying on Semantic Mapping"
+    ],
+    "year": "2022",
+    "citation_count": 1
+  },
+  {
+    "bibcode": "2022intc.conf...15G",
+    "citation_count": 0,
+    "abstract": "Vision-based geo-location is very important for many military applications, especially when the global navigation satellite system (GNSS) is unavailable. However, this is not an easy task and faces many challenges due to the changes of vegetation, illumination and season in mountainous regions. In this work, we regard automatic geo-localization without GNSS recordings as a skyline matching problem, and propose an automated approach for visual localization using digital elevation model (DEM) data and real-captured images. The skyline feature is used as a cue for visual database retrieval. Our system was tested on 50 testing site points within a large-scale area (China, 202.6 km<SUP>2</SUP>) and an average position error of 43.13 m was obtained within 4.5 s, which demonstrates that this low-cost approach can produce fast and reliable localization results.",
+    "title": [
+      "Vision-based Geo-Localization in Mountainous Regions"
+    ],
+    "year": "2022"
+  },
+  {
+    "bibcode": "2016IPot...35f..48C",
+    "citation_count": 0,
+    "abstract": "There's a photo making the rounds on social media that purports to show Earth as seen from a Mars rover. It features Earth as a bright evening star, grouped with Jupiter and Venus, hanging low above a typically rocky and red Martian landscape at last light. Perhaps you've seen it? In fact, the picture was not taken on Mars but is instead a computer-generated visualization. There's an article about it (\"An Unreal Mars Skyline,\" by Phil Plait, in Discover magazine from August 2012) that you can easily find online.",
+    "title": [
+      "Gamesman Problems"
+    ],
+    "year": "2016"
+  },
+  {
+    "bibcode": "2026RemS...18.1794L",
+    "abstract": "What are the main findings? We proposed the Mars Adaptive Frequency Transformer (MAFT), a lightweight network building upon AFFormer with AKConv and EMCA, which achieves 88.90% Intersection over Union (IoU) with only 2.97 M parameters and 15.49 G floating-point operations (FLOPs), surpassing all compared lightweight and Mars-specific segmentation models. We constructed the TWMARS-V2 dataset with fine-grained annotations, addressing the high omission rate of small rocks in existing datasets and establishing a robust evaluation benchmark. What are the implications of the main findings? With a high inference speed of 35.25 frames per second (FPS) and low computational cost, MAFT is highly suitable for deployment on resource-constrained onboard hardware, enabling real-time obstacle avoidance for future Mars rovers. The network's robustness under dust coverage and complex textures supports automated rock size and morphology statistics through a practical measurement workflow. The segmentation of rocks on the Martian surface is crucial for navigation and obstacle avoidance by Mars rovers. However, frequent dust storms degrade rock surface textures, and the wide range of rock scales\u2014from sub-meter to ten-meter\u2014further complicates segmentation, especially under the strict computational constraints of rover hardware. This paper proposes a lightweight network named MAFT, specifically designed for Martian rock segmentation. The network builds upon the Adaptive Frequency Transformer (AFFormer) and constructs an improved backbone termed the Improved Adaptive Frequency Transformer (IAFFormer). By replacing the traditional self-attention mechanism with a frequency-domain approach, it captures global feature dependencies while reducing the computational complexity from quadratic to linear. The spatially isolated 1 \u00d7 1 convolutions in the pixel descriptor module are further replaced with Adaptive Kernel Convolution (AKConv), enabling the backbone to dynamically adjust its sampling positions to conform to the irregular and diverse morphologies of Martian rocks. An Enhanced Multidimensional Convolutional Attention (EMCA) module is introduced as the decoding structure. By integrating max-pooling in the squeeze stage and adaptive dilated convolutions in the excitation stage, EMCA strengthens the boundary perception and long-range dependency modeling of dust-covered rocks without increasing the parameter count. Additionally, we constructed a dataset of Martian rocks for the Zhurong rover (TWMARS-V2) and conducted experiments using a synthetic dataset (SynMars) and a real dataset (MarsData-V2). Experimental results demonstrate that MAFT achieves the highest segmentation accuracy among all compared methods, with only 2.97 M parameters and 15.49 G FLOPs. On the TWMARS-V2 dataset, Pixel Accuracy (PA) reaches 98.17%, and IoU reaches 88.90%.",
+    "title": [
+      "MAFT: A Lightweight Network for Martian Rock Segmentation Based on an Adaptive Frequency Transformer"
+    ],
+    "year": "2026",
+    "citation_count": 0
+  }
+]

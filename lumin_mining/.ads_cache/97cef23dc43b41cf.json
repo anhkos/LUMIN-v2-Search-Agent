@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2012RPPh...75j6901K",
+    "abstract": "The transport of sand and dust by wind is a potent erosional force, creates sand dunes and ripples, and loads the atmosphere with suspended dust aerosols. This paper presents an extensive review of the physics of wind-blown sand and dust on Earth and Mars. Specifically, we review the physics of aeolian saltation, the formation and development of sand dunes and ripples, the physics of dust aerosol emission, the weather phenomena that trigger dust storms, and the lifting of dust by dust devils and other small-scale vortices. We also discuss the physics of wind-blown sand and dune formation on Venus and Titan.",
+    "title": [
+      "The physics of wind-blown sand and dust"
+    ],
+    "year": "2012",
+    "citation_count": 898
+  },
+  {
+    "bibcode": "2009JGRE..114.0D12M",
+    "abstract": "Definitive exposures of pristine, ancient crust on Mars are rare, and the finding that much of the ancient Noachian terrain on Mars exhibits evidence of phyllosilicate alteration adds further complexity. We have analyzed high-resolution data from the Mars Reconnaissance Orbiter in the well-exposed Noachian crust surrounding the Isidis basin. We focus on data from the Compact Reconnaissance Imaging Spectrometer for Mars as well as imaging data sets from High Resolution Imagine Science Experiment and Context Imager. These data show the lowermost unit of Noachian crust in this region is a complex, brecciated unit of diverse compositions. Breccia blocks consisting of unaltered mafic rocks together with rocks showing signatures of Fe/Mg-phyllosilicates are commonly observed. In regions of good exposure, layered or banded phyllosilicate-bearing breccia rocks are observed suggestive of pre-Isidis sedimentary deposits. In places, the phyllosilicate-bearing material appears as a matrix surrounding mafic blocks, and the mafic rocks show evidence of complex folded relationships possibly formed in the turbulent flow during emplacement of basin-scale ejecta. These materials likely include both pre-Isidis basement rocks as well as the brecciated products of the Isidis basin-forming event at 3.9 Ga. A banded olivine unit capped by a mafic unit covers a large topographic and geographic range from northwest of Nili Fossae to the southern edge of the Isidis basin. This olivine-mafic cap combination superimposes the phyllosilicate-bearing basement rocks and distinctly conforms to the underlying basement topography. This may be due to draping of the topography by a fluid or tectonic deformation of a previously flatter lying morphology. We interpret the draping, superposed olivine-mafic cap combination to be impact melt from the Isidis basin-forming event. While some distinct post-Isidis alteration is evident (carbonate, kaolinite, and serpentine), the persistence of olivine from the time of Isidis basin suggests that large-scale aqueous alteration processes had ceased by the time this unit was emplaced.",
+    "title": [
+      "Composition, Morphology, and Stratigraphy of Noachian Crust around the Isidis basin"
+    ],
+    "year": "2009",
+    "citation_count": 154
+  },
+  {
+    "bibcode": "2003JGRE..108.8088K",
+    "abstract": "We analyzed narrow-angle Mars Orbiter Camera (MOC-NA) images to produce high-resolution digital elevation models (DEMs) in order to provide topographic and slope information needed to assess the safety of candidate landing sites for the Mars Exploration Rovers (MER) and to assess the accuracy of our results by a variety of tests. The mapping techniques developed also support geoscientific studies and can be used with all present and planned Mars-orbiting scanner cameras. Photogrammetric analysis of MOC stereopairs yields DEMs with 3-pixel (typically 10 m) horizontal resolution, vertical precision consistent with ~0.22 pixel matching errors (typically a few meters), and slope errors of 1-3\u00b0. These DEMs are controlled to the Mars Orbiter Laser Altimeter (MOLA) global data set and consistent with it at the limits of resolution. Photoclinometry yields DEMs with single-pixel (typically ~3 m) horizontal resolution and submeter vertical precision. Where the surface albedo is uniform, the dominant error is 10-20% relative uncertainty in the amplitude of topography and slopes after ``calibrating'' photoclinometry against a stereo DEM to account for the influence of atmospheric haze. We mapped portions of seven candidate MER sites and the Mars Pathfinder site. Safety of the final four sites (Elysium, Gusev, Isidis, and Meridiani) was assessed by mission engineers by simulating landings on our DEMs of ``hazard units'' mapped in the sites, with results weighted by the probability of landing on those units; summary slope statistics show that most hazard units are smooth, with only small areas of etched terrain in Gusev crater posing a slope hazard.",
+    "title": [
+      "High-resolution topomapping of candidate MER landing sites with Mars Orbiter Camera narrow-angle images"
+    ],
+    "year": "2003",
+    "citation_count": 110
+  },
+  {
+    "bibcode": "2007JGRE..112.7002F",
+    "abstract": "We describe the distribution and concentration of the largest Martian gypsum deposit discovered to date by the Mars Express OMEGA (Observatoire pour le Mineralogie, l'Eau, les Glaces et l'Activit\u00e9) imaging spectrometer, its relationship to the late Amazonian-aged north polar dunes in which it is found, and its likely origin. Gypsum has not been discovered anywhere within the north polar region outside of the Olympia Undae dune sea. In the areas of highest gypsum a concentration, 35% pure gypsum grains of a few tens of micrometers in size, mixed with 65% millimeter-sized gypsum grains containing, dark, spectrally featureless inclusions best fit the OMEGA observations. The gypsum-rich dunes contain no significant average albedo, temperature, or morphological anomalies. We propose that water emanating from nearby channels, carved during melting of the polar layered deposits, infiltrated the eastern end of the polar dune sea, percolating through the dunes. Deposits of gypsum resulted from a combination of direct, in situ alteration of sulfide- and high-calcium-pyroxene-bearing dunes and from formation of evaporitic gypsum crystals in the pore spaces of these dunes. This gypsum deposit formed in a unique local environment and is disconnected from sulfate-forming events elsewhere on Mars which are thought to have occurred much earlier, during the late Noachian and Hesperian, by various means. Sulfates have not been discovered in any other collection of dunes on Mars.",
+    "title": [
+      "On the origin of gypsum in the Mars north polar region"
+    ],
+    "year": "2007",
+    "citation_count": 104
+  },
+  {
+    "bibcode": "2009JGRE..114.0D02R",
+    "abstract": "The East Candor Interior Layered Deposit (ILD) has signatures of mono- and polyhydrated sulfate in alternating layers that give insight into the processes which formed these layered deposits and on the environmental conditions acting on them since then. We use orbital data to explore multiple hypotheses for how these deposits formed: (1) sulfate-bearing ILDs experience hydration changes on seasonal to a few years timescales under current Mars environmental conditions; (2) the deposits experience hydration under recent Mars conditions but require the wetter climate of high obliquity; and (3) the kieserite could be an original or diagenetic part of a complex evaporite mineral assemblage. Modeled climatology shows recent Mars environmental conditions might pass between multiple sulfate fields. However, comparison of Observatoire pour la Min\u00e9ralogie, l'Eau, les Glaces et l'Activit\u00e9 (OMEGA) and Compact Reconnaissance Imaging Spectrometer (CRISM) observations of the same ILD do not show changes in hydration over 2 Mars years. Low temperatures might slow the kinetics of that transition; it is likely that more clement conditions during periods of high obliquity are needed to overcome mineral metastability and hydrate kieserite-bearing deposits. We find the alternate model, that the deposit is a cyclic evaporite sequence of mono- and polyhydrated sulfates, also plausible but with an unexplained dearth of Fe sulfates.",
+    "title": [
+      "Testing evidence of recent hydration state change in sulfates on Mars"
+    ],
+    "year": "2009",
+    "citation_count": 77
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2001ApJ...562L..55F",
+    "abstract": "We present a comprehensive sample of all gamma-ray burst (GRB) afterglows with known distances, and we derive their conical opening angles based on observed broadband breaks in their light curves. Within the framework of this conical jet model, we correct for the geometry and we find that the gamma-ray energy release is narrowly clustered around 5\u00d710<SUP>50</SUP> ergs. We draw three conclusions. First, the central engines of GRBs release energies that are comparable to ordinary supernovae. Second, the broad distribution in fluence and luminosity for GRBs is largely the result of a wide variation of opening angles. Third, only a small fraction of GRBs are visible to a given observer, and the true GRB rate is several hundred times larger than the observed rate.",
+    "title": [
+      "Beaming in Gamma-Ray Bursts: Evidence for a Standard Energy Reservoir"
+    ],
+    "year": "2001",
+    "citation_count": 1197
+  },
+  {
+    "bibcode": "1999ApJ...525..737R",
+    "abstract": "The energy requirements of gamma-ray bursts have in past been poorly constrained because of three major uncertainties: the distances to bursts, the degree of burst beaming, and the efficiency of gamma-ray production. The first of these has been resolved, with both indirect evidence (the distribution of bursts in flux and position) and direct evidence (redshifted absorption features in the afterglow spectrum of GRB 970508) pointing to cosmological distances. We now wish to address the second uncertainty. Afterglows allow a statistical test of beaming, described in an earlier paper. In this paper, we modify a standard fireball afterglow model to explore the effects of beaming on burst remnant dynamics and afterglow emission. If the burst ejecta are beamed into angle \u03b6<SUB>m</SUB>, the burst remnant's evolution changes qualitatively once its bulk Lorentz factor \u0393&lt;~1/\u03b6<SUB>m</SUB>: before this, \u0393 declines as a power law of radius, while afterward, it declines exponentially. This change results in a broken power-law light curve whose late-time decay is faster than expected for a purely spherical geometry. These predictions disagree with afterglow observations of GRB 970508. We explored several variations on our model, but none seems to be able to change this result. We therefore suggest that this burst is unlikely to have been highly beamed and that its energy requirements were near those of isotropic models. More recent afterglows may offer the first practical applications for our beamed models.",
+    "title": [
+      "The Dynamics and Light Curves of Beamed Gamma-Ray Burst Afterglows"
+    ],
+    "year": "1999",
+    "citation_count": 835
+  },
+  {
+    "bibcode": "2011ApJ...726...90Z",
+    "abstract": "The recent Fermi observation of GRB 080916C shows that the bright photosphere emission associated with a putative fireball is missing, which suggests that the central engine likely launches a Poynting-flux-dominated (PFD) outflow. We propose a model of gamma-ray burst (GRB) prompt emission in the PFD regime, namely, the Internal-Collision-induced MAgnetic Reconnection and Turbulence (ICMART) model. It is envisaged that the GRB central engine launches an intermittent, magnetically dominated wind, and that in the GRB emission region, the ejecta is still moderately magnetized (e.g., 1 &lt;~ \u03c3 &lt;~ 100). Similar to the internal shock (IS) model, the mini-shells interact internally at the radius R <SUB>IS</SUB> ~ \u0393<SUP>2</SUP> c\u2206t. Most of these early collisions, however, have little energy dissipation, but serve to distort the ordered magnetic field lines entrained in the ejecta. At a certain point, the distortion of magnetic field configuration reaches the critical condition to allow fast reconnection seeds to occur, which induce relativistic MHD turbulence in the interaction regions. The turbulence further distorts field lines easing additional magnetic reconnections, resulting in a runway release of the stored magnetic field energy (an ICMART event). Particles are accelerated either directly in the reconnection zone, or stochastically in the turbulent regions, which radiate synchrotron photons that power the observed gamma rays. Each ICMART event corresponds to a broad pulse in the GRB light curve, and a GRB is composed of multiple ICMART events. This model retains the merits of IS and other models, but may overcome several difficulties/issues faced by the IS model (e.g., low efficiency, fast cooling, electron number excess, Amati/Yonetoku relation inconsistency, and missing bright photosphere). Within this model, the observed GRB variability timescales could have two components, one slow component associated with the central engine time history, and another fast component associated with relativistic magnetic turbulence in the emission region. The model predicts a decrease of gamma-ray polarization degree and E<SUB>p</SUB> in each ICMART event (broad pulse) during the prompt GRB phase, as well as a moderately magnetized external reverse shock. The model may be applied to the GRBs that have time-resolved, featureless Band-function spectra, such as GRB 080916C and most GRBs detected by Fermi LAT.",
+    "title": [
+      "The Internal-collision-induced Magnetic Reconnection and Turbulence (ICMART) Model of Gamma-ray Bursts"
+    ],
+    "year": "2011",
+    "citation_count": 802
+  },
+  {
+    "bibcode": "1999ApJ...510..379M",
+    "abstract": "We examine the relation between presupernova stellar structure and the distribution of ejecta in core-collapse supernovae of Types Ib, Ic, and II, under the approximations of adiabatic, spherically symmetric flow. We develop a simple yet accurate analytical formula for the velocity of the initial forward shock that traverses the stellar envelope. For material that does not later experience a strong reverse shock, the entropy deposited by this forward shock persists into the final, freely expanding state. We demonstrate that the final density distribution can be approximated with simple models for the final pressure distribution, in a way that matches the results of simulations. Our results indicate that the distribution of density and radiation pressure in a star's ejecta depends on whether the outer envelope is radiative or convective, and if convective, on the composition structure of the star. Our models are most accurate for the high-velocity ejecta cast away from the periphery of a star. For stellar structures that limit to a common form in this region, the resulting ejecta limit to a common distribution at high velocities because the blast wave forgets its history as it approaches the stellar surface. We present formulae for the final density distribution of this material as a function of mass, for both radiative and efficiently convective envelopes. These formulae limit to the well-known planar, self-similar solutions for mass shells approaching the stellar surface. However, the assumption of adiabatic flow breaks down for shells of low optical depth, so this planar limit need not be attained. The event of shock emergence, which limits adiabatic flow, also produces a soft X-ray burst of radiation. Formulae are given for the observable properties of this burst and their dependence on the parameters of the explosion. Motivated by the relativistic expansion recently inferred by Kulkarni et al. for the synchrotron shell around SN 1998bw, we estimate the criterion for relativistic mass ejection and the rest mass of relativistic ejecta. We base our models for the entire ejecta distribution on the high-velocity solution, on our shock-velocity formula, and on realistic radiation pressure distributions. We also present simpler, but less flexible, analytical approximations for ejecta distributions. We survey the ejecta of the polytropic hydrogen envelopes of red supergiants. Our models will be useful for studies of the light curves and circumstellar or interstellar interactions of core-collapse supernovae, and of the birth of pulsar nebulae in their ejecta.",
+    "title": [
+      "The Expulsion of Stellar Envelopes in Core-Collapse Supernovae"
+    ],
+    "year": "1999",
+    "citation_count": 567
+  },
+  {
+    "bibcode": "2017Sci...358.1565E",
+    "abstract": "The gravitational wave event GW170817 was caused by the merger of two neutron stars (see the Introduction by Smith). In three papers, teams associated with the GROWTH (Global Relay of Observatories Watching Transients Happen) project present their observations of the event at wavelengths from x-rays to radio waves. Evans et al. used space telescopes to detect GW170817 in the ultraviolet and place limits on its x-ray flux, showing that the merger generated a hot explosion known as a blue kilonova. Hallinan et al. describe radio emissions generated as the explosion slammed into the surrounding gas within the host galaxy. Kasliwal et al. present additional observations in the optical and infrared and formulate a model for the event involving a cocoon of material expanding at close to the speed of light, matching the data at all observed wavelengths.",
+    "title": [
+      "Swift and NuSTAR observations of GW170817: Detection of a blue kilonova"
+    ],
+    "year": "2017",
+    "citation_count": 533
+  }
+]

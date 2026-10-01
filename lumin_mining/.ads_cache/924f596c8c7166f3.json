@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1991Natur.354...56I",
+    "abstract": "The preparation of a new type of finite carbon structure consisting of needlelike tubes is reported. Produced using an arc-discharge evaporation method similar to that used for fullerene sythesis, the needles grow at the negative end of the electrode used for the arc discharge. Electron microscopy reveals that each needle comprises coaxial tubes of graphitic sheets ranging in number from two up to about 50. On each tube the carbon-atom hexagons are arranged in a helical fashion about the needle axis. The helical pitch varies from needle to needle and from tube to tube within a single needle. It appears that this helical structure may aid the growth process. The formation of these needles, ranging from a few to a few tens of nanometers in diameter, suggests that engineering of carbon structures should be possible on scales considerably greater than those relevant to the fullerenes.",
+    "title": [
+      "Helical microtubules of graphitic carbon"
+    ],
+    "year": "1991",
+    "citation_count": 20134
+  },
+  {
+    "bibcode": "1992ESRv...32..235L",
+    "abstract": "Accurate and precise sampling and analytical procedures are essential in environmental geochemical studies. This report provides a detailed description of the techniques and analytical procedures for sampling, grain size determinations, and for precise and accurate AAS determination of the major and trace metals in marine sediments and suspended particulate matter. In addition, it describes the procedures for the chemical partition of the metals, determination of readily oxidizable organic matter, and calcium carbonate. A separate section discusses the normalization of trace metal data.",
+    "title": [
+      "Manual for the geochemical analyses of marine sediments and suspended particulate matter"
+    ],
+    "year": "1992",
+    "citation_count": 1039
+  },
+  {
+    "bibcode": "1955ApJ...121..491P",
+    "abstract": "It is shown that a horizontal magnetic flux tube in an electrically conducting atmosphere is buoyant and will tend to rise. This magnetic buoyancy is large enough to bring an occasional strand of flux from the general solar toroidal field up into the photosphere, if we assume general field densities of a few hundred gauss farther down. Identifying the intersection of such ropes with the photosphere as the source of sunspots, we may deduce several general characteristics of the spots, e.g., east-west orientation, bipolarity, appearance only in low latitudes, migration, reversal of polarity, etc. The linearized static equilibrium equations for a flux tube are developed. With a cooling mechanism, such as that suggested by Biermann (1941), we find from the equilibrium equations that a sunspot group should consist of a diffuse flux tube of 10-100 gauss and 10 km extent in the photosphere, forming eventually a number of cool intense cores of several thousand gauss.",
+    "title": [
+      "The Formation of Sunspots from the Solar Toroidal Field."
+    ],
+    "year": "1955",
+    "citation_count": 713
+  },
+  {
+    "bibcode": "1999PhRvB..59.2514H",
+    "abstract": "We have measured the temperature-dependent thermal conductivity \u03ba(T) of crystalline ropes of single-walled carbon nanotubes from 350 K to 8 K. \u03ba(T) decreases smoothly with decreasing temperature, and displays linear temperature dependence below 30 K. Comparison with electrical conductivity experiments indicates that the room-temperature thermal conductivity of a single nanotube may be comparable to that of diamond or in-plane graphite, while the ratio of thermal to electrical conductance for a given sample indicates that the thermal conductivity is dominated by phonons at all temperatures. Below 30 K, the linear temperature dependence and estimated magnitude of \u03ba(T) imply an energy-independent phonon mean free path of ~0.5-1.5 \u03bcm.",
+    "title": [
+      "Thermal conductivity of single-walled carbon nanotubes"
+    ],
+    "year": "1999",
+    "citation_count": 653
+  },
+  {
+    "bibcode": "2012SSRv..170....5G",
+    "abstract": "Scheduled to land in August of 2012, the Mars Science Laboratory (MSL) Mission was initiated to explore the habitability of Mars. This includes both modern environments as well as ancient environments recorded by the stratigraphic rock record preserved at the Gale crater landing site. The Curiosity rover has a designed lifetime of at least one Mars year (\u223c23 months), and drive capability of at least 20 km. Curiosity's science payload was specifically assembled to assess habitability and includes a gas chromatograph-mass spectrometer and gas analyzer that will search for organic carbon in rocks, regolith fines, and the atmosphere (SAM instrument); an x-ray diffractometer that will determine mineralogical diversity (CheMin instrument); focusable cameras that can image landscapes and rock/regolith textures in natural color (MAHLI, MARDI, and Mastcam instruments); an alpha-particle x-ray spectrometer for in situ determination of rock and soil chemistry (APXS instrument); a laser-induced breakdown spectrometer to remotely sense the chemical composition of rocks and minerals (ChemCam instrument); an active neutron spectrometer designed to search for water in rocks/regolith (DAN instrument); a weather station to measure modern-day environmental variables (REMS instrument); and a sensor designed for continuous monitoring of background solar and cosmic radiation (RAD instrument). The various payload elements will work together to detect and study potential sampling targets with remote and in situ measurements; to acquire samples of rock, soil, and atmosphere and analyze them in onboard analytical instruments; and to observe the environment around the rover. The 155-km diameter Gale crater was chosen as Curiosity's field site based on several attributes: an interior mountain of ancient flat-lying strata extending almost 5 km above the elevation of the landing site; the lower few hundred meters of the mountain show a progression with relative age from clay-bearing to sulfate-bearing strata, separated by an unconformity from overlying likely anhydrous strata; the landing ellipse is characterized by a mixture of alluvial fan and high thermal inertia/high albedo stratified deposits; and a number of stratigraphically/geomorphically distinct fluvial features. Samples of the crater wall and rim rock, and more recent to currently active surface materials also may be studied. Gale has a well-defined regional context and strong evidence for a progression through multiple potentially habitable environments. These environments are represented by a stratigraphic record of extraordinary extent, and insure preservation of a rich record of the environmental history of early Mars. The interior mountain of Gale Crater has been informally designated at Mount Sharp, in honor of the pioneering planetary scientist Robert Sharp. The major subsystems of the MSL Project consist of a single rover (with science payload), a Multi-Mission Radioisotope Thermoelectric Generator, an Earth-Mars cruise stage, an entry, descent, and landing system, a launch vehicle, and the mission operations and ground data systems. The primary communication path for downlink is relay through the Mars Reconnaissance Orbiter. The primary path for uplink to the rover is Direct-from-Earth. The secondary paths for downlink are Direct-to-Earth and relay through the Mars Odyssey orbiter. Curiosity is a scaled version of the 6-wheel drive, 4-wheel steering, rocker bogie system from the Mars Exploration Rovers (MER) Spirit and Opportunity and the Mars Pathfinder Sojourner. Like Spirit and Opportunity, Curiosity offers three primary modes of navigation: blind-drive, visual odometry, and visual odometry with hazard avoidance. Creation of terrain maps based on HiRISE (High Resolution Imaging Science Experiment) and other remote sensing data were used to conduct simulated driving with Curiosity in these various modes, and allowed selection of the Gale crater landing site which requires climbing the base of a mountain to achieve its primary science goals. The Sample Acquisition, Processing, and Handling (SA/SPaH) subsystem is responsible for the acquisition of rock and soil samples from the Martian surface and the processing of these samples into fine particles that are then distributed to the analytical science instruments. The SA/SPaH subsystem is also responsible for the placement of the two contact instruments (APXS, MAHLI) on rock and soil targets. SA/SPaH consists of a robotic arm and turret-mounted devices on the end of the arm, which include a drill, brush, soil scoop, sample processing device, and the mechanical and electrical interfaces to the two contact science instruments. SA/SPaH also includes drill bit boxes, the organic check material, and an observation tray, which are all mounted on the front of the rover, and inlet cover mechanisms that are placed over the SAM and CheMin solid sample inlet tubes on the rover top deck.",
+    "title": [
+      "Mars Science Laboratory Mission and Science Investigation"
+    ],
+    "year": "2012",
+    "citation_count": 572
+  }
+]

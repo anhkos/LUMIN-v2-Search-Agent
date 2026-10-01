@@ -1,0 +1,11 @@
+[
+  {
+    "bibcode": "2021cvpr.conf..224C",
+    "abstract": "As the exploration of human beings pushes deeper into the galaxy, the classification of images from space and other planets is becoming an increasingly critical task. Image classification on these planetary images can be very challenging due to differences in hue, quality, illumination, and clarity when compared to images captured on Earth. In this work, we try to bridge this gap by developing a deep learning network, MRSCAtt (Mars Rover Spatial and Channel Attention), which jointly uses spatial and channel attention to accurately classify images. We use images taken by NASA's Curiosity rover on Mars as a dataset to show the superiority of our approach by achieving state-of-the-art results with 81.53% test set accuracy on the MSL Surface Dataset, outperforming other methods. To necessitate the use of spatial and channel attention, we perform an ablation study to show the effectiveness of each of the components. We further show robustness of our approach by validating with images taken aboard NASA's recently-landed Perseverance rover.",
+    "title": [
+      "MRSCAtt: A Spatio-Channel Attention-Guided Network for Mars Rover Image Classification"
+    ],
+    "year": "2021",
+    "citation_count": 2
+  }
+]

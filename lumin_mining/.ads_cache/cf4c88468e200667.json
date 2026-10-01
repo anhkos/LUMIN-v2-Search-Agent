@@ -1,0 +1,46 @@
+[
+  {
+    "bibcode": "2012RPPh...75j6901K",
+    "abstract": "The transport of sand and dust by wind is a potent erosional force, creates sand dunes and ripples, and loads the atmosphere with suspended dust aerosols. This paper presents an extensive review of the physics of wind-blown sand and dust on Earth and Mars. Specifically, we review the physics of aeolian saltation, the formation and development of sand dunes and ripples, the physics of dust aerosol emission, the weather phenomena that trigger dust storms, and the lifting of dust by dust devils and other small-scale vortices. We also discuss the physics of wind-blown sand and dune formation on Venus and Titan.",
+    "title": [
+      "The physics of wind-blown sand and dust"
+    ],
+    "year": "2012",
+    "citation_count": 898
+  },
+  {
+    "bibcode": "2003Natur.426..797H",
+    "abstract": "A key pacemaker of ice ages on the Earth is climatic forcing due to variations in planetary orbital parameters. Recent Mars exploration has revealed dusty, water-ice-rich mantling deposits that are layered, metres thick and latitude dependent, occurring in both hemispheres from mid-latitudes to the poles. Here we show evidence that these deposits formed during a geologically recent ice age that occurred from about 2.1 to 0.4 Myr ago. The deposits were emplaced symmetrically down to latitudes of ~30\u00b0-equivalent to Saudi Arabia and the southern United States on the Earth-in response to the changing stability of water ice and dust during variations in obliquity (the angle between Mars' pole of rotation and the ecliptic plane) reaching 30-35\u00b0. Mars is at present in an `interglacial' period, and the ice-rich deposits are undergoing reworking, degradation and retreat in response to the current instability of near-surface ice. Unlike the Earth, martian ice ages are characterized by warmer polar climates and enhanced equatorward transport of atmospheric water and dust to produce widespread smooth deposits down to mid-latitudes.",
+    "title": [
+      "Recent ice ages on Mars"
+    ],
+    "year": "2003",
+    "citation_count": 702
+  },
+  {
+    "bibcode": "2009JGRE..114.0D06M",
+    "abstract": "Martian aqueous mineral deposits have been examined and characterized using data acquired during Mars Reconnaissance Orbiter's (MRO) primary science phase, including Compact Reconnaissance Imaging Spectrometer for Mars hyperspectral images covering the 0.4-3.9 \u03bcm wavelength range, coordinated with higher-spatial resolution HiRISE and Context Imager images. MRO's new high-resolution measurements, combined with earlier data from Thermal Emission Spectrometer; Thermal Emission Imaging System; and Observatoire pour la Min\u00e9ralogie, L'Eau, les Glaces et l'Activiti\u00e9 on Mars Express, indicate that aqueous minerals are both diverse and widespread on the Martian surface. The aqueous minerals occur in 9-10 classes of deposits characterized by distinct mineral assemblages, morphologies, and geologic settings. Phyllosilicates occur in several settings: in compositionally layered blankets hundreds of meters thick, superposed on eroded Noachian terrains; in lower layers of intracrater depositional fans; in layers with potential chlorides in sediments on intercrater plains; and as thousands of deep exposures in craters and escarpments. Carbonate-bearing rocks form a thin unit surrounding the Isidis basin. Hydrated silica occurs with hydrated sulfates in thin stratified deposits surrounding Valles Marineris. Hydrated sulfates also occur together with crystalline ferric minerals in thick, layered deposits in Terra Meridiani and in Valles Marineris and together with kaolinite in deposits that partially infill some highland craters. In this paper we describe each of the classes of deposits, review hypotheses for their origins, identify new questions posed by existing measurements, and consider their implications for ancient habitable environments. On the basis of current data, two to five classes of Noachian-aged deposits containing phyllosilicates and carbonates may have formed in aqueous environments with pH and water activities suitable for life.",
+    "title": [
+      "A synthesis of Martian aqueous mineralogy after 1 Mars year of observations from the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2009",
+    "citation_count": 412
+  },
+  {
+    "bibcode": "2014AsBio..14..887R",
+    "title": [
+      "A New Analysis of Mars ``Special Regions'': Findings of the Second MEPAG Special Regions Science Analysis Group (SR-SAG2)"
+    ],
+    "year": "2014",
+    "citation_count": 249
+  },
+  {
+    "bibcode": "1986Icar...68..217C",
+    "abstract": "The spatial distribution of rocks exposed at the surface of Mars has been mapped using Viking Infrared Thermal Mapper (IRTM) observations. Overall, there are no regions on the surface of Mars at a scale of 1\u00b0 \u00d7 1\u00b0 in latitude and longitude that are rock free. The modal value of rock abundance is 6% areal coverage, with no areas having more than 30-35% rock cover. The model developed to determine rock abundance relates the thermal emission in each of the four surface-sensing IRTM bands to temperature contrasts within the field of view, non-unit thermal emissivity due to absorption bands in the surface materials, and the absorption and scattering of the outgoing energy by atmospheric dust and water ice. Each of these effects produce characteristic spectral and diurnal signatures, allowing them to be separated. The temperature contrasts provide a means to determine both the abundance of exposed rocks and the fine-component thermal intertia. Rock abundance alone does not produce the observed variation in bulk thermal inertia of the surface. Low-inertia (fine), bright surfaces have fewer rocks exposed than do high-inertia (coarse), dark surfaces. Rock abundance does not correlate well with the RMS slope nor reflectivity determined from delay-Doppler radar measurements. There is, however, a possible correlation between RMS slope determined from continuous-wave radar observations. Dual-polarization radar measurements, which provide the best radar measure of small-scale roughness, indicate that the Tharsis volcanic region is very rough, whereas thermal measurements indicate very few rocks and a covering of dust. Together these observations suggest an approximately 1-m-thick mantle of fines covering a very rough subsurface. This fine material may be an aeolian deposit of dust storm fallout. Valles Marineris, together with several major channels and chaotic terrains, have high rock abundances, as does the Acidalia Planitia basin. This observed distribution may reflect the initial deposition of coarse material associated with channel formation. Syrtis Major is unique in having a high inertia but a very low rock abundance, together with low radar roughness. These observations are consistent with mantling of rocks by sand. The observed distribution of rocks and fines indicates that aeolian processes, both erosional and depositional, play a dominant role in shaping the present Martian surface.",
+    "title": [
+      "The spatial distribution of rocks on mars"
+    ],
+    "year": "1986",
+    "citation_count": 230
+  }
+]

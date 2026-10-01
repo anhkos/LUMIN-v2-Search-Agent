@@ -1,0 +1,46 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2014AsBio..14..887R",
+    "title": [
+      "A New Analysis of Mars ``Special Regions'': Findings of the Second MEPAG Special Regions Science Analysis Group (SR-SAG2)"
+    ],
+    "year": "2014",
+    "citation_count": 249
+  },
+  {
+    "bibcode": "2009ApJ...692...12E",
+    "abstract": "Clump clusters and chain galaxies in the Hubble Ultra Deep Field (UDF) are examined for bulges in Near-Infrared Camera Multi-Object Spectrometer images. Approximately 50% of the clump clusters and 30% of the chains have relatively red and massive clumps that could be young bulges. Magnitudes and colors are determined for these bulgelike objects and for the bulges in spiral galaxies, and for all of the prominent star formation clumps in these three galaxy types. The colors are fitted to population evolution models to determine the bulge and clump masses, ages, star formation rate decay times, and extinctions. The results indicate that bulgelike objects in clump clusters and chain galaxies have similar ages and two to five times larger masses compared to the star formation clumps, while the bulges in spirals have roughly six times larger ages and 20 to 30 times larger masses than the clumps. All systems appear to have an underlying red disk population. The masses of star-forming clumps are typically in a range from 10<SUP>7</SUP> to 10<SUP>8</SUP> M <SUB>sun</SUB>; their ages have a wide range around ~10<SUP>2</SUP> Myr. Ages and extinctions both decrease with redshift. Star formation is probably the result of gravitational instabilities in the disk gas, in which case the large clump mass in the UDF is the result of a high gas velocity dispersion, 30 km s<SUP>-1</SUP> or more, combined with a high gas mass column density, ~100 M <SUB>sun</SUB> pc<SUP>-2</SUP>. Because clump clusters and chains dominate disk galaxies beyond z ~ 1, the observations suggest that these types represent an early phase in the formation of modern spiral galaxies, when the bulge and inner disk formed.",
+    "title": [
+      "Bulge and Clump Evolution in Hubble Ultra Deep Field Clump Clusters, Chains and Spiral Galaxies"
+    ],
+    "year": "2009",
+    "citation_count": 230
+  },
+  {
+    "bibcode": "2005Icar..174..336M",
+    "abstract": "Patterned grounds such as polygonal features and slope stripes are the signature of the presence of ground ice and of temperature variations in cold regions on Earth. Identifying similar features on Mars is important to understand its past climate as well as the ground ice distribution. In this study, young patterned grounds are classed and mapped from the systematical analysis of Mars Observer Camera high resolution images. These features are located poleward of 55\u00b0 latitude which fits the distribution of ground ice found by the Neutron Spectrometer onboard Mars Odyssey. Thermal contraction due to seasonal temperature variations is the predominant process of formation of polygons formed by cracks which sizes vary from 15 to 300 m. The small (&lt;40 m) widespread polygons are very recent and degraded by the desiccation of ground ice from the cracks which enhances the effect of ice sublimation. The large polygons (50 to 300 m) located only around the south CO <SUB>2</SUB> polar cap indicate the presence of ground ice and thus outline the limit of the CO <SUB>2</SUB> ice cap. They could be due to the blanketing of water ice deposits by the advances and retreats of the residual CO <SUB>2</SUB> ice cap during the last thousand years. Large (50-250 m) and homogeneous polygons similar to ice wedge polygons, hillslope stripes and solifluction lobes may indicate that specific environments such as crater floors and hillslopes could have been submitted to freeze-thaw cycles, possibly related to higher summer temperatures in periods of obliquity higher than 35\u00b0. These interpretations must be strengthened by higher resolution images such as those of the HiRise mission of the Mars Reconnaissance Orbiter because locations with past seasonal thaw could be of major interest as potential landing sites for the Phoenix mission.",
+    "title": [
+      "High latitude patterned grounds on Mars: Classification, distribution and climatic control"
+    ],
+    "year": "2005",
+    "citation_count": 217
+  }
+]

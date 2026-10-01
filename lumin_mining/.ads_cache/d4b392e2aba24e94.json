@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2023arXiv230917421Y",
+    "abstract": "Large multimodal models (LMMs) extend large language models (LLMs) with multi-sensory skills, such as visual understanding, to achieve stronger generic intelligence. In this paper, we analyze the latest model, GPT-4V(ision), to deepen the understanding of LMMs. The analysis focuses on the intriguing tasks that GPT-4V can perform, containing test samples to probe the quality and genericity of GPT-4V's capabilities, its supported inputs and working modes, and the effective ways to prompt the model. In our approach to exploring GPT-4V, we curate and organize a collection of carefully designed qualitative samples spanning a variety of domains and tasks. Observations from these samples demonstrate that GPT-4V's unprecedented ability in processing arbitrarily interleaved multimodal inputs and the genericity of its capabilities together make GPT-4V a powerful multimodal generalist system. Furthermore, GPT-4V's unique capability of understanding visual markers drawn on input images can give rise to new human-computer interaction methods such as visual referring prompting. We conclude the report with in-depth discussions on the emerging application scenarios and the future research directions for GPT-4V-based systems. We hope that this preliminary exploration will inspire future research on the next-generation multimodal task formulation, new ways to exploit and enhance LMMs to solve real-world problems, and gaining better understanding of multimodal foundation models. Finally, we acknowledge that the model under our study is solely the product of OpenAI's innovative work, and they should be fully credited for its development. Please see the GPT-4V contributions paper for the authorship and credit attribution: https://cdn.openai.com/contributions/gpt-4v.pdf",
+    "title": [
+      "The Dawn of LMMs: Preliminary Explorations with GPT-4V(ision)"
+    ],
+    "year": "2023",
+    "citation_count": 699
+  },
+  {
+    "bibcode": "1985RvMP...57..105B",
+    "abstract": "This paper briefly describes the hydrothermal growth process and then discusses the important defects in quartz (twins, inclusions, dislocations, and impurities) and the correlations among them. The properties of quartz are reviewed and tabulated under the headings of intrinsic properties and defect-related properties. Resonator theory and fabrication techniques are outlined, with particular reference to aspects related to defects in the crystals. At this stage, it is possible to list the circuit design factors which must be taken into account when the application calls for very high performance. The paper then looks at the approach of a device maker faced with problems caused by impurities, inclusions, dislocations, and other nonideal properties of real crystals. This question leads to a specification of the crystals suitable for device use. The major parameter of this specification is the infrared Q, which must exceed about 1.8 million for satisfactory performance and yield. Acceptance test procedures are discussed, and finally the present state of the subject and the future prospects are briefly described.",
+    "title": [
+      "Crystals for quartz resonators"
+    ],
+    "year": "1985",
+    "citation_count": 115
+  },
+  {
+    "bibcode": "2014JGRE..119.1134V",
+    "abstract": "The Mars Science Laboratory mission reached Bradbury Landing in August 2012. In its first 500 sols, the rover Curiosity was commissioned and began its investigation of the habitability of past and present environments within Gale Crater. Curiosity traversed eastward toward Glenelg, investigating a boulder with a highly alkaline basaltic composition, encountering numerous exposures of outcropping pebble conglomerate, and sampling aeolian sediment at Rocknest and lacustrine mudstones at Yellowknife Bay. On sol 324, the mission turned its focus southwest, beginning a year-long journey to the lower reaches of Mt. Sharp, with brief stops at the Darwin and Cooperstown waypoints. The unprecedented complexity of the rover and payload systems posed challenges to science operations, as did a number of anomalies. Operational processes were revised to include additional opportunities for advance planning by the science and engineering teams.",
+    "title": [
+      "Overview of the Mars Science Laboratory mission: Bradbury Landing to Yellowknife Bay and beyond"
+    ],
+    "year": "2014",
+    "citation_count": 109
+  },
+  {
+    "bibcode": "2000Ecol...81.1765O",
+    "abstract": "Optimal Defense (OD) theory predicts that the within-plant allocation of secondary metabolites that function as defenses will be positively correlated with the fitness value of particular plant parts. Here, we experimentally examine this prediction by exploiting our understanding of the mechanisms of wound-induced nicotine production in Nicotiana sylvestris (Solanaceae) to manipulate the patterns of nicotine allocation and to determine their fitness consequences. In two perturbation experiments conducted over three stages of ontogeny (rosette, elongation, and flowering), we wounded or removed leaves of different ages (young, mature, or old) and determined the effects on nicotine allocation (whole-plant and within-plant) and fitness (lifetime viable seed production). OD theory predicts that, as leaves age and their fitness value decreases, the allocation of defense to particular leaves and the fitness consequences of their removal should be positively correlated. We found that (1) leaf removal results in a significant decrease in seed mass at the elongation stage, but not at the rosette or flowering stages; (2) the relative value of leaves decreases from young and mature to old leaves; (3) leaf damage significantly increases the whole-plant nicotine contents of rosette-stage plants, but not of elongation- or flowering-stage plants, and after damage, younger leaves are more heavily defended than older leaves at the elongation and flowering stages; and (4) regardless of ontogenetic stage, plants distribute nicotine among leaves in accordance with their relative fitness value, thus supporting OD theory predictions. Leaf value increases after N fertilization at the flowering stage, but is not changed if adjacent leaves are removed at earlier growth stages. Moreover, plants are capable of sending their root-synthesized nicotine to specific leaves after damage; at the elongation stage, the new and young leaves receive greater proportional allocations of nicotine than other leaves. The cessation of significant whole-plant nicotine inductions at later stages in ontogeny is not due to the root's decreased ability to respond to the plant's wound signal, jasmonic acid (JA) with increased nicotine biosynthesis, but rather to the decline in a leaf's sensitivity to wounding and in its ability to export JA from the leaves to roots. Ontogeny has profound effects on the use of this induced defense. Plants mount systemic nicotine inductions at the rosette stage that rely on large increases in de novo nicotine synthesis, switch to the selective targeting of nicotine to the new and young leaves at the elongation stage without large increases in de novo nicotine synthesis, and allocate to reproductive structures, but not leaves, at the flowering stage. These changes are consistent with the predictions of OD theory.",
+    "title": [
+      "Optimal Defense Theory Predicts the Ontogeny of AN Induced Nicotine Defense"
+    ],
+    "year": "2000",
+    "citation_count": 100
+  },
+  {
+    "bibcode": "1959ApJ...130..345S",
+    "abstract": "A 12-inch solar telescope equipped with a photoelectric pointing mechanism and an automatic camera has been flown by unmanned balloons to an altitude of 80000 feet. A number of photographs of the solar granulation obtained with this telescope are of very high definition and show the granulation to have the character of non-stationary convection. The bright granules, ranging in diameter from about 300 to about 1800 km, are of highly irregular, often polygonal, shape and are separated from one another by dark, often very narrow, lanes. The root-mean-square temperature fluctuation, uncorrected for instrumental smoothing, is found to be only + 60 . The analysis suggests that the true root-mean-square temperature fluctuation is probably not larger than * 100 .",
+    "title": [
+      "Photographs of the Solar Granulation Taken from the Stratosphere."
+    ],
+    "year": "1959",
+    "citation_count": 97
+  }
+]

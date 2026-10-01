@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2002JGRE..107.5038E",
+    "abstract": "High spatial resolution (1.5 to 6 m/pixel) Mars Global Surveyor Mars Orbiter Camera images obtained September 1997 to June 2001 show that each of the large, dark wind streaks of western Arabia Terra originate at a barchan dune field on a crater floor. The streaks consist of a relatively thin (&lt;1 m) coating of sediment deflated from the dune fields and their vicinity. In most cases, this sediment drapes over a previous mantle that more thickly covers nearly all of western Arabia Terra. No concurrent eolian bedforms are found within the dark streaks, nor do any dunes climb up crater walls to deliver sand via saltation to the streaks. The relations between dunes, wind streak, and subjacent terrain imply that dark-toned grains finer than those that comprise the dunes are lifted into suspension and carried out of the craters to be deposited on the adjacent terrain. Previous eolian physics and thermal inertia studies suggest that, under modern Martian conditions, such grains likely include silt (3.9-62.5 \u03bcm), very fine sand (62.5-125 \u03bcm), and possibly fine sand (to ~210 \u03bcm). The streaks change in terms of extent, relative albedo, and surface pattern over periods measured in years; however, through June 2001, very little evidence for recent eolian activity (dust plumes, storms, dune movement) was observed.",
+    "title": [
+      "Low-albedo surfaces and eolian sediment: Mars Orbiter Camera views of western Arabia Terra craters and wind streaks"
+    ],
+    "year": "2002",
+    "citation_count": 57
+  },
+  {
+    "bibcode": "2012JGRE..117.6007S",
+    "abstract": "The only area on Mars where crystalline quartz has been identified from orbit is near Antoniadi Crater, on the northern edge of the Syrtis Major shield volcano. However, the method of quartz formation has remained unknown. In this study, we use high-resolution satellite imagery as well as thermal and near-infrared spectroscopy to construct a geologic history of these deposits and their local context. We find that the quartz-bearing deposits are consistently co-located with hydrated silica. This spatial coherence suggests that the quartz formed as a diagenetic product of amorphous silica, rather than as a primary igneous mineral. Diagenetic quartz is a mature alteration product of hydrated amorphous silica, and indicates more persistent water and/or higher temperatures at this site. Beneath the silica-bearing rocks, we also find spectral evidence for smectites in the lowermost exposed Noachian-aged breccia. A similar stratigraphic sequence \u2014 smectite-bearing breccias beneath deposits containing minerals suggesting a greater degree of alteration \u2014 has also been found at nearby exposures at Nili Fossae and Toro Crater, suggesting a widespread sequence of alteration. By merging the mineral detections of thermal infrared (quartz, feldspar) and near-infrared spectroscopy (hydrated silica, smectite clays) we are able to construct a more complete geologic history from orbit.",
+    "title": [
+      "Geology of quartz and hydrated silica-bearing deposits near Antoniadi Crater, Mars"
+    ],
+    "year": "2012",
+    "citation_count": 46
+  },
+  {
+    "bibcode": "2017Icar..293...27M",
+    "abstract": "Coogoon Valles is an intricate fluvial system, and its main channel was formed during the Noachian period through the erosion of the clay-bearing basement of the Western Arabia Terra. This region is characterized by a thinner crust compared to the rest of the highlands and by the occurrence of massive phyllosilicate-bearing materials. The origin of this region is still under discussion. Its surface has been exposed to a large-scale volcanism, and several episodes of extensive denudation were primarily controlled by fluvial activity. In this regard, the study of the oldest channels in Arabia Terra is crucial for understanding the global geological evolution of early Mars. The reactivation of the hydrological system by sapping followed by aeolian erosion had reshaped the channel, as well as exposed ancient materials and landforms. The examination of the bed deposits suggests an old episode of detrital sedimentation covering the Noachian basement followed by an erosive event that formed the current Coogoon Valles configuration. A complex system of deltas and alluvial fans is situated at the termination of this channel, which has been proposed as a landing site for the upcoming ExoMars and Mars 2020 missions.",
+    "title": [
+      "Coogoon Valles, western Arabia Terra: Hydrological evolution of a complex Martian channel system"
+    ],
+    "year": "2017",
+    "citation_count": 32
+  },
+  {
+    "bibcode": "2017E&PSL.462...55C",
+    "abstract": "SHARAD is a subsurface sounding radar aboard NASA's Mars Reconnaissance Orbiter, capable of detecting dielectric discontinuities in the subsurface caused by compositional and/or structural changes. Echoes coming from the surface contain information on geometric properties at metre scale and on the permittivity of the upper layers of the Martian crust. A model has been developed to estimate the effect of surface roughness on echo power, depending on statistical parameters such as RMS height and topothesy. Such model is based on the assumption that topography can be characterized as a self-affine fractal, and its use allows the estimation of the dielectric properties of the first few metres of the Martian soil. A permittivity map of the surface of Mars is obtained, covering several large regions across the planet surface. The most significant correspondence with geology is observed at the dichotomy boundary, with high dielectric constant on the highlands side (7 to over 10) and lower on the lowlands side (3 to 7). Other geological correlations are discussed.",
+    "title": [
+      "Global permittivity mapping of the Martian surface from SHARAD"
+    ],
+    "year": "2017",
+    "citation_count": 29
+  },
+  {
+    "bibcode": "2011Icar..211..207O",
+    "abstract": "The value of slope stability analyses for gaining insight into the geologic conditions that would facilitate the growth of gully alcoves on Mars is demonstrated in Gasa crater. Two-dimensional limit equilibrium methods are used in conjunction with high-resolution topography derived from stereo High Resolution Imaging Science Experiment (HiRISE) imagery. These analyses reveal three conditions that may produce observed alcove morphologies through slope failure: (1) a ca. &gt;10 m thick surface layer that is either saturated with H <SUB>2</SUB>O ground ice or contains no groundwater/ice at all, above a zone of melting H <SUB>2</SUB>O ice or groundwater and under dynamic loading (i.e., seismicity), (2) a 1-10 m thick surface layer that is saturated with either melting H <SUB>2</SUB>O ice or groundwater and under dynamic loading, or (3) a &gt;100 m thick surface layer that is saturated with either melting H <SUB>2</SUB>O ice or groundwater and under static loading. This finding of three plausible scenarios for slope failure demonstrates how the triggering mechanisms and characteristics of future alcove growth would be affected by prevailing environmental conditions. HiRISE images also reveal normal faults and other fractures tangential to the crowns of some gully alcoves that are interpreted to be the result of slope instability, which may facilitate future slope movement. Stability analyses show that the most failure-prone slopes in this area are found in alcoves that are adjacent to crown fractures. Accordingly, crown fractures appear to be a useful indicator of those alcoves that should be monitored for future landslide activity.",
+    "title": [
+      "Constraints on mechanisms for the growth of gully alcoves in Gasa crater, Mars, from two-dimensional stability assessments of rock slopes"
+    ],
+    "year": "2011",
+    "citation_count": 24
+  }
+]

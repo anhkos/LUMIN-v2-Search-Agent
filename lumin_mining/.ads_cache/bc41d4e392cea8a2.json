@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "1991Geo....19..867H",
+    "abstract": "We suggest that a buried 180-km-diameter circular structure on the Yucat\u00e1n Peninsula, Mexico, is an impact crater. Its size and shape are revealed by magnetic and gravity-field anomalies, as well as by oil wells drilled inside and near the structure. The stratigraphy of the crater includes a sequence of andesitic igneous rocks and glass interbedded with, and overlain by, breccias that contain evidence of shock metamorphism. The andesitic rocks have chemical and isotopic compositions similar to those of tektites found in Cretaceous/Tertiary (K/T) ejecta. A 90-m-thick K/T boundary breccia, also containing evidence of shock metamorphism, is present 50 km outside the crater's edge. This breccia probably represents the crater's ejecta blanket. The age of the crater is not precisely known, but a K/T boundary age is indicated. Because the crater is in a thick carbonate sequence, shock-produced CO<SUB>2</SUB> from the impact may have caused a severe greenhouse warming.",
+    "title": [
+      "Chicxulub Crater: A possible Cretaceous/Tertiary boundary impact crater on the Yucat\u00e1n Peninsula, Mexico"
+    ],
+    "year": "1991",
+    "citation_count": 634
+  },
+  {
+    "bibcode": "1975Icar...24..504H",
+    "abstract": "Exploratory calculations using accretionary theory are made to demonstrate plausible sizes of second-largest, third-largest, etc., bodies at the close of planet formation in heliocentric orbits near the planets, assuming asteroid-like size distributions at the start of the calculation. Many satellite-sized bodies are found to be available for capture, cratering, or collisional fragmentation. In the case of Earth-sized planets, the models suggest second-largest bodies of 500 to 3000 km radius, and tens of bodies larger than 100 km radius. Many of these interact with the planet before suffering any fragmentation events with each other. Collision of a large body with Earth could eject iron-deficient crust and upper mantle material, forming a cloud of refractory, volatile-poor dust that could form the Moon. Other satellite systems may have been affected by major capture or collision events of chance character.",
+    "title": [
+      "Satellite-Sized Planetesimals and Lunar Origin"
+    ],
+    "year": "1975",
+    "citation_count": 630
+  },
+  {
+    "bibcode": "1974E&PSL..22....1T",
+    "abstract": "Most highland total rock samples define a single U sbnd Pb isochron which corresponds to a metamorphism age of \u223c 3.9AE. This age is also obtained for internal U sbnd Pb isochrons for some of these samples. The data on 18 rock samples range from concordant samples with <SUP>238</SUP>U/ <SUP>206</SUP>Pb\u223c 1.2 to discordant ones with <SUP>238</SUP>U/ <SUP>206</SUP>Pb\u223c 0.02. This feature coupled with a correlated pattern of <SUP>238</SUP>U/ <SUP>204</SUP>Pb ratios, indicates that Pb was extensively mobilized at \u223c 3.9AE. The observed Pb sbnd U fractionation is essentially due to Pb volatilization during the metamorphic events. Volatile Pb transport is not accompanied by similar effects in Rb and must therefore be attributed to a specific process. Rb sbnd Sr internal isochrons for the same rocks determine distinct metamorphic events in the interval 3.85-4.00 AE. We conclude that highland samples from widely separated areas bear the imprint of an event or series of events in a narrow time interval which can be identified with a cataclysmic impacting rate of the moon at \u223c 3.9AE, although differentiation by internal magma generation cannot be excluded. This cataclysm is associated with the Imbrium impact and very possibly the formation of Crisium and Orientale and possibly several other major basins in a narrow time interval (\u223c2 \u00d7 10 <SUP>8</SUP>yr or less). The U sbnd Pb data indicate formation of the lunar crust at \u223c 4.4AE, which is distinctly younger than 4.6 AE, the time generally associated with planetary formation. If the lunar crust started being formed at \u223c 4.6AE, then this process must have continued until times significantly younger than 4.4 AE. Rb sbnd Sr data also indicate formation of the lunar crust around 4.5 AE with only minor additions of high Rb/Sr materials to the crust at times younger than 4.3 AE. Using the U sbnd Pb systematics, K/U and the average U concentration of the moon as obtained from heat-flow measurements, we estimate the lunar concentrations: primordial Pb= 35ppb;Rb= 0.5ppm with Rb/Sr= 0.006.",
+    "title": [
+      "Isotopic evidence for a terminal lunar cataclysm"
+    ],
+    "year": "1974",
+    "citation_count": 589
+  },
+  {
+    "bibcode": "2005Icar..174..294H",
+    "abstract": "This paper reviews and refines the technique of dating martian surfaces by using impact-crater isochrons (defined as size distributions of impact craters on undisturbed martian surfaces of specified ages). In the 1970s, this system identified not only abundant ancient martian volcanic surfaces, but also extensive lava plains with ages of a few 10 <SUP>8</SUP> y-old; this dating was initially controversial but confirmed in the 1980s and 90s by martian meteorites. The present update utilizes updated estimates of the Mars/Moon cratering ratio (the most important calibration factor), improves treatment of gravity and impact velocity scaling effects, combines aspects of the crater size distribution data from earlier work by both Neukum and Hartmann, and for the first time applies a correction for loss of small meteoroids in the martian atmosphere from Popova et al. (2003, Meteorit. Planet. Sci. 38, 905-925). The updated isochrons are not radically different from the previous \"2002 iteration\" but fit observed data better and give somewhat older model ages for features dated from small craters (diameter D&lt;100 m). Crater counts from young lava flows in various areas give good fits to the new isochrons over as much as 3 orders of magnitude in D, confirming the general isochron shape and giving crater retention ages in the range of some 10 <SUP>6</SUP> to some 10 <SUP>8</SUP> y, interpreted as lava flow ages. More complex, older units are also discussed. Uncertainties are greatest if only small craters ( D\u2272100 m) are used. Suggestions by other workers of gross uncertainties, due to local secondary craters and deposition/exhumation, are discussed; they do not refute our conclusions of significant volcanic, fluvial, and other geologic activity in the last few percent of martian geologic time or the importance of cratering as a tool for studying processes such as exhumation. Indeed, crater count data suggest certain very recent episodes of deposition, exhumation, and ice flow, possibly associated with obliquity cycles of \u223c10 y timescale. Evidence from ancient surfaces suggests higher rates of volcanism, fluvial activity, glaciation, and other processes in Noachian/Hesperian time than in Amazonian time.",
+    "title": [
+      "Martian cratering 8: Isochron refinement and the chronology of Mars"
+    ],
+    "year": "2005",
+    "citation_count": 582
+  }
+]

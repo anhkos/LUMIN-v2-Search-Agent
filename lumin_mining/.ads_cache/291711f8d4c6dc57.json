@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2006AREPS..34..157B",
+    "abstract": "The Yarkovsky and YORP (Yarkovsky-O'Keefe-Radzievskii-Paddack) effects are thermal radiation forces and torques that cause small objects to undergo semimajor axis drift and spin vector modifications, respectively, as a function of their spin, orbit, and material properties. These mechanisms help to (a) deliver asteroids (and meteoroids) with diameter D &lt; 40 km from their source locations in the main belt to chaotic resonance zones capable of transporting this material to Earth-crossing orbits; (b) disperse asteroid families, with drifting bodies jumping or becoming trapped in mean-motion and secular resonances within the main belt; (c) modify the rotation rates and obliquities of D &lt; 40 km asteroids; and (d) allow asteroids to enter into spin-orbit resonances, which affect the evolution of their spin vectors and feedback into the Yarkovsky-driven semimajor axis evolution. Accordingly, we suggest that nongravitational forces should now be considered as important as collisions and gravitational perturbations to our overall understanding of asteroid evolution.",
+    "title": [
+      "The Yarkovsky and Yorp Effects: Implications for Asteroid Dynamics"
+    ],
+    "year": "2006",
+    "citation_count": 680
+  },
+  {
+    "bibcode": "2017SSRv..212..925L",
+    "abstract": "In May of 2011, NASA selected the Origins, Spectral Interpretation, Resource Identification, and Security- Regolith Explorer (OSIRIS-REx) asteroid sample return mission as the third mission in the New Frontiers program. The other two New Frontiers missions are New Horizons, which explored Pluto during a flyby in July 2015 and is on its way for a flyby of Kuiper Belt object 2014 MU69 on January 1, 2019, and Juno, an orbiting mission that is studying the origin, evolution, and internal structure of Jupiter. The spacecraft departed for near-Earth asteroid (101955) Bennu aboard an United Launch Alliance Atlas V 411 evolved expendable launch vehicle at 7:05 p.m. EDT on September 8, 2016, on a seven-year journey to return samples from Bennu. The spacecraft is on an outbound-cruise trajectory that will result in a rendezvous with Bennu in November 2018. The science instruments on the spacecraft will survey Bennu to measure its physical, geological, and chemical properties, and the team will use these data to select a site on the surface to collect at least 60 g of asteroid regolith. The team will also analyze the remote-sensing data to perform a detailed study of the sample site for context, assess Bennu's resource potential, refine estimates of its impact probability with Earth, and provide ground-truth data for the extensive astronomical data set collected on this asteroid. The spacecraft will leave Bennu in 2021 and return the sample to the Utah Test and Training Range (UTTR) on September 24, 2023.",
+    "title": [
+      "OSIRIS-REx: Sample Return from Asteroid (101955) Bennu"
+    ],
+    "year": "2017",
+    "citation_count": 540
+  },
+  {
+    "bibcode": "2011Sci...333.1113N",
+    "abstract": "The Hayabusa spacecraft successfully recovered dust particles from the surface of near-Earth asteroid 25143 Itokawa. Synchrotron-radiation x-ray diffraction and transmission and scanning electron microscope analyses indicate that the mineralogy and mineral chemistry of the Itokawa dust particles are identical to those of thermally metamorphosed LL chondrites, consistent with spectroscopic observations made from Earth and by the Hayabusa spacecraft. Our results directly demonstrate that ordinary chondrites, the most abundant meteorites found on Earth, come from S-type asteroids. Mineral chemistry indicates that the majority of regolith surface particles suffered long-term thermal annealing and subsequent impact shock, suggesting that Itokawa is an asteroid made of reassembled pieces of the interior portions of a once larger asteroid.",
+    "title": [
+      "Itokawa Dust Particles: A Direct Link Between S-Type Asteroids and Ordinary Chondrites"
+    ],
+    "year": "2011",
+    "citation_count": 504
+  },
+  {
+    "bibcode": "1999Icar..137..235S",
+    "abstract": "A simple one-dimensional geometrical-optics model for spectral albedo of powdered surfaces, in particular of lunar regolith, is presented. As distinct from, e.g., the Kubelka-Munk formula, which deals with two effective parameters of a medium, the suggested model uses spectra of optical constants of the medium materials. Besides, our model is invertible, i.e., allows estimations of spectral absorption using albedo spectrum, ifa prioridata on the real part of refractive index and surface porosity are known. The model has been applied to interpret optical properties of the Moon. In particular, it has been shown that: (1) both color indices and depth of absorption bands for regolith-like surfaces depend on particle size, which should be taken into account when correlations between these optical characteristics and abundance of Fe and Ti in the lunar regolith are studied; (2) fine-grained reduced iron occurring in regolith particles affects band minima positions in reflectance spectra of lunar pyroxenes and, consequently, affects the result of determination of pyroxene types and Fe abundance by Adams' method.",
+    "title": [
+      "A Model of Spectral Albedo of Particulate Surfaces: Implications for Optical Properties of the Moon"
+    ],
+    "year": "1999",
+    "citation_count": 422
+  }
+]

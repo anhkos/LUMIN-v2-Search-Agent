@@ -1,0 +1,46 @@
+[
+  {
+    "bibcode": "2007JGRE..112.5S02M",
+    "abstract": "The HiRISE camera features a 0.5 m diameter primary mirror, 12 m effective focal length, and a focal plane system that can acquire images containing up to 28 Gb (gigabits) of data in as little as 6 seconds. HiRISE will provide detailed images (0.25 to 1.3 m/pixel) covering ~1% of the Martian surface during the 2-year Primary Science Phase (PSP) beginning November 2006. Most images will include color data covering 20% of the potential field of view. A top priority is to acquire ~1000 stereo pairs and apply precision geometric corrections to enable topographic measurements to better than 25 cm vertical precision. We expect to return more than 12 Tb of HiRISE data during the 2-year PSP, and use pixel binning, conversion from 14 to 8 bit values, and a lossless compression system to increase coverage. HiRISE images are acquired via 14 CCD detectors, each with 2 output channels, and with multiple choices for pixel binning and number of Time Delay and Integration lines. HiRISE will support Mars exploration by locating and characterizing past, present, and future landing sites, unsuccessful landing sites, and past and potentially future rover traverses. We will investigate cratering, volcanism, tectonism, hydrology, sedimentary processes, stratigraphy, aeolian processes, mass wasting, landscape evolution, seasonal processes, climate change, spectrophotometry, glacial and periglacial processes, polar geology, and regolith properties. An Internet Web site (HiWeb) will enable anyone in the world to suggest HiRISE targets on Mars and to easily locate, view, and download HiRISE data products.",
+    "title": [
+      "Mars Reconnaissance Orbiter's High Resolution Imaging Science Experiment (HiRISE)"
+    ],
+    "year": "2007",
+    "citation_count": 1242
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2014AsBio..14..887R",
+    "title": [
+      "A New Analysis of Mars ``Special Regions'': Findings of the Second MEPAG Special Regions Science Analysis Group (SR-SAG2)"
+    ],
+    "year": "2014",
+    "citation_count": 249
+  },
+  {
+    "bibcode": "2014NatGe...7...53M",
+    "abstract": "The presence of liquid water is a requirement of habitability on a planet. Possible indicators of liquid surface water on Mars include intermittent flow-like features observed on sloping terrains. These recurring slope lineae are narrow, dark markings on steep slopes that appear and incrementally lengthen during warm seasons on low-albedo surfaces. The lineae fade in cooler seasons and recur over multiple Mars years. Recurring slope lineae were initially reported to appear and lengthen at mid-latitudes in the late southern spring and summer and are more common on equator-facing slopes where and when the peak surface temperatures are higher. Here we report extensive activity of recurring slope lineae in equatorial regions of Mars, particularly in the deep canyons of Valles Marineris, from analysis of data acquired by the Mars Reconnaissance Orbiter. We observe the lineae to be most active in seasons when the slopes often face the sun. Expected peak temperatures suggest that activity may not depend solely on temperature. Although the origin of the recurring slope lineae remains an open question, our observations are consistent with intermittent flow of briny water. Such an origin suggests surprisingly abundant liquid water in some near-surface equatorial regions of Mars.",
+    "title": [
+      "Recurring slope lineae in equatorial regions of Mars"
+    ],
+    "year": "2014",
+    "citation_count": 207
+  },
+  {
+    "bibcode": "2008Geomo.101..703B",
+    "abstract": "Aeolian processes are probably the dominant ongoing surface process on Mars; Large Dark Dunes (LDDs), particularly common aeolian landforms, were first recognized in the early 1970s. Recent, higher resolution images have revealed another, morphologically distinct, large population of smaller, ripple-like aeolian bedforms that have been termed \"Transverse Aeolian Ridges\" (TARs) as it is unknown whether they formed as large ripples or small dunes. We have begun a new study of TARs that examines their distribution, orientation, and morphology using &gt; 10,000 high-resolution Mars Orbiter Camera (1.5 to 8 m/pixel resolution) images in a 45\u00b0 longitude wide, pole-to-pole survey. The aim of this study is to assess whether TARs are active, to identify possible sediment sources and pathways, and to determine the volumes of sediment that they comprise. We present results from the first half of this study, in which we examine the northern hemisphere, and describe a new three-part classification scheme used to aid the survey. Our results show that TARs are abundant but not ubiquitous: preferentially forming proximal to friable, layered terrains such as those found in Terra Meridiani \u2014 the location of the ongoing Mars Exploration Rover \"Opportunity\" mission. TAR distribution in the northern hemisphere shows a strong latitudinal dependence with very few TARs being found north of \u223c 30\u00b0 N. We also find that in most cases TARs are less mobile than LDDs, a conclusion possibly explained by Mars Exploration Rover Opportunity observations that show TAR-like ripples to have a core of fine material armored by a monolayer of granule-sized particles. This could disallow significant bedform movement under the current wind regime. That TARs are essentially inactive is confirmed by superposition relations with slope streaks and LDDs and by observations of superposed impact craters. We suggest that observations made by the Opportunity Rover in Terra Meridiani indicate that the small aeolian bedforms common here are ripples and not small dunes. Farther south, these bedforms transition into larger features indistinguishable from TARs, suggesting that TARs (in the Meridiani area at least) are ripples and not dunes.",
+    "title": [
+      "Transverse Aeolian Ridges (TARs) on Mars"
+    ],
+    "year": "2008",
+    "citation_count": 167
+  }
+]

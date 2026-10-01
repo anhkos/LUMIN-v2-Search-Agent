@@ -10,3 +10,4 @@ output/*
 !serve.js
 *.pyc
 __pycache__/
+eval_results_*.json

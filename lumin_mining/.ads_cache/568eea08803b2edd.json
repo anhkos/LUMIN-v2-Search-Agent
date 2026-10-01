@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2012SSRv..170..259E",
+    "abstract": "The Mars Science Laboratory (MSL) Mars Hand Lens Imager (MAHLI) investigation will use a 2-megapixel color camera with a focusable macro lens aboard the rover, Curiosity, to investigate the stratigraphy and grain-scale texture, structure, mineralogy, and morphology of geologic materials in northwestern Gale crater. Of particular interest is the stratigraphic record of a \u223c5 km thick layered rock sequence exposed on the slopes of Aeolis Mons (also known as Mount Sharp). The instrument consists of three parts, a camera head mounted on the turret at the end of a robotic arm, an electronics and data storage assembly located inside the rover body, and a calibration target mounted on the robotic arm shoulder azimuth actuator housing. MAHLI can acquire in-focus images at working distances from \u223c2.1 cm to infinity. At the minimum working distance, image pixel scale is \u223c14 \u03bcm per pixel and very coarse silt grains can be resolved. At the working distance of the Mars Exploration Rover Microscopic Imager cameras aboard Spirit and Opportunity, MAHLI's resolution is comparable at \u223c30 \u03bcm per pixel. Onboard capabilities include autofocus, auto-exposure, sub-framing, video imaging, Bayer pattern color interpolation, lossy and lossless compression, focus merging of up to 8 focus stack images, white light and longwave ultraviolet (365 nm) illumination of nearby subjects, and 8 gigabytes of non-volatile memory data storage.",
+    "title": [
+      "Curiosity's Mars Hand Lens Imager (MAHLI) Investigation"
+    ],
+    "year": "2012",
+    "citation_count": 213
+  },
+  {
+    "bibcode": "2013JGRE..118.2338M",
+    "abstract": "Martian solar days 57-100, the Mars Science Laboratory Curiosity rover acquired and processed a solid (sediment) sample and analyzed its mineralogy and geochemistry with the Chemistry and Mineralogy and Sample Analysis at Mars instruments. An aeolian deposit\u2014herein referred to as the Rocknest sand shadow\u2014was inferred to represent a global average soil composition and selected for study to facilitate integration of analytical results with observations from earlier missions. During first-time activities, the Mars Hand Lens Imager (MAHLI) was used to support both science and engineering activities related to sample assessment, collection, and delivery. Here we report on MAHLI activities that directly supported sample analysis and provide MAHLI observations regarding the grain-scale characteristics of the Rocknest sand shadow. MAHLI imaging confirms that the Rocknest sand shadow is one of a family of bimodal aeolian accumulations on Mars\u2014similar to the coarse-grained ripples interrogated by the Mars Exploration Rovers Spirit and Opportunity\u2014in which a surface veneer of coarse-grained sediment stabilizes predominantly fine-grained sediment of the deposit interior. The similarity in grain size distribution of these geographically disparate deposits support the widespread occurrence of bimodal aeolian transport on Mars. We suggest that preservation of bimodal aeolian deposits may be characteristic of regions of active deflation, where winnowing of the fine-sediment fraction results in a relatively low sediment load and a preferential increase in the coarse-grained fraction of the sediment load. The compositional similarity of Martian aeolian deposits supports the potential for global redistribution of fine-grained components, combined with potential local contributions.",
+    "title": [
+      "MAHLI at the Rocknest sand shadow: Science and science-enabling activities"
+    ],
+    "year": "2013",
+    "citation_count": 72
+  },
+  {
+    "bibcode": "2016GI......5..205A",
+    "abstract": "The Mars Hand Lens Imager (MAHLI) is a 2-megapixel, color camera with resolution as high as 13.9 <inline-formula><mml:math><mml:mi>\u00b5</mml:mi></mml:math></inline-formula>m pixel<inline-formula><mml:math><mml:msup><mml:mi></mml:mi><mml:mrow><mml:mo>-</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msup></mml:math></inline-formula>. MAHLI has operated successfully on the Martian surface for over 1150 Martian days (sols) aboard the Mars Science Laboratory (MSL) rover, Curiosity. During that time MAHLI acquired images to support science and science-enabling activities, including rock and outcrop textural analysis; sand characterization to further the understanding of global sand properties and processes; support of other instrument observations; sample extraction site documentation; range-finding for arm and instrument placement; rover hardware and instrument monitoring and safety; terrain assessment; landscape geomorphology; and support of rover robotic arm commissioning. Operation of the instrument has demonstrated that imaging fully illuminated, dust-free targets yields the best results, with complementary information obtained from shadowed images. The light-emitting diodes (LEDs) allow satisfactory night imaging but do not improve daytime shadowed imaging. MAHLI's combination of fine-scale, science-driven resolution, RGB color, the ability to focus over a large range of distances, and relatively large field of view (FOV), have maximized the return of science and science-enabling observations given the MSL mission architecture and constraints.",
+    "title": [
+      "MAHLI on Mars: lessons learned operating a geoscience camera on a landed payload robotic arm"
+    ],
+    "year": "2016",
+    "citation_count": 27
+  },
+  {
+    "bibcode": "2013LPI....44.1199E",
+    "abstract": "Viewing targets near and far, Curiosity\u2019s MAHLI was used for science and engineering support during the first 100 sols at the Gale Crater, Mars, field site.",
+    "title": [
+      "Curiosity's Mars Hand Lens Imager (MAHLI): Initial Observations and Activities"
+    ],
+    "year": "2013",
+    "citation_count": 3
+  },
+  {
+    "bibcode": "2026JGRE..13109631M",
+    "abstract": "X-ray amorphous sulfate hydrates are a substantial component (up to 23 wt%) of the sedimentary rocks and sands analyzed to date by the Mars Science Laboratory Curiosity rover at Gale crater. Recently, the CheMin X-ray diffractometer observed the amorphization of the crystalline sulfate starkeyite (MgSO<SUB>4</SUB> \u00b7 4H<SUB>2</SUB>O) upon exposure to the dry and relatively warm atmosphere inside the rover body. To assess the extent to which interactions between minerals and the rover environment contribute to the amorphous component, we investigated the stability of several hydrated minerals under Curiosity-like conditions. Our results show that highly hydrated minerals are more prone to transformation inside the rover than lower hydrates. Minerals that readily become amorphous under rover conditions are also likely to be unstable when exposed to the dry Martian atmosphere during the warm periods at noon. We therefore suggest that much of the observed amorphization occurred at the Martian surface prior to sampling. Future missions such as the Rosalind Franklin rover and Mars Life Explorer propose to drill into the substantially colder subsurface at Martian mid-latitudes and are likely to encounter temperature and humidity-sensitive cryohydrates. To evaluate the original mineral assemblage of rocks on such missions, it will be critical to maintain controlled temperature and relative humidity (RH) conditions inside the rover body. We find that increasing ambient humidity may induce the recrystallization of amorphous salt hydrates, thus controlling RH and temperature inside the rover would significantly enhance the analytical capabilities of a next generation X-ray diffractometer on Mars.",
+    "title": [
+      "Rover-Induced Mineral Transformations: Extent of the Effect for the Mars Science Laboratory and Opportunities for Future Landed Mission"
+    ],
+    "year": "2026",
+    "citation_count": 0
+  }
+]

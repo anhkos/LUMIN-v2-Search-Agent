@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2011RSEnv.115.3220D",
+    "abstract": "Productive wetland systems at land-water interfaces that provide unique ecosystem services are challenging to study because of water dynamics, complex surface cover and constrained field access. We applied object-based image analysis and supervised classification to four 32-m Beijing-1 microsatellite images to examine broad-scale surface cover composition and its change during November 2007-March 2008 low water season at Poyang Lake, the largest freshwater lake-wetland system in China (&gt; 4000 km <SUP>2</SUP>). We proposed a novel method for semi-automated selection of training objects in this heterogeneous landscape using extreme values of spectral indices (SIs) estimated from satellite data. Dynamics of the major wetland cover types (Water, Mudflat, Vegetation and Sand) were investigated both as transitions among primary classes based on maximum membership value, and as changes in memberships to all classes even under no change in a primary class. Fuzzy classification accuracy was evaluated as match frequencies between classification outcome and a) the best reference candidate class (MAX function) and b) any acceptable reference class (RIGHT function). MAX-based accuracy was relatively high for Vegetation (\u2265 90%), Water (\u2265 82%), Mudflat (\u2265 76%) and the smallest-area Sand (\u2265 75%) in all scenes; these scores improved with the RIGHT function to 87-100%. Classification uncertainty assessed as the proportion of fuzzy object area within a class at a given fuzzy threshold value was the highest for all classes in November 2007, and consistently higher for Mudflat than for other classes in all scenes. Vegetation was the dominant class in all scenes, occupying 41.2-49.3% of the study area. Object memberships to Vegetation mostly declined from November 2007 to February 2008 and increased substantially only in February-March 2008, possibly reflecting growing season conditions and grazing. Spatial extent of Water both declined and increased during the study period, reflecting precipitation and hydrological events. The \"fuzziest\" Mudflat class was involved in major detected transitions among classes and declined in classification accuracy by March 2008, representing a key target for finer-scale research. Future work should introduce Vegetation sub-classes reflecting differences in phenology and alternative methods to discriminate Mudflat from other classes. Results can be used to guide field sampling and top-down landscape analyses in this wetland.",
+    "title": [
+      "Object-based analysis and change detection of major wetland cover types and their classification uncertainty during the low water period at Poyang Lake, China"
+    ],
+    "year": "2011",
+    "citation_count": 205
+  },
+  {
+    "bibcode": "2009P&SS...57..944H",
+    "abstract": "A variety of sedimentary deposits is observed in Xanthe Terra, Mars, including Gilbert-type deltas, fan deltas dominated by resedimentation processes, and alluvial fans. Sediments were provided through deeply incised valleys, which were probably incised by both runoff and groundwater sapping. Mass balances based on High-Resolution Stereo Camera (HRSC) digital terrain models show that up to \u223c30% of the material that was eroded in the valleys is present as deltas or alluvial fan deposits. Stratigraphic relationships and crater counts indicate an age of \u223c4.0 to \u223c3.8 Ga for the fluvial activity. Hydrologic modeling indicates that the deposits were probably formed in geologically very short time scales. Our results point to episodes of a warmer and wetter climate on early Mars, followed by a long period of significantly reduced erosion rates.",
+    "title": [
+      "Sedimentary deposits in Xanthe Terra: Implications for the ancient climate on Mars"
+    ],
+    "year": "2009",
+    "citation_count": 71
+  },
+  {
+    "bibcode": "2002GeoRL..29.1353T",
+    "abstract": "We use the MODerate resolution Imaging Spectroradiometer (MODIS) aboard the Terra spacecraft to derive surface albedo for the arid areas of Northern Africa and the Arabian peninsula. Albedo in seven MODIS spectral bands for land and three broad bands (for shortwave, near infrared, and visible portions of the spectrum) is produced. Surface albedo is derived from MODIS observations during a sixteen-day period and is analyzed at 1 km spatial resolution. MODIS data show considerable spatial variability of surface albedo in the study region that is related to soil and geological characteristics of the surface. For example, solar shortwave white-sky albedo varies by a factor of about 2.5 from the darkest volcanic terrains to the brightest sand sheets. Vegetation contribution to surface reflectance is essentially negligible since we only considered pixels with under 10 percent fractional canopy cover. Few, if any, coupled land-atmosphere global or regional models capture this observed spatial variability in surface reflectance or albedo. Here we suggest a scheme that relates soil groups (based on the United Nations Food and Agriculture Organization, FAO, soil classification) and rock types (based on the United States Geological Survey, USGS, geological maps) to MODIS derived surface albedo statistics. This approach is a first step towards the incorporation of the observed spatial variability in surface reflective properties into climate models.",
+    "title": [
+      "Relating MODIS-derived surface albedo to soils and rock types over Northern Africa and the Arabian peninsula"
+    ],
+    "year": "2002",
+    "citation_count": 54
+  },
+  {
+    "bibcode": "2005ITGRS..43.1665H",
+    "abstract": "In this study, independent classifications of Landsat Thematic Mapper imagery and Jet Propulsion Laboratory AirSAR were combined to create an integrated classification of pasture and other vegetation types for a study area in the agricultural zone of Western Australia. The resulting classification combines greenness and brightness information from optical data with structure and water content information from synthetic aperture radar (SAR). Field observations of vegetation type, botanical composition, ground cover percentage, wet and dry biomass, canopy height, and soil water content were collected at 34 sites representing a range of pastures, browse shrubs, and crops. An unsupervised version of the Complex Wishart classification procedure, based on preserving scattering characteristics from the Freeman and Durden backscatter decomposition, was applied to the C-, L-, and P-band polarimetric SAR data. The optical classification was carried out using a principle component analysis on the green, red, and near-infrared bands and clustering on the basis of a class centroid distance measure and knowledge of ground targets. These two classification results were then fused together. Assessment of a confusion matrix using the individual sites showed that identification of more uniform, dense, and structurally distinct canopies was better than that of more diverse, sparse, and structurally ambiguous canopies, as the former were better represented by the canopy height attribute used in the SAR classification component. The optical classification enabled correction of SAR misclassification of vegetation due to surface roughness and soil moisture effects, or similar backscatter responses from herbaceous or arboreal canopies. The results show that simplification of vegetation into groups based upon properties with sensitive responses in both the optical and SAR domains, and combination of separate SAR and optical classifications, has potential for improving classification of diverse and heterogeneous herbaceous and browse cover in grazing lands. However, collection of ground calibration data must be at an appropriate spatial scale and include canopy and surface measurements directly related to backscatter mechanisms and spectral sensitivity.",
+    "title": [
+      "Integration of Optical and Radar Classifications for Mapping Pasture Type in Western Australia"
+    ],
+    "year": "2005",
+    "citation_count": 50
+  },
+  {
+    "bibcode": "2014JGRE..119.2583G",
+    "abstract": "Transverse aeolian ridges (TARs) are small bright windblown deposits found throughout the Martian tropics that stand a few meters tall and are spaced a few tens of meters apart. The origin of these features remains mysterious more than 20 years after their discovery on Mars. This paper presents a new hypothesis, that some of the TARs could be indurated dust deposits emplaced millions of years ago during periods of higher axial obliquity. It suggests that these TARs are primary depositional bed forms that accumulated in place from dust carried by the winds in suspension, perhaps in a manner comparable to antidunes on Earth, and were subsequently indurated and eroded to their current states by eons of sandblasting. It points out examples of modern dust drifts and dune-like features that appear to have been recently formed by dust accumulating directly onto the surface from atmospheric suspension. It shows how these pristine dust deposits could evolve to explain the range of morphologies of the TARs. Finally, it explains how the known properties of many TARs are consistent with this hypothesis, including their composition, thermal behavior, and distribution.",
+    "title": [
+      "The birth and death of transverse aeolian ridges on Mars"
+    ],
+    "year": "2014",
+    "citation_count": 48
+  }
+]

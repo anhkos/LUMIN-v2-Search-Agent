@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2005OcMod...9..347S",
+    "abstract": "The purpose of this study is to find a combination of optimal numerical algorithms for time-stepping and mode-splitting suitable for a high-resolution, free-surface, terrain-following coordinate oceanic model. Due to mathematical feedback between the baroclinic momentum and tracer equations and, similarly, between the barotropic momentum and continuity equations, it is advantageous to treat both modes so that, after a time step for the momentum equation, the computed velocities participate immediately in the computation of tracers and continuity, and vice versa, rather than advancing all equations for one time step simultaneously. This leads to a new family of time-stepping algorithms that combine forward-backward feedback with the best known synchronous algorithms, allowing an increased time step due to the enhanced internal stability without sacrificing its accuracy. Based on these algorithms we design a split-explicit hydrodynamic kernel for a realistic oceanic model, which addresses multiple numerical issues associated with mode splitting. This kernel utilizes consistent temporal averaging of the barotropic mode via a specially designed filter function to guarantee both exact conservation and constancy preservation properties for tracers and yields more accurate (up to second-order), resolved barotropic processes, while preventing aliasing of unresolved barotropic signals into the slow baroclinic motions. It has a more accurate mode-splitting due to redefined barotropic pressure-gradient terms to account for the local variations in density field, while maintaining the computational efficiency of a split model. It is naturally compatible with a variety of centered and upstream-biased high-order advection algorithms, and helps to mitigate computational cost of expensive physical parameterization of mixing processes and submodels.",
+    "title": [
+      "The regional oceanic modeling system (ROMS): a split-explicit, free-surface, topography-following-coordinate oceanic model"
+    ],
+    "year": "2005",
+    "citation_count": 3820
+  },
+  {
+    "bibcode": "2013TCry....7..375F",
+    "abstract": "We present Bedmap2, a new suite of gridded products describing surface elevation, ice-thickness and the seafloor and subglacial bed elevation of the Antarctic south of 60\u00b0 S. We derived these products using data from a variety of sources, including many substantial surveys completed since the original Bedmap compilation (Bedmap1) in 2001. In particular, the Bedmap2 ice thickness grid is made from 25 million measurements, over two orders of magnitude more than were used in Bedmap1. In most parts of Antarctica the subglacial landscape is visible in much greater detail than was previously available and the improved data-coverage has in many areas revealed the full scale of mountain ranges, valleys, basins and troughs, only fragments of which were previously indicated in local surveys. The derived statistics for Bedmap2 show that the volume of ice contained in the Antarctic ice sheet (27 million km<SUP>3</SUP>) and its potential contribution to sea-level rise (58 m) are similar to those of Bedmap1, but the mean thickness of the ice sheet is 4.6% greater, the mean depth of the bed beneath the grounded ice sheet is 72 m lower and the area of ice sheet grounded on bed below sea level is increased by 10%. The Bedmap2 compilation highlights several areas beneath the ice sheet where the bed elevation is substantially lower than the deepest bed indicated by Bedmap1. These products, along with grids of data coverage and uncertainty, provide new opportunities for detailed modelling of the past and future evolution of the Antarctic ice sheets.",
+    "title": [
+      "Bedmap2: improved ice bed, surface and thickness datasets for Antarctica"
+    ],
+    "year": "2013",
+    "citation_count": 1514
+  },
+  {
+    "bibcode": "2008JCoPh.227.3595H",
+    "abstract": "Systematic improvements in algorithmic design of regional ocean circulation models have led to significant enhancement in simulation ability across a wide range of space/time scales and marine system types. As an example, we briefly review the Regional Ocean Modeling System, a member of a general class of three-dimensional, free-surface, terrain-following numerical models. Noteworthy characteristics of the ROMS computational kernel include: consistent temporal averaging of the barotropic mode to guarantee both exact conservation and constancy preservation properties for tracers; redefined barotropic pressure-gradient terms to account for local variations in the density field; vertical interpolation performed using conservative parabolic splines; and higher-order, quasi-monotone advection algorithms. Examples of quantitative skill assessment are shown for a tidally driven estuary, an ice-covered high-latitude sea, a wind- and buoyancy-forced continental shelf, and a mid-latitude ocean basin. The combination of moderate-order spatial approximations, enhanced conservation properties, and quasi-monotone advection produces both more robust and accurate, and less diffusive, solutions than those produced in earlier terrain-following ocean models. Together with advanced methods of data assimilation and novel observing system technologies, these capabilities constitute the necessary ingredients for multi-purpose regional ocean prediction systems.",
+    "title": [
+      "Ocean forecasting in terrain-following coordinates: Formulation and skill assessment of the Regional Ocean Modeling System"
+    ],
+    "year": "2008",
+    "citation_count": 1012
+  },
+  {
+    "bibcode": "2007JGRE..112.5S04M",
+    "abstract": "The Context Camera (CTX) on the Mars Reconnaissance Orbiter (MRO) is a Facility Instrument (i.e., government-furnished equipment operated by a science team not responsible for design and fabrication) designed, built, and operated by Malin Space Science Systems and the MRO Mars Color Imager team (MARCI). CTX will (1) provide context images for data acquired by other MRO instruments, (2) observe features of interest to NASA's Mars Exploration Program (e.g., candidate landing sites), and (3) conduct a scientific investigation, led by the MARCI team, of geologic, geomorphic, and meteorological processes on Mars. CTX consists of a digital electronics assembly; a 350 mm f/3.25 Schmidt-type telescope of catadioptric optical design with a 5.7\u00b0 field of view, providing a ~30-km-wide swath from ~290 km altitude; and a 5000-element CCD with a band pass of 500-700 nm and 7 \u03bcm pixels, giving ~6 m/pixel spatial resolution from MRO's nearly circular, nearly polar mapping orbit. Raw data are transferred to the MRO spacecraft flight computer for processing (e.g., data compression) before transmission to Earth. The ground data system and operations are based on 9 years of Mars Global Surveyor Mars Orbiter Camera on-orbit experience. CTX has been allocated 12% of the total MRO data return, or about &gt;=3 terabits for the nominal mission. This data volume would cover ~9% of Mars at 6 m/pixel, but overlapping images (for stereo, mosaics, and observation of changes and meteorological events) will reduce this area. CTX acquired its first (instrument checkout) images of Mars on 24 March 2006.",
+    "title": [
+      "Context Camera Investigation on board the Mars Reconnaissance Orbiter"
+    ],
+    "year": "2007",
+    "citation_count": 955
+  },
+  {
+    "bibcode": "2005Natur.438..623P",
+    "abstract": "The recent identification of large deposits of sulphates by remote sensing and in situ observations has been considered evidence of the past presence of liquid water on Mars. Here we report the unambiguous detection of diverse phyllosilicates, a family of aqueous alteration products, on the basis of observations by the OMEGA imaging spectrometer on board the Mars Express spacecraft. These minerals are mainly associated with Noachian outcrops, which is consistent with an early active hydrological system, sustaining the long-term contact of igneous minerals with liquid water. We infer that the two main families of hydrated alteration products detected-phyllosilicates and sulphates-result from different formation processes. These occurred during two distinct climatic episodes: an early Noachian Mars, resulting in the formation of hydrated silicates, followed by a more acidic environment, in which sulphates formed.",
+    "title": [
+      "Phyllosilicates on Mars and implications for early martian climate"
+    ],
+    "year": "2005",
+    "citation_count": 881
+  }
+]

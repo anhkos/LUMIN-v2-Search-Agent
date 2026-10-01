@@ -56,9 +56,14 @@ DEFAULT_OPEN_MODELS = [
 
 RAG_SYSTEM_PROMPT = """You extract PDS4 query filters from natural language.
 Given context documents and a user query, output ONLY valid JSON with this shape:
-{"filters": {"field_name": {"min": <number>, "max": <number>, "value": <string>}}}
+{"filters": {"field_name": {"min": <number>, "max": <number>, "value": <string>}}, "confidence": <number between 0 and 1>}
 Include only fields clearly supported by the query and context.
-Omit fields you are uncertain about. Use min/max for ranges and value for exact matches."""
+Omit fields you are uncertain about. Use min/max for ranges and value for exact matches.
+The "confidence" field is your own honest self-assessment of how likely it is that the
+filters you produced are COMPLETELY correct — not just plausible. 1.0 means you are certain
+every field and value is right. A low value (e.g. 0.2) means you are largely guessing, the
+context didn't clearly support your answer, or you suspect you are missing required fields.
+Use the full range — do not default to a fixed value like 0.5 or 1.0 out of habit."""
 
 DEV_TEST_CASES = [
     {
@@ -101,6 +106,7 @@ class EvalResult:
     confidence: float
     context_docs: list[str]
     retrieval_recall: Optional[bool] = None
+    verbalized_confidence: Optional[float] = None
 
 
 # ── Clients ────────────────────────────────────────────────────────────────────
@@ -487,6 +493,25 @@ def parse_llm_json(text: str) -> dict:
     return {"filters": {}}
 
 
+def extract_verbalized_confidence(raw: dict) -> Optional[float]:
+    """
+    Pull the model's self-reported confidence out of a parsed LLM response,
+    validating it rather than trusting it blindly — a model can return a
+    string, an out-of-range number, or omit it entirely.
+    Returns None (not 0.0) when genuinely absent, so a missing value is
+    distinguishable from a model that confidently reported zero.
+    """
+    if not isinstance(raw, dict) or "confidence" not in raw:
+        return None
+    try:
+        val = float(raw["confidence"])
+    except (TypeError, ValueError):
+        return None
+    if val != val:  # NaN check without importing math
+        return None
+    return max(0.0, min(1.0, val))
+
+
 def run_rag_query(
     query: str,
     context_docs: list[str],
@@ -582,6 +607,62 @@ def filter_match(predicted: dict, ground_truth: dict) -> bool:
     return True
 
 
+# ── Calibration metrics ───────────────────────────────────────────────────────
+
+def _auroc(pairs: list[tuple[float, bool]]) -> Optional[float]:
+    """
+    AUROC via the rank-sum formula — does confidence correctly rank correct
+    answers above wrong ones? 0.5 = no better than random; 1.0 = perfect
+    separation. Implemented from scratch (no scipy dependency) with average
+    ranks for ties, since a constant confidence (e.g. rag_oracle's old
+    hardcoded 1.0) produces nothing BUT ties and must resolve to exactly 0.5,
+    not an error or an artificially high score.
+    """
+    scores = np.array([p[0] for p in pairs], dtype=np.float64)
+    labels = np.array([bool(p[1]) for p in pairs], dtype=np.bool_)
+    n_pos, n_neg = int(labels.sum()), int((~labels).sum())
+    if n_pos == 0 or n_neg == 0:
+        return None  # undefined — every result was the same class
+
+    order = np.argsort(scores, kind="mergesort")
+    ranks = np.empty(len(scores), dtype=np.float64)
+    sorted_scores = scores[order]
+    i = 0
+    while i < len(sorted_scores):
+        j = i
+        while j + 1 < len(sorted_scores) and sorted_scores[j + 1] == sorted_scores[i]:
+            j += 1
+        avg_rank = (i + j) / 2.0 + 1.0  # 1-indexed average rank for the tied block
+        ranks[order[i:j + 1]] = avg_rank
+        i = j + 1
+
+    rank_sum_pos = ranks[labels].sum()
+    auroc = (rank_sum_pos - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg)
+    return float(auroc)
+
+
+def _ece(pairs: list[tuple[float, bool]], n_bins: int = 10) -> float:
+    """
+    Expected Calibration Error: bins predictions by stated confidence, and
+    measures how far each bin's actual accuracy is from its average stated
+    confidence, weighted by bin size. 0 = perfectly calibrated.
+    """
+    scores = np.array([p[0] for p in pairs], dtype=np.float64)
+    labels = np.array([bool(p[1]) for p in pairs], dtype=np.float64)
+    bin_edges = np.linspace(0.0, 1.0, n_bins + 1)
+    n = len(scores)
+    ece = 0.0
+    for lo, hi in zip(bin_edges[:-1], bin_edges[1:]):
+        in_bin = (scores >= lo) & (scores <= hi if hi == 1.0 else scores < hi)
+        count = int(in_bin.sum())
+        if count == 0:
+            continue
+        bin_acc = labels[in_bin].mean()
+        bin_conf = scores[in_bin].mean()
+        ece += (count / n) * abs(bin_acc - bin_conf)
+    return float(ece)
+
+
 # ── Evaluator ──────────────────────────────────────────────────────────────────
 
 class Evaluator:
@@ -668,6 +749,7 @@ class Evaluator:
         recall: bool | None = None
         confidence = 0.0
         predicted: dict = {}
+        verbalized_confidence: Optional[float] = None
 
         if self.condition == "rag_concept_docs":
             assert self.concept_index is not None
@@ -676,6 +758,7 @@ class Evaluator:
             )
             raw = run_rag_query(query, context_docs, self.llm_client, self.model)
             predicted = normalize_filters(raw)
+            verbalized_confidence = extract_verbalized_confidence(raw)
 
         elif self.condition == "rag_mapping_docs":
             assert self.mapping_index is not None
@@ -684,6 +767,7 @@ class Evaluator:
             )
             raw = run_rag_query(query, context_docs, self.llm_client, self.model)
             predicted = normalize_filters(raw)
+            verbalized_confidence = extract_verbalized_confidence(raw)
 
         elif self.condition == "rag_oracle":
             assert self.mapping_index is not None
@@ -693,6 +777,7 @@ class Evaluator:
             confidence = 1.0
             raw = run_rag_query(query, context_docs, self.llm_client, self.model)
             predicted = normalize_filters(raw)
+            verbalized_confidence = extract_verbalized_confidence(raw)
 
         elif self.condition == "kg":
             assert self.traversal is not None
@@ -708,6 +793,7 @@ class Evaluator:
             confidence = 0.5
             recall = None
             context_docs = []
+            verbalized_confidence = extract_verbalized_confidence(raw)
 
         correct = filter_match(predicted, gt)
 
@@ -721,6 +807,7 @@ class Evaluator:
             confidence=confidence,
             context_docs=context_docs,
             retrieval_recall=recall,
+            verbalized_confidence=verbalized_confidence,
         )
 
     def aggregate(self, results: list[EvalResult]) -> dict:
@@ -755,10 +842,18 @@ class Evaluator:
 
         return summary
 
-    def calibration_curve(self, results: list[EvalResult]) -> list[dict]:
+    def calibration_curve(self, results: list[EvalResult], confidence_key: str = "confidence") -> list[dict]:
+        confidences = [getattr(r, confidence_key) for r in results]
+        if any(c is None for c in confidences):
+            usable = [(r, c) for r, c in zip(results, confidences) if c is not None]
+            skipped = len(results) - len(usable)
+            if skipped:
+                print(f"  [calibration] skipping {skipped}/{len(results)} results with no {confidence_key}")
+            results = [r for r, _ in usable]
+
         curve = []
         for tau in np.arange(0.1, 1.0, 0.01):
-            covered = [r for r in results if r.confidence >= tau]
+            covered = [r for r in results if getattr(r, confidence_key) >= tau]
             n_covered = len(covered)
             n_total = len(results)
             n_correct = sum(r.correct for r in covered)
@@ -770,6 +865,25 @@ class Evaluator:
                 "silent_failure_rate": n_wrong / max(1, n_covered),
             })
         return curve
+
+    def calibration_metrics(self, results: list[EvalResult], confidence_key: str = "confidence") -> dict:
+        """
+        AUROC (does confidence rank correct above wrong?) and ECE (does a
+        stated confidence of X correspond to being right X% of the time?).
+        Separate from calibration_curve's threshold sweep — these summarize
+        it into two numbers suitable for comparing conditions side by side.
+        """
+        pairs = [(getattr(r, confidence_key), r.correct) for r in results
+                 if getattr(r, confidence_key) is not None]
+        if not pairs:
+            return {"auroc": None, "ece": None, "n": 0,
+                    "note": f"no {confidence_key} values available"}
+
+        return {
+            "auroc": _auroc(pairs),
+            "ece": _ece(pairs),
+            "n": len(pairs),
+        }
 
 
 # ── Test data ──────────────────────────────────────────────────────────────────
@@ -872,6 +986,21 @@ def main():
         help="Sweep confidence threshold and save calibration_curve.json",
     )
     parser.add_argument(
+        "--confidence-key",
+        default="confidence",
+        choices=["confidence", "verbalized_confidence"],
+        help=(
+            "Which confidence signal to use for --calibration-curve and the "
+            "calibration_metrics in the results file. 'confidence' is the "
+            "existing signal (retrieval similarity for RAG, traversal "
+            "rho for kg, or a hardcoded constant for rag_oracle/zero_shot). "
+            "'verbalized_confidence' is the model's own self-reported "
+            "confidence, elicited via the prompt — only present for the "
+            "LLM-driven conditions (not kg), and the one to use for a fair "
+            "calibration comparison against the KG's rho."
+        ),
+    )
+    parser.add_argument(
         "--output",
         default=str(ROOT / "results"),
         help="Output directory for results JSON (default: <repo>/results)",
@@ -897,29 +1026,61 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
 
     if args.calibration_curve:
-        curve = evaluator.calibration_curve(results)
+        curve = evaluator.calibration_curve(results, confidence_key=args.confidence_key)
+        metrics = evaluator.calibration_metrics(results, confidence_key=args.confidence_key)
         cal_path = out_dir / "calibration_curve.json"
         payload = {
             "condition": args.condition,
             "model": args.model,
+            "confidence_key": args.confidence_key,
             "n_queries": len(results),
+            "auroc": metrics["auroc"],
+            "ece": metrics["ece"],
             "curve": curve,
         }
         with open(cal_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2)
         print(f"\nSaved {cal_path}")
+        print(f"  AUROC: {metrics['auroc']}")
+        print(f"  ECE:   {metrics['ece']}")
         _print_calibration_anchors(curve)
+
+        has_verbalized = any(r.verbalized_confidence is not None for r in results)
+        if args.confidence_key == "confidence" and has_verbalized:
+            print(
+                "\n  Note: this condition also has verbalized_confidence available. "
+                "Re-run with --confidence-key verbalized_confidence to see the "
+                "model's own self-reported calibration instead."
+            )
     else:
+        # Always compute calibration_metrics on the default signal so every
+        # results file carries a comparable AUROC/ECE, even without
+        # --calibration-curve. Also compute on verbalized_confidence
+        # whenever it's actually present, so RAG conditions get both.
+        metrics_confidence = evaluator.calibration_metrics(results, confidence_key="confidence")
+        metrics_verbalized = None
+        if any(r.verbalized_confidence is not None for r in results):
+            metrics_verbalized = evaluator.calibration_metrics(results, confidence_key="verbalized_confidence")
+
         results_path = out_dir / f"eval_results_{args.condition}.json"
         payload = {
             "condition": args.condition,
             "model": args.model,
             "summary": summary,
+            "calibration_metrics": {
+                "confidence": metrics_confidence,
+                "verbalized_confidence": metrics_verbalized,
+            },
             "results": [asdict(r) for r in results],
         }
         with open(results_path, "w", encoding="utf-8") as f:
             json.dump(payload, f, indent=2)
         print(f"\nSaved {results_path}")
+        print(f"  AUROC (confidence):            {metrics_confidence['auroc']}")
+        print(f"  ECE   (confidence):            {metrics_confidence['ece']}")
+        if metrics_verbalized:
+            print(f"  AUROC (verbalized_confidence): {metrics_verbalized['auroc']}")
+            print(f"  ECE   (verbalized_confidence): {metrics_verbalized['ece']}")
 
 
 if __name__ == "__main__":

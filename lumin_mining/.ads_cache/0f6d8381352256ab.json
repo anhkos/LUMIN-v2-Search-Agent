@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2009AcCrD..65..148S",
+    "abstract": "This paper reports on the current status of structure validation in chemical crystallography.",
+    "title": [
+      "Structure validation in chemical crystallography"
+    ],
+    "year": "2009",
+    "citation_count": 9648
+  },
+  {
+    "bibcode": "2009arXiv0912.0201L",
+    "abstract": "A survey that can cover the sky in optical bands over wide fields to faint magnitudes with a fast cadence will enable many of the exciting science opportunities of the next decade. The Large Synoptic Survey Telescope (LSST) will have an effective aperture of 6.7 meters and an imaging camera with field of view of 9.6 deg^2, and will be devoted to a ten-year imaging survey over 20,000 deg^2 south of +15 deg. Each pointing will be imaged 2000 times with fifteen second exposures in six broad bands from 0.35 to 1.1 microns, to a total point-source depth of r~27.5. The LSST Science Book describes the basic parameters of the LSST hardware, software, and observing plans. The book discusses educational and outreach opportunities, then goes on to describe a broad range of science that LSST will revolutionize: mapping the inner and outer Solar System, stellar populations in the Milky Way and nearby galaxies, the structure of the Milky Way disk and halo and other objects in the Local Volume, transient and variable objects both at low and high redshift, and the properties of normal and active galaxies at low and high redshift. It then turns to far-field cosmological topics, exploring properties of supernovae to z~1, strong and weak lensing, the large-scale distribution of galaxies and baryon oscillations, and how these different probes may be combined to constrain cosmological models and the physics of dark energy.",
+    "title": [
+      "LSST Science Book, Version 2.0"
+    ],
+    "year": "2009",
+    "citation_count": 2934
+  },
+  {
+    "bibcode": "2013A&A...556A...2V",
+    "abstract": "LOFAR, the LOw-Frequency ARray, is a new-generation radio interferometer constructed in the north of the Netherlands and across europe. Utilizing a novel phased-array design, LOFAR covers the largely unexplored low-frequency range from 10-240 MHz and provides a number of unique observing capabilities. Spreading out from a core located near the village of Exloo in the northeast of the Netherlands, a total of 40 LOFAR stations are nearing completion. A further five stations have been deployed throughout Germany, and one station has been built in each of France, Sweden, and the UK. Digital beam-forming techniques make the LOFAR system agile and allow for rapid repointing of the telescope as well as the potential for multiple simultaneous observations. With its dense core array and long interferometric baselines, LOFAR achieves unparalleled sensitivity and angular resolution in the low-frequency radio regime. The LOFAR facilities are jointly operated by the International LOFAR Telescope (ILT) foundation, as an observatory open to the global astronomical community. LOFAR is one of the first radio observatories to feature automated processing pipelines to deliver fully calibrated science products to its user community. LOFAR's new capabilities, techniques and modus operandi make it an important pathfinder for the Square Kilometre Array (SKA). We give an overview of the LOFAR instrument, its major hardware and software components, and the core science objectives that have driven its design. In addition, we present a selection of new results from the commissioning phase of this new radio observatory.",
+    "title": [
+      "LOFAR: The LOw-Frequency ARray"
+    ],
+    "year": "2013",
+    "citation_count": 2470
+  },
+  {
+    "bibcode": "2016cvpr.conf..308S",
+    "abstract": "Convolutional networks are at the core of most state of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we are exploring ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21:2% top-1 and 5:6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3:5% top-5 error and 17:3% top-1 error on the validation set and 3:6% top-5 error on the official test set.",
+    "title": [
+      "Rethinking the Inception Architecture for Computer Vision"
+    ],
+    "year": "2016",
+    "citation_count": 2404
+  },
+  {
+    "bibcode": "2006ApJS..163....1H",
+    "abstract": "We present an evolutionary model for starbursts, quasars, and spheroidal galaxies in which mergers between gas-rich galaxies drive nuclear inflows of gas, producing starbursts and feeding the buried growth of supermassive black holes (BHs) until feedback expels gas and renders a briefly visible optical quasar. The quasar lifetime and obscuring column density depend on both the instantaneous and peak quasar luminosity, and we determine this dependence using a large set of galaxy merger simulations varying galaxy properties, orbital geometry, and gas physics. We use these fits to deconvolve observed quasar luminosity functions and obtain the evolution of the formation rate of quasars with peak luminosity, n dot(L<SUB>peak</SUB>,z). Quasars spend extended periods at luminosities well below peak, so n dot(L<SUB>peak</SUB>) has a maximum corresponding to the ``break'' in the observed luminosity function. From n dot(L<SUB>peak</SUB>) and our simulations, we obtain self-consistent hard and soft X-ray and optical luminosity functions and predict many observables at multiple redshifts, including column density distributions of optical and X-ray samples, the luminosity function of broad-line quasars in X-ray samples and broad-line fraction versus luminosity, active BH mass functions, the distribution of Eddington ratios, the mass function of relic BHs and total BH mass density, and the cosmic X-ray background. In every case, our predictions agree well with observed estimates, without invoking ad hoc assumptions about source properties or distributions. We provide a library of Monte Carlo realizations of our models for comparison with observations.",
+    "title": [
+      "A Unified, Merger-driven Model of the Origin of Starbursts, Quasars, the Cosmic X-Ray Background, Supermassive Black Holes, and Galaxy Spheroids"
+    ],
+    "year": "2006",
+    "citation_count": 1882
+  }
+]

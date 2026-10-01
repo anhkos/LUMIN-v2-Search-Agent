@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2016A&A...594A..13P",
+    "abstract": "This paper presents cosmological results based on full-mission Planck observations of temperature and polarization anisotropies of the cosmic microwave background (CMB) radiation. Our results are in very good agreement with the 2013 analysis of the Planck nominal-mission temperature data, but with increased precision. The temperature and polarization power spectra are consistent with the standard spatially-flat 6-parameter \u039bCDM cosmology with a power-law spectrum of adiabatic scalar perturbations (denoted \"base \u039bCDM\" in this paper). From the Planck temperature data combined with Planck lensing, for this cosmology we find a Hubble constant, H<SUB>0</SUB> = (67.8 \u00b1 0.9) km s<SUP>-1</SUP>Mpc<SUP>-1</SUP>, a matter density parameter \u03a9<SUB>m</SUB> = 0.308 \u00b1 0.012, and a tilted scalar spectral index with n<SUB>s</SUB> = 0.968 \u00b1 0.006, consistent with the 2013 analysis. Note that in this abstract we quote 68% confidence limits on measured parameters and 95% upper limits on other parameters. We present the first results of polarization measurements with the Low Frequency Instrument at large angular scales. Combined with the Planck temperature and lensing data, these measurements give a reionization optical depth of \u03c4 = 0.066 \u00b1 0.016, corresponding to a reionization redshift of z_re=8.8<SUP>+1.7</SUP><SUB>-1.4</SUB>. These results are consistent with those from WMAP polarization measurements cleaned for dust emission using 353-GHz polarization maps from the High Frequency Instrument. We find no evidence for any departure from base \u039bCDM in the neutrino sector of the theory; for example, combining Planck observations with other astrophysical data we find N<SUB>eff</SUB> = 3.15 \u00b1 0.23 for the effective number of relativistic degrees of freedom, consistent with the value N<SUB>eff</SUB> = 3.046 of the Standard Model of particle physics. The sum of neutrino masses is constrained to \u2211 m<SUB>\u03bd</SUB> &lt; 0.23 eV. The spatial curvature of our Universe is found to be very close to zero, with | \u03a9<SUB>K</SUB> | &lt; 0.005. Adding a tensor component as a single-parameter extension to base \u039bCDM we find an upper limit on the tensor-to-scalar ratio of r<SUB>0.002</SUB>&lt; 0.11, consistent with the Planck 2013 results and consistent with the B-mode polarization constraints from a joint analysis of BICEP2, Keck Array, and Planck (BKP) data. Adding the BKP B-mode data to our analysis leads to a tighter constraint of r<SUB>0.002</SUB> &lt; 0.09 and disfavours inflationarymodels with a V(\u03c6) \u221d \u03c6<SUP>2</SUP> potential. The addition of Planck polarization data leads to strong constraints on deviations from a purely adiabatic spectrum of fluctuations. We find no evidence for any contribution from isocurvature perturbations or from cosmic defects. Combining Planck data with other astrophysical data, including Type Ia supernovae, the equation of state of dark energy is constrained to w = -1.006 \u00b1 0.045, consistent with the expected value for a cosmological constant. The standard big bang nucleosynthesis predictions for the helium and deuterium abundances for the best-fit Planck base \u039bCDM cosmology are in excellent agreement with observations. We also constraints on annihilating dark matter and on possible deviations from the standard recombination history. In neither case do we find no evidence for new physics. The Planck results for base \u039bCDM are in good agreement with baryon acoustic oscillation data and with the JLA sample of Type Ia supernovae. However, as in the 2013 analysis, the amplitude of the fluctuation spectrum is found to be higher than inferred from some analyses of rich cluster counts and weak gravitational lensing. We show that these tensions cannot easily be resolved with simple modifications of the base \u039bCDM cosmology. Apart from these tensions, the base \u039bCDM cosmology provides an excellent description of the Planck CMB observations and many other astrophysical data sets. <P /></SUP>",
+    "title": [
+      "Planck 2015 results. XIII. Cosmological parameters"
+    ],
+    "year": "2016",
+    "citation_count": 13454
+  },
+  {
+    "bibcode": "2003SIAMR..45..167N",
+    "abstract": "Inspired by empirical studies of networked systems such as the Internet, social networks, and biological networks, researchers have in recent years developed a variety of techniques and models to help us understand or predict the behavior of these systems. Here we review developments in this field, including such concepts as the small-world effect, degree distributions, clustering, network correlations, random graph models, models of network growth and preferential attachment, and dynamical processes taking place on networks.",
+    "title": [
+      "The Structure and Function of Complex Networks"
+    ],
+    "year": "2003",
+    "citation_count": 7085
+  },
+  {
+    "bibcode": "2023arXiv231211805G",
+    "abstract": "This report introduces a new family of multimodal models, Gemini, that exhibit remarkable capabilities across image, audio, video, and text understanding. The Gemini family consists of Ultra, Pro, and Nano sizes, suitable for applications ranging from complex reasoning tasks to on-device memory-constrained use-cases. Evaluation on a broad range of benchmarks shows that our most-capable Gemini Ultra model advances the state of the art in 30 of 32 of these benchmarks - notably being the first model to achieve human-expert performance on the well-studied exam benchmark MMLU, and improving the state of the art in every one of the 20 multimodal benchmarks we examined. We believe that the new capabilities of the Gemini family in cross-modal reasoning and language understanding will enable a wide variety of use cases. We discuss our approach toward post-training and deploying Gemini models responsibly to users through services including Gemini, Gemini Advanced, Google AI Studio, and Cloud Vertex AI.",
+    "title": [
+      "Gemini: A Family of Highly Capable Multimodal Models"
+    ],
+    "year": "2023",
+    "citation_count": 6980
+  },
+  {
+    "bibcode": "2019ApJ...873..111I",
+    "abstract": "We describe here the most ambitious survey currently planned in the optical, the Large Synoptic Survey Telescope (LSST). The LSST design is driven by four main science themes: probing dark energy and dark matter, taking an inventory of the solar system, exploring the transient optical sky, and mapping the Milky Way. LSST will be a large, wide-field ground-based system designed to obtain repeated images covering the sky visible from Cerro Pach\u00f3n in northern Chile. The telescope will have an 8.4 m (6.5 m effective) primary mirror, a 9.6 deg<SUP>2</SUP> field of view, a 3.2-gigapixel camera, and six filters (ugrizy) covering the wavelength range 320-1050 nm. The project is in the construction phase and will begin regular survey operations by 2022. About 90% of the observing time will be devoted to a deep-wide-fast survey mode that will uniformly observe a 18,000 deg<SUP>2</SUP> region about 800 times (summed over all six bands) during the anticipated 10 yr of operations and will yield a co-added map to r \u223c 27.5. These data will result in databases including about 32 trillion observations of 20 billion galaxies and a similar number of stars, and they will serve the majority of the primary science programs. The remaining 10% of the observing time will be allocated to special projects such as Very Deep and Very Fast time domain surveys, whose details are currently under discussion. We illustrate how the LSST science drivers led to these choices of system parameters, and we describe the expected data products and their characteristics.",
+    "title": [
+      "LSST: From Science Drivers to Reference Design and Anticipated Data Products"
+    ],
+    "year": "2019",
+    "citation_count": 5181
+  },
+  {
+    "bibcode": "2012SoPh..275...17L",
+    "abstract": "The Atmospheric Imaging Assembly (AIA) provides multiple simultaneous high-resolution full-disk images of the corona and transition region up to 0.5 R<SUB>\u2609</SUB> above the solar limb with 1.5-arcsec spatial resolution and 12-second temporal resolution. The AIA consists of four telescopes that employ normal-incidence, multilayer-coated optics to provide narrow-band imaging of seven extreme ultraviolet (EUV) band passes centered on specific lines: Fe XVIII (94 \u00c5), Fe XVII, XXI (131 \u00c5), Fe IX (171 \u00c5), Fe XII, XXIV (193 \u00c5), Fe XIV (211 \u00c5), He II (304 \u00c5), and Fe XVI (335 \u00c5). One telescope observes C IV (near 1600 \u00c5) and the nearby continuum (1700 \u00c5) and has a filter that observes in the visible to enable coalignment with images from other telescopes. The temperature diagnostics of the EUV emissions cover the range from 6\u00d710<SUP>4</SUP> K to 2\u00d710<SUP>7</SUP> K. The AIA was launched as a part of NASA's Solar Dynamics Observatory (SDO) mission on 11 February 2010. AIA will advance our understanding of the mechanisms of solar variability and of how the Sun's energy is stored and released into the heliosphere and geospace.",
+    "title": [
+      "The Atmospheric Imaging Assembly (AIA) on the Solar Dynamics Observatory (SDO)"
+    ],
+    "year": "2012",
+    "citation_count": 4678
+  }
+]

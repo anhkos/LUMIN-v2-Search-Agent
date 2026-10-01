@@ -1,0 +1,29 @@
+[
+  {
+    "bibcode": "2022Sedim..69.2371S",
+    "abstract": "Mudstone-dominated lacustrine strata in the Pahrump Hills area of Gale Crater, Mars, have the most extensive data set of physical and geochemical observations yet collected. Although sparse by Earth standards, a source-to-sink portrayal of the sedimentary system that differs substantially from previous work has been extracted by integrating sedimentology, stratigraphy, mineral and elemental analyses, geochemical modelling, laboratory experiments and Earth analogues in a sequence-stratigraphic and palaeogeographical framework. Approximately 3.5 Ga, these 15 m thick strata contain five facies that range from fine to coarse detrital mudstone with abundant sediment-incorporative evaporite pseudomorphs. The section is dominated by first-cycle grains of minimally weathered primary igneous minerals but with four distinct compositions. Bedding in the mudstones comprises planar-parallel beds, current ripples and wave-induced structures, with common and widespread truncation. The absence of primary desiccation and synaeresis cracks is probably due to minimal clay-mineral content, as supported by laboratory experiments. Evaporite minerals formed on and within detrital muds shortly after accumulation by evapoconcentration and cooling. The succession contains 16 parasequences in five depositional sequences with all the sequence-stratigraphic elements known from terrestrial strata. Two of the sequence boundaries are unconformities that record significant shifts in the behaviour and palaeogeographical configuration of the fluvio-lacustrine system. This contrasts with the previous view that all facies are genetically related. Most of the variability in rock composition can be attributed to stratigraphic changes in provenance that integrate changing drainage basin configurations, type of exposed bedrock and changes in weathering regime. These strata are interpreted as evaporative lake deposits that accumulated in an underfilled lake basin with closed surface hydrography but through-flowing groundwater. Lake waters were saline to hypersaline, and lake levels, shorelines and salinities fluctuated greatly at various temporal scales.",
+    "title": [
+      "Mars is a mirror - Understanding the Pahrump Hills mudstones from a perspective of Earth analogues"
+    ],
+    "year": "2022",
+    "citation_count": 21
+  },
+  {
+    "bibcode": "2021cvpr.conf..224C",
+    "abstract": "As the exploration of human beings pushes deeper into the galaxy, the classification of images from space and other planets is becoming an increasingly critical task. Image classification on these planetary images can be very challenging due to differences in hue, quality, illumination, and clarity when compared to images captured on Earth. In this work, we try to bridge this gap by developing a deep learning network, MRSCAtt (Mars Rover Spatial and Channel Attention), which jointly uses spatial and channel attention to accurately classify images. We use images taken by NASA's Curiosity rover on Mars as a dataset to show the superiority of our approach by achieving state-of-the-art results with 81.53% test set accuracy on the MSL Surface Dataset, outperforming other methods. To necessitate the use of spatial and channel attention, we perform an ablation study to show the effectiveness of each of the components. We further show robustness of our approach by validating with images taken aboard NASA's recently-landed Perseverance rover.",
+    "title": [
+      "MRSCAtt: A Spatio-Channel Attention-Guided Network for Mars Rover Image Classification"
+    ],
+    "year": "2021",
+    "citation_count": 2
+  },
+  {
+    "bibcode": "2025arXiv251024010P",
+    "abstract": "Foundation models have enabled rapid progress across many specialized domains by leveraging large-scale pre-training on unlabeled data, demonstrating strong generalization to a variety of downstream tasks. While such models have gained significant attention in fields like Earth Observation, their application to Mars science remains limited. A key enabler of progress in other domains has been the availability of standardized benchmarks that support systematic evaluation. In contrast, Mars science lacks such benchmarks and standardized evaluation frameworks, which have limited progress toward developing foundation models for Martian tasks. To address this gap, we introduce Mars-Bench, the first benchmark designed to systematically evaluate models across a broad range of Mars-related tasks using both orbital and surface imagery. Mars-Bench comprises 20 datasets spanning classification, segmentation, and object detection, focused on key geologic features such as craters, cones, boulders, and frost. We provide standardized, ready-to-use datasets and baseline evaluations using models pre-trained on natural images, Earth satellite data, and state-of-the-art vision-language models. Results from all analyses suggest that Mars-specific foundation models may offer advantages over general-domain counterparts, motivating further exploration of domain-adapted pre-training. Mars-Bench aims to establish a standardized foundation for developing and comparing machine learning models for Mars science. Our data, models, and code are available at: https://mars-bench.github.io/.",
+    "title": [
+      "Mars-Bench: A Benchmark for Evaluating Foundation Models for Mars Science Tasks"
+    ],
+    "year": "2025",
+    "citation_count": 0
+  }
+]

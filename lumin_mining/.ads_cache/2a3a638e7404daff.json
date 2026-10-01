@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "1994ChGeo.114..289M",
+    "abstract": "The amount and type of organic matter in the sediments of lakes and oceans contribute to their paleoenvironmental and paleoclimatological records. Only a small fraction of the initial aquatic organic matter survives destruction and alteration during sinking and sedimentation. Selective degradation modifies the character of the surviving small fraction of organic matter which becomes incorporated in bottom sediments. Organic matter alterations can continue to sub-bottom depths of hundreds of meters, corresponding to millions of years. Source and paleoenvironmental information nonetheless remains preserved in the molecular, elemental and isotopic compositions of organic matter. C/N- and \u03b4 <SUP>13</SUP>C-values of total organic matter, in particular, appear to retain paleoenvironmental information for multi-Myr time periods.",
+    "title": [
+      "Preservation of elemental and isotopic source identification of sedimentary organic matter"
+    ],
+    "year": "1994",
+    "citation_count": 2268
+  },
+  {
+    "bibcode": "1989icgp.book.....M",
+    "abstract": "The mechanisms involved in the formation of impact craters are examined theoretically, reviewing the results of recent investigations. Topics addressed include crater morphology, stress waves in solids, the contact and compression stage, the excavation stage, and ejecta deposits. Consideration is given to the scaling of crater dimensions, the crater modification stage, multiring basins, cratered landscapes, atmospheric interactions, and the implications of impact cratering for planetary evolution. Extensive diagrams, graphs, tables, and images of typical craters are provided.",
+    "title": [
+      "Impact cratering : a geologic process"
+    ],
+    "year": "1989",
+    "citation_count": 1961
+  },
+  {
+    "bibcode": "2012JGRB..117.4406P",
+    "abstract": "EGM2008 is a spherical harmonic model of the Earth's gravitational potential, developed by a least squares combination of the ITG-GRACE03S gravitational model and its associated error covariance matrix, with the gravitational information obtained from a global set of area-mean free-air gravity anomalies defined on a 5 arc-minute equiangular grid. This grid was formed by merging terrestrial, altimetry-derived, and airborne gravity data. Over areas where only lower resolution gravity data were available, their spectral content was supplemented with gravitational information implied by the topography. EGM2008 is complete to degree and order 2159, and contains additional coefficients up to degree 2190 and order 2159. Over areas covered with high quality gravity data, the discrepancies between EGM2008 geoid undulations and independent GPS/Leveling values are on the order of \u00b15 to \u00b110 cm. EGM2008 vertical deflections over USA and Australia are within \u00b11.1 to \u00b11.3 arc-seconds of independent astrogeodetic values. These results indicate that EGM2008 performs comparably with contemporary detailed regional geoid models. EGM2008 performs equally well with other GRACE-based gravitational models in orbit computations. Over EGM96, EGM2008 represents improvement by a factor of six in resolution, and by factors of three to six in accuracy, depending on gravitational quantity and geographic area. EGM2008 represents a milestone and a new paradigm in global gravity field modeling, by demonstrating for the first time ever, that given accurate and detailed gravimetric data, asingle global model may satisfy the requirements of a very wide range of applications.",
+    "title": [
+      "The development and evaluation of the Earth Gravitational Model 2008 (EGM2008)"
+    ],
+    "year": "2012",
+    "citation_count": 1614
+  },
+  {
+    "bibcode": "2002ISPM...19...44K",
+    "abstract": "The evolution of passive remote sensing has witnessed the collection of measurements with significantly greater spectral breadth and reso-lution. It has been motivated by a desire to extract increasingly detailed information about the material properties of pixels in a scene for both civilian and military applications. While multispectral sensing has largely succeeded at classifying whole pixels, further analysis of the constituent substances that comprise a pixel is limited by a relatively low number of spectral measurements. The recognition that pixels of interest are frequently a combination of numerous disparate components has introduced a need to quantitatively decompose, or \"unmix,\" these mixtures. Collecting data in hundreds of spectral bands, hyperspectral sensors have demonstrated the capability of performing spectral unmixing.",
+    "title": [
+      "Spectral Unmixing"
+    ],
+    "year": "2002",
+    "citation_count": 1475
+  },
+  {
+    "bibcode": "1979Icar...40....1B",
+    "abstract": "We present a new and more accurate expression for the radiation pressure and Poynting-Robertson drag forces; it is more complete than previous ones, which considered only perfectly absorbing particles or artificial scattering laws. Using a simple heuristic derivation, the equation of motion for a particle of mass m and geometrical cross section A, moving with velocity v through a radiation field of energy flux density S, is found to be (to terms of order v/c) m v\u0307 = ( SA/c)Q <SUB>pr</SUB>[(1 - \u1e59/c) \u015c - v/c] , where \u015c is a unit vector in the direction of the incident radiation, \u1e59 is the particle's radial velocity, and c is the speed of light; the radiation pressure efficiency factor Q<SUB>pr</SUB> \u2261 Q<SUB>abs</SUB> + Q<SUB>sca</SUB>(1 - &lt;cos \u03b1&gt;), where Q<SUB>abs</SUB> and Q<SUB>sca</SUB> are the efficiency factors for absorption and scattering, and &lt;cos \u03b1&gt; accounts for the asymmetry of the scattered radiation. This result is confirmed by a new formal derivation applying special relativistic transformations for the incoming and outgoing energy and momentum as seen in the particle and solar frames of reference. Q<SUB>pr</SUB> is evaluated from Mie theory for small spherical particles with measured optical properties, irradiated by the actual solar spectrum. Of the eight materials studied, only for iron, magnetite , and graphite grains does the radiation pressure force exceed gravity and then just for sizes around 0.1 \u03bcm; very small particles are not easily blown out of the solar system nor are they rapidly dragged into the Sun by the Poynting-Robertson effect. The solar wind counterpart of the Poynting-Robertson drag may be effective, however, for these particles. The orbital consequences of these radiation forces-including ejection from the solar system by relatively small radiation pressures-and of the Poynting-Robertson drag are considered both for heliocentric and planetocentric orbiting particles. We discuss the coupling between the dynamics of particles and their sizes (which diminish due to sputtering and sublimation). A qualitative derivation is given for the differential Doppler effect, which occurs because the light received by an orbiting particle is slightly red-shifted by the solar rotation velocity when coming from the eastern hemisphere of the Sun but blue-shifted when from the western hemisphere; the ratio of this force to the Poynting-Robertson force is ( R <SUB>\u2609</SUB>/r) <SUP>2</SUP>[( w <SUB>\u2609</SUB>/n) - 1] , where R<SUB>\u2609</SUB> and w<SUB>\u2609</SUB> are the solar radius and spin rate, and n is the particle's mean motion. The Yarkovsky effect, caused by the asymmetry in the reradiated thermal emission of a rotating body, is also developed relying on new physical arguments. Throughout the paper, representative calculations use the physical and orbital properties of interplanetary dust, as known from various recent measurements.",
+    "title": [
+      "Radiation forces on small particles in the solar system"
+    ],
+    "year": "1979",
+    "citation_count": 1341
+  }
+]

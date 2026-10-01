@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2003JGRE..108.8062S",
+    "abstract": "Each Mars Exploration Rover carries an integrated suite of scientific instruments and tools called the Athena science payload. The primary objective of the Athena science investigation is to explore two sites on the Martian surface where water may once have been present, and to assess past environmental conditions at those sites and their suitability for life. The remote sensing portion of the payload uses a mast called the Pancam Mast Assembly (PMA) that provides pointing for two instruments: the Panoramic Camera (Pancam), and the Miniature Thermal Emission Spectrometer (Mini-TES). Pancam provides high-resolution, color, stereo imaging, while Mini-TES provides spectral cubes at mid-infrared wavelengths. For in-situ study, a five degree-of-freedom arm called the Instrument Deployment Device (IDD) carries four more tools: a Microscopic Imager (MI) for close-up imaging, an Alpha Particle X-Ray Spectrometer (APXS) for elemental chemistry, a M\u00f6ssbauer Spectrometer (MB) for the mineralogy of Fe-bearing materials, and a Rock Abrasion Tool (RAT) for removing dusty and weathered surfaces and exposing fresh rock underneath. The payload also includes magnets that allow the instruments to study the composition of magnetic Martian materials. All of the Athena instruments have undergone extensive calibration, both individually and using a set of geologic reference materials that are being measured with all the instruments. Using a MER-like rover and payload in a number of field settings, we have devised operations processes that will enable us to use the MER rovers to formulate and test scientific hypotheses concerning past environmental conditions and habitability at the landing sites.",
+    "title": [
+      "Athena Mars rover science investigation"
+    ],
+    "year": "2003",
+    "citation_count": 162
+  },
+  {
+    "bibcode": "2018Sedim..65..993B",
+    "abstract": "Reconstruction of the palaeoenvironmental context of Martian sedimentary rocks is central to studies of ancient Martian habitability and regional palaeoclimate history. This paper reports the analysis of a distinct aeolian deposit preserved in Gale crater, Mars, and evaluates its palaeomorphology, the processes responsible for its deposition, and its implications for Gale crater geological history and regional palaeoclimate. Whilst exploring the sedimentary succession cropping out on the northern flank of Aeolis Mons, Gale crater, the Mars Science Laboratory rover Curiosity encountered a decametre-thick sandstone succession, named the Stimson formation, unconformably overlying lacustrine deposits of the Murray formation. The sandstone contains sand grains characterized by high roundness and sphericity, and cross-bedding on the order of 1 m in thickness, separated by sub-horizontal bounding surfaces traceable for tens of metres across outcrops. The cross-beds are composed of uniform thickness cross-laminations interpreted as wind-ripple strata. Cross-sets are separated by sub-horizontal bounding surfaces traceable for tens of metres across outcrops that are interpreted as dune migration surfaces. Grain characteristics and presence of wind-ripple strata indicate deposition of the Stimson formation by aeolian processes. The absence of features characteristic of damp or wet aeolian sediment accumulation indicate deposition in a dry aeolian system. Reconstruction of the palaeogeomorphology suggests that the Stimson dune field was composed largely of simple sinuous crescentic dunes with a height of ca 10 m, and wavelengths of ca 150 m, with local development of complex dunes. Analysis of cross-strata dip azimuths indicates that the general dune migration direction and hence net sediment transport was towards the north-east. The juxtaposition of a dry aeolian system unconformably above the lacustrine Murray formation represents starkly contrasting palaeoenvironmental and palaeoclimatic conditions. Stratigraphic relationships indicate that this transition records a significant break in time, with the Stimson formation being deposited after the Murray formation and stratigraphically higher Mount Sharp group rocks had been buried, lithified and subsequently eroded.",
+    "title": [
+      "Ancient Martian aeolian processes and palaeomorphology reconstructed from the Stimson formation on the lower slope of Aeolis Mons, Gale crater, Mars"
+    ],
+    "year": "2018",
+    "citation_count": 160
+  },
+  {
+    "bibcode": "2003JGRE..108.8066R",
+    "abstract": "The new alpha particle X-ray spectrometer (APXS) is part of the Athena payload of the two Mars Exploration Rovers (MER). The APXS sensor head is attached to the turret of the instrument deployment device (IDD) of the rover. The APXS is a very light-weight instrument for determining the major and minor elemental composition of Martian soils, rocks, and other geological materials at the MER landing sites. The sensor head has simply to be docked by the IDD on the surface of the selected sample. X-ray radiation, excited by alpha particles and X rays of the radioactive sources, is recorded by a high-resolution X-ray detector. The X-ray spectra show elements starting from sodium up to yttrium, depending on their concentrations. The backscattered alpha spectra, measured by a ring of detectors, provide additional data on carbon and oxygen. By means of a proper calibration, the elemental concentrations are derived. Together with data from the two other Athena instruments mounted on the IDD, the samples under investigation can be fully characterized. Key APXS objectives are the determination of the chemistry of crustal rocks and soils and the examination of water-related deposits, sediments, or evaporates. Using the rock abrasion tool attached to the IDD, issues of weathering can be addressed by measuring natural and abraded surfaces of rocks.",
+    "title": [
+      "The new Athena alpha particle X-ray spectrometer for the Mars Exploration Rovers"
+    ],
+    "year": "2003",
+    "citation_count": 155
+  },
+  {
+    "bibcode": "2012SSRv..170...57A",
+    "abstract": "The Mars Science Laboratory Mission (MSL), scheduled to land on Mars in the summer of 2012, consists of a rover and a scientific payload designed to identify and assess the habitability, geological, and environmental histories of Gale crater. Unraveling the geologic history of the region and providing an assessment of present and past habitability requires an evaluation of the physical and chemical characteristics of the landing site; this includes providing an in-depth examination of the chemical and physical properties of Martian regolith and rocks. The MSL Sample Acquisition, Processing, and Handling (SA/SPaH) subsystem will be the first in-situ system designed to acquire interior rock and soil samples from Martian surface materials. These samples are processed and separated into fine particles and distributed to two onboard analytical science instruments SAM (Sample Analysis at Mars Instrument Suite) and CheMin (Chemistry and Mineralogy) or to a sample analysis tray for visual inspection. The SA/SPaH subsystem is also responsible for the placement of the two contact instruments, Alpha Particle X-Ray Spectrometer (APXS), and the Mars Hand Lens Imager (MAHLI), on rock and soil targets. Finally, there is a Dust Removal Tool (DRT) to remove dust particles from rock surfaces for subsequent analysis by the contact and or mast mounted instruments (e.g. Mast Cameras (MastCam) and the Chemistry and Micro-Imaging instruments (ChemCam)).",
+    "title": [
+      "Collecting Samples in Gale Crater, Mars; an Overview of the Mars Science Laboratory Sample Acquisition, Sample Processing and Handling System"
+    ],
+    "year": "2012",
+    "citation_count": 112
+  },
+  {
+    "bibcode": "2014JGRE..119.1134V",
+    "abstract": "The Mars Science Laboratory mission reached Bradbury Landing in August 2012. In its first 500 sols, the rover Curiosity was commissioned and began its investigation of the habitability of past and present environments within Gale Crater. Curiosity traversed eastward toward Glenelg, investigating a boulder with a highly alkaline basaltic composition, encountering numerous exposures of outcropping pebble conglomerate, and sampling aeolian sediment at Rocknest and lacustrine mudstones at Yellowknife Bay. On sol 324, the mission turned its focus southwest, beginning a year-long journey to the lower reaches of Mt. Sharp, with brief stops at the Darwin and Cooperstown waypoints. The unprecedented complexity of the rover and payload systems posed challenges to science operations, as did a number of anomalies. Operational processes were revised to include additional opportunities for advance planning by the science and engineering teams.",
+    "title": [
+      "Overview of the Mars Science Laboratory mission: Bradbury Landing to Yellowknife Bay and beyond"
+    ],
+    "year": "2014",
+    "citation_count": 109
+  }
+]

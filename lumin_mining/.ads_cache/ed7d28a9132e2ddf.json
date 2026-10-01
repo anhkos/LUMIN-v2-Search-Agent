@@ -1,0 +1,47 @@
+[
+  {
+    "bibcode": "2018arXiv181203079B",
+    "abstract": "Our goal is to train a policy for autonomous driving via imitation learning that is robust enough to drive a real vehicle. We find that standard behavior cloning is insufficient for handling complex driving scenarios, even when we leverage a perception system for preprocessing the input and a controller for executing the output on the car: 30 million examples are still not enough. We propose exposing the learner to synthesized data in the form of perturbations to the expert's driving, which creates interesting situations such as collisions and/or going off the road. Rather than purely imitating all data, we augment the imitation loss with additional losses that penalize undesirable events and encourage progress -- the perturbations then provide an important signal for these losses and lead to robustness of the learned model. We show that the ChauffeurNet model can handle complex situations in simulation, and present ablation experiments that emphasize the importance of each of our proposed changes and show that the model is responding to the appropriate causal factors. Finally, we demonstrate the model driving a car in the real world.",
+    "title": [
+      "ChauffeurNet: Learning to Drive by Imitating the Best and Synthesizing the Worst"
+    ],
+    "year": "2018",
+    "citation_count": 364
+  },
+  {
+    "bibcode": "2007JGRA..112.6305V",
+    "abstract": "The dissipation of high-frequency gravity waves (GWs) in the thermosphere is primarily due to kinematic viscosity and thermal diffusivity. Recently, an anelastic GW dispersion relation was derived which includes the damping effects of kinematic viscosity and thermal diffusivity in the thermosphere and which is valid before and during dissipation. Using a ray trace model which incorporates this new dispersion relation, we explore many GW properties that result from this dispersion relation for a wide range of thermospheric temperatures. We calculate the dissipation altitudes, horizontal distances traveled, times taken, and maximum vertical wavelengths prior to dissipation in the thermosphere for a wide range of upward-propagating GWs that originate in the lower atmosphere and at several altitudes in the thermosphere. We show that the vertical wavelengths of dissipating GWs, \u03bb<SUB>z</SUB>(z<SUB>diss</SUB>), increases exponentially with altitude, although with a smaller slope for z &gt; 200 km. We also show how the horizontal wavelength, \u03bb<SUB>H</SUB>, and wave period spectra change with altitude for dissipating GWs. We find that a new dissipation condition can predict our results for \u03bb<SUB>z</SUB>(z<SUB>diss</SUB>) very well up to altitudes of \u223c500 km. We also find that a GW spectrum excited from convection shifts to increasingly larger \u03bb<SUB>z</SUB> and \u03bb<SUB>H</SUB> with altitude in the thermosphere that are not characteristic of the initial convective scales. Additionally, a lower thermospheric shear shifts this spectrum to even larger \u03bb<SUB>z</SUB>, consistent with observations. Finally, we show that our results agree well with observations.",
+    "title": [
+      "Horizontal and vertical propagation and dissipation of gravity waves in the thermosphere from lower atmospheric and thermospheric sources"
+    ],
+    "year": "2007",
+    "citation_count": 338
+  },
+  {
+    "bibcode": "2008JGRE..113.0A24K",
+    "abstract": "The objectives of this paper are twofold: first, to report our estimates of the meter-to-decameter-scale topography and slopes of candidate landing sites for the Phoenix mission, based on analysis of Mars Global Surveyor (MGS) Mars Orbiter Camera (MOC) images with a typical pixel scale of 3 m and Mars Reconnaissance Orbiter (MRO) High Resolution Imaging Science Experiment (HiRISE) images at 0.3 m pixel<SUP>-1</SUP> and, second, to document in detail the geometric calibration, software, and procedures on which the photogrammetric analysis of HiRISE data is based. A combination of optical design modeling, laboratory observations, star images, and Mars images form the basis for software in the U.S. Geological Survey Integrated Software for Imagers and Spectrometers (ISIS) 3 system that corrects the images for a variety of distortions with single-pixel or subpixel accuracy. Corrected images are analyzed in the commercial photogrammetric software SOCET SET (\u00ae BAE Systems), yielding digital topographic models (DTMs) with a grid spacing of 1 m (3-4 pixels) that require minimal interactive editing. Photoclinometry yields DTMs with single-pixel grid spacing. Slopes from MOC and HiRISE are comparable throughout the latitude zone of interest and compare favorably with those where past missions have landed successfully; only the Mars Exploration Rover (MER) B site in Meridiani Planum is smoother. MOC results at multiple locations have root-mean-square (RMS) bidirectional slopes of 0.8-4.5\u00b0 at baselines of 3-10 m. HiRISE stereopairs (one per final candidate site and one in the former site) yield 1.8-2.8\u00b0 slopes at 1-m baseline. Slopes at 1 m from photoclinometry are also in the range 2-3\u00b0 after correction for image blur. Slopes exceeding the 16\u00b0 Phoenix safety limit are extremely rare.",
+    "title": [
+      "Ultrahigh resolution topographic mapping of Mars with MRO HiRISE stereo images: Meter-scale slopes of candidate Phoenix landing sites"
+    ],
+    "year": "2008",
+    "citation_count": 326
+  },
+  {
+    "bibcode": "2017QJRMS.143..607B",
+    "abstract": "Variational and ensemble methods have been developed separately by various research and development groups and each brings its own benefits to data assimilation. In the last decade or so, various ways have been developed to combine these methods, especially with the aims of improving the background-error covariance matrices and of improving efficiency. The field has become confusing, even to many specialists, and so there is now a need to summarize the methods in order to show how they work, how they are related, what benefits they bring, why they have been developed, how they perform, and what improvements are pending. This article starts with a reminder of basic variational and ensemble techniques and shows how they can be combined to give the emerging ensemble-variational (EnVar) and hybrid methods. A key part of the article includes details of how localization is commonly represented. There has been a particular push to develop four-dimensional methods that are free of linearized forecast models. This article attempts to provide derivations of the formulations of most popular schemes. These are otherwise scattered throughout the literature or absent. It builds on the nomenclature used to distinguish between methods, and discusses further possible developments to the methods, including the representation of model error.",
+    "title": [
+      "A review of operational methods of variational and ensemble-variational data assimilation"
+    ],
+    "year": "2017",
+    "citation_count": 306
+  },
+  {
+    "bibcode": "2010Natur.464.1357D",
+    "abstract": "The inflammatory nature of atherosclerosis is well established but the agent(s) that incite inflammation in the artery wall remain largely unknown. Germ-free animals are susceptible to atherosclerosis, suggesting that endogenous substances initiate the inflammation. Mature atherosclerotic lesions contain macroscopic deposits of cholesterol crystals in the necrotic core, but their appearance late in atherogenesis had been thought to disqualify them as primary inflammatory stimuli. However, using a new microscopic technique, we revealed that minute cholesterol crystals are present in early diet-induced atherosclerotic lesions and that their appearance in mice coincides with the first appearance of inflammatory cells. Other crystalline substances can induce inflammation by stimulating the caspase-1-activating NLRP3 (NALP3 or cryopyrin) inflammasome, which results in cleavage and secretion of interleukin (IL)-1 family cytokines. Here we show that cholesterol crystals activate the NLRP3 inflammasome in phagocytes in vitro in a process that involves phagolysosomal damage. Similarly, when injected intraperitoneally, cholesterol crystals induce acute inflammation, which is impaired in mice deficient in components of the NLRP3 inflammasome, cathepsin B, cathepsin L or IL-1 molecules. Moreover, when mice deficient in low-density lipoprotein receptor (LDLR) were bone-marrow transplanted with NLRP3-deficient, ASC (also known as PYCARD)-deficient or IL-1\u03b1/\u03b2-deficient bone marrow and fed on a high-cholesterol diet, they had markedly decreased early atherosclerosis and inflammasome-dependent IL-18 levels. Minimally modified LDL can lead to cholesterol crystallization concomitant with NLRP3 inflammasome priming and activation in macrophages. Although there is the possibility that oxidized LDL activates the NLRP3 inflammasome in vivo, our results demonstrate that crystalline cholesterol acts as an endogenous danger signal and its deposition in arteries or elsewhere is an early cause rather than a late consequence of inflammation. These findings provide new insights into the pathogenesis of atherosclerosis and indicate new potential molecular targets for the therapy of this disease.",
+    "title": [
+      "NLRP3 inflammasomes are required for atherogenesis and activated by cholesterol crystals"
+    ],
+    "year": "2010",
+    "citation_count": 298
+  }
+]
