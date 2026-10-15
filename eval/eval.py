@@ -54,7 +54,7 @@ DEFAULT_OPEN_MODELS = [
     "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo",
 ]
 
-RAG_SYSTEM_PROMPT = """You extract PDS4 query filters from natural language.
+RAG_SYSTEM_PROMPT_BASELINE = """You extract PDS4 query filters from natural language.
 Given context documents and a user query, output ONLY valid JSON with this shape:
 {"filters": {"field_name": {"min": <number>, "max": <number>, "value": <string>}}, "confidence": <number between 0 and 1>}
 Include only fields clearly supported by the query and context.
@@ -64,6 +64,51 @@ filters you produced are COMPLETELY correct — not just plausible. 1.0 means yo
 every field and value is right. A low value (e.g. 0.2) means you are largely guessing, the
 context didn't clearly support your answer, or you suspect you are missing required fields.
 Use the full range — do not default to a fixed value like 0.5 or 1.0 out of habit."""
+
+# "improved" fixes the failure modes seen in the first dev-set error analysis
+# (partial/one-field outputs, point values turned into ranges, forced matches
+# on off-topic queries) WITHOUT naming any dataset-specific concept, field or
+# value — so it can be frozen and carried to the held-out test split unchanged.
+# No few-shot examples on purpose: examples drawn from the graph would leak.
+_IMPROVED_HEADER = """You convert a scientist's natural-language request into structured PDS4 archive search filters.
+
+Output ONLY a JSON object, no prose, in exactly this shape:
+{"filters": {"<field_name>": {"value": <string or number>} OR {"min": <number>, "max": <number>}}, "confidence": <number from 0 to 1>}
+"""
+
+_IMPROVED_RULES_CONTEXT = """
+You will be given CONTEXT documents and a QUERY. Follow these rules:
+1. FIELD NAMES. Use only field names that appear in the context, spelled exactly as written. Never invent or rename a field.
+2. COMPLETENESS. Scientists use shorthand for a whole bundle of constraints. If the context says the concept the query refers to maps to several fields, return ALL of those fields, not just the most obvious one. A partial filter silently returns the wrong data, which is worse than no filter.
+3. VALUE FORM. Copy the form the context shows for each field. If the context gives an exact value, return {"value": ...}. If it gives a numeric range, return {"min": ..., "max": ...}. Never turn a single value into a range, or a range into a single value. Copy values exactly; do not add units to the number.
+4. MATCHING. Decide which context document the query actually refers to, including through synonyms and paraphrase. Ignore documents about other concepts, even if they look similar (a different mission, instrument, planet or time period is a different concept).
+5. UNANSWERABLE QUERIES. If the query is not about something the context covers (off-topic, a different body or mission that is not in the context, or not an archive-filter request at all), return {"filters": {}, "confidence": 0}. Do NOT force a match to the closest-looking document.
+6. CONFIDENCE. Give the probability that the ENTIRE filters object is exactly right and complete. 1.0 = certain; about 0.5 = a coin flip; below 0.3 = mostly guessing. Lower it if the query is vague, if more than one document could apply, or if you are unsure you have every required field. Use the full range. If you return empty filters, confidence must be 0.
+"""
+
+_IMPROVED_RULES_NO_CONTEXT = """
+No context documents are provided. Use your own knowledge of PDS4 label attribute names (lowercase snake_case, e.g. as in the PDS4 Cartography and Imaging dictionaries). Follow these rules:
+1. VALUE FORM. Use {"value": ...} for exact values and {"min": ..., "max": ...} for numeric ranges.
+2. COMPLETENESS. If the request implies several constraints, return a filter for each.
+3. UNANSWERABLE QUERIES. If the request is not about planetary-science archive data at all, return {"filters": {}, "confidence": 0}.
+4. CONFIDENCE. Give the probability that the ENTIRE filters object is exactly right and complete. Use the full range. If you return empty filters, confidence must be 0.
+"""
+
+PROMPT_VARIANTS = ["baseline", "improved"]
+DEFAULT_PROMPT_VARIANT = "baseline"
+
+
+def get_system_prompt(variant: str, has_context: bool = True) -> str:
+    if variant == "baseline":
+        return RAG_SYSTEM_PROMPT_BASELINE
+    if variant == "improved":
+        rules = _IMPROVED_RULES_CONTEXT if has_context else _IMPROVED_RULES_NO_CONTEXT
+        return _IMPROVED_HEADER + rules
+    raise ValueError(f"Unknown prompt variant: {variant!r} (choose from {PROMPT_VARIANTS})")
+
+
+# Backwards-compatible alias for anything that still imports the old name.
+RAG_SYSTEM_PROMPT = RAG_SYSTEM_PROMPT_BASELINE
 
 DEV_TEST_CASES = [
     {
@@ -107,6 +152,7 @@ class EvalResult:
     context_docs: list[str]
     retrieval_recall: Optional[bool] = None
     verbalized_confidence: Optional[float] = None
+    subtype: Optional[str] = None  # T3 only: "obvious" vs "near_miss"
 
 
 # ── Clients ────────────────────────────────────────────────────────────────────
@@ -353,6 +399,12 @@ def find_oracle_doc(
 ) -> str:
     gt_fields = set(ground_truth_filters.keys())
 
+    # Unanswerable (T3) query: no correct doc exists, so the oracle gets none.
+    # Without this guard every doc scores 0 and the loop below falls through to
+    # docs[0] — an arbitrary, unrelated concept presented as "the right doc".
+    if not gt_fields and not concept_label:
+        return ""
+
     best = None
     best_score = -1
     for i, meta in enumerate(mapping_index.metadata):
@@ -435,7 +487,9 @@ class FlatRAGIndex:
 
         retrieved_docs = [self.docs[i] for i in top_idx]
         recall: bool | None = None
-        if ground_truth_filters is not None:
+        # Recall is undefined for unanswerable queries (nothing to retrieve);
+        # scoring it False would drag retrieval_recall down for no reason.
+        if ground_truth_filters or concept_label:
             recall = any(
                 _doc_is_correct(
                     self.docs[i],
@@ -517,12 +571,14 @@ def run_rag_query(
     context_docs: list[str],
     client: OpenAI,
     model: str,
+    prompt_variant: str = DEFAULT_PROMPT_VARIANT,
 ) -> dict:
     user_msg = f"Context:\n{_join_docs(context_docs)}\n\nQuery: {query}"
+    system_prompt = get_system_prompt(prompt_variant, has_context=bool(context_docs))
     response = client.chat.completions.create(
         model=model,
         messages=[
-            {"role": "system", "content": RAG_SYSTEM_PROMPT},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_msg},
         ],
         temperature=0,
@@ -574,10 +630,18 @@ def _constraint_satisfied(predicted: dict, expected: dict) -> bool:
         return False
 
     if "value" in expected:
-        exp = str(expected["value"]).lower()
-        if "value" in predicted:
-            return str(predicted["value"]).lower() == exp
-        return False
+        if "value" not in predicted:
+            return False
+        # Numeric values compare numerically ("270" == 270 == 270.0); anything
+        # else compares as case-insensitive text. Purely a formatting fix —
+        # it does not make a min/max range count as a point value.
+        try:
+            return float(predicted["value"]) == float(expected["value"])
+        except (TypeError, ValueError):
+            return (
+                str(predicted["value"]).strip().lower()
+                == str(expected["value"]).strip().lower()
+            )
 
     pmin = predicted.get("min")
     pmax = predicted.get("max")
@@ -663,6 +727,141 @@ def _ece(pairs: list[tuple[float, bool]], n_bins: int = 10) -> float:
     return float(ece)
 
 
+# ── Abstention / unanswerable (T3) metrics ────────────────────────────────────
+#
+# Design: every result stores the RAW prediction and its confidence. Abstention
+# is applied at SCORING time ("answer only if confidence >= tau"), so tau can be
+# swept, tuned on val and frozen for test without a single new API call.
+#
+#   answerable   = ground truth is non-empty  (T0/T1/T2)
+#   unanswerable = ground truth is empty      (T3, should abstain)
+#   committed    = prediction non-empty AND confidence >= tau
+#
+# A missing confidence (LLM omitted it) never earns abstention credit: the
+# result is treated as committed.
+
+def default_abstain_key(condition: str) -> str:
+    """kg abstains on its own rho; LLM conditions on the model's own stated confidence."""
+    return "confidence" if condition == "kg" else "verbalized_confidence"
+
+
+def _is_committed(r: EvalResult, key: str, tau: float) -> bool:
+    if not r.predicted_filters:
+        return False
+    c = getattr(r, key)
+    if c is None:
+        return True
+    return c >= tau
+
+
+def abstention_metrics(results: list[EvalResult], key: str = "confidence", tau: float = 0.0) -> dict:
+    answerable = [r for r in results if r.ground_truth_filters]
+    unanswerable = [r for r in results if not r.ground_truth_filters]
+
+    out: dict[str, Any] = {
+        "confidence_key": key,
+        "tau": tau,
+        "n": len(results),
+        "n_answerable": len(answerable),
+        "n_unanswerable": len(unanswerable),
+        "n_missing_confidence": sum(getattr(r, key) is None for r in results),
+    }
+
+    # Answerable side: what did abstaining cost, and what slipped through?
+    committed_a = [r for r in answerable if _is_committed(r, key, tau)]
+    right = [r for r in committed_a if r.correct]
+    out["answerable"] = {
+        "coverage": len(committed_a) / len(answerable) if answerable else None,
+        "selective_accuracy": len(right) / len(committed_a) if committed_a else None,
+        "correct": len(right),
+        "silent_failures": len(committed_a) - len(right),   # committed AND wrong
+        "abstained": len(answerable) - len(committed_a),     # lost coverage
+    }
+
+    # Unanswerable side: did it refuse, or force a match onto something?
+    if unanswerable:
+        grounded = [r for r in unanswerable if _is_committed(r, key, tau)]
+
+        def _rate(rows):
+            if not rows:
+                return None
+            return sum(_is_committed(r, key, tau) for r in rows) / len(rows)
+
+        out["unanswerable"] = {
+            "false_grounding_rate": len(grounded) / len(unanswerable),
+            "correct_rejection_rate": 1 - len(grounded) / len(unanswerable),
+            "false_grounding_by_subtype": {
+                st: _rate([r for r in unanswerable if r.subtype == st])
+                for st in sorted({r.subtype for r in unanswerable if r.subtype})
+            },
+        }
+
+        # Can confidence alone tell answerable from unanswerable? An empty
+        # prediction scores 0 (nothing was offered), otherwise its confidence.
+        pairs = [
+            ((getattr(r, key) if getattr(r, key) is not None else 1.0) if r.predicted_filters else 0.0,
+             bool(r.ground_truth_filters))
+            for r in results
+        ]
+        out["answerability_auroc"] = _auroc(pairs)
+    else:
+        out["unanswerable"] = None
+        out["answerability_auroc"] = None
+
+    # One headline number that charges for BOTH failure types: right answer on
+    # answerable queries + correct refusal on unanswerable ones, over everything.
+    correct_total = len(right) + (
+        sum(not _is_committed(r, key, tau) for r in unanswerable) if unanswerable else 0
+    )
+    out["abstention_aware_accuracy"] = correct_total / max(1, len(results))
+    return out
+
+
+def abstention_sweep(results: list[EvalResult], key: str = "confidence", step: float = 0.05) -> list[dict]:
+    rows = []
+    for tau in np.arange(0.0, 1.0 + 1e-9, step):
+        m = abstention_metrics(results, key, float(tau))
+        rows.append({
+            "tau": round(float(tau), 2),
+            "answerable_coverage": m["answerable"]["coverage"],
+            "selective_accuracy": m["answerable"]["selective_accuracy"],
+            "silent_failures": m["answerable"]["silent_failures"],
+            "false_grounding_rate": (m["unanswerable"] or {}).get("false_grounding_rate"),
+            "abstention_aware_accuracy": m["abstention_aware_accuracy"],
+        })
+    return rows
+
+
+def _fmt(x: Any, pct: bool = False) -> str:
+    if x is None:
+        return "  n/a"
+    return f"{x * 100:5.1f}%" if pct else f"{x:5.3f}"
+
+
+def print_abstention_report(results: list[EvalResult], key: str, tau: float):
+    m = abstention_metrics(results, key, tau)
+    print("\n" + "=" * 60)
+    print(f"ABSTENTION REPORT  (confidence_key={key}, tau={tau:.2f})")
+    print("=" * 60)
+    a = m["answerable"]
+    print(f"  Answerable   n={m['n_answerable']:<3} coverage={_fmt(a['coverage'], True)}  "
+          f"selective_acc={_fmt(a['selective_accuracy'], True)}  "
+          f"silent_failures={a['silent_failures']}  abstained={a['abstained']}")
+    if m["unanswerable"]:
+        u = m["unanswerable"]
+        print(f"  Unanswerable n={m['n_unanswerable']:<3} false_grounding={_fmt(u['false_grounding_rate'], True)}  "
+              f"correct_rejection={_fmt(u['correct_rejection_rate'], True)}")
+        for st, rate in u["false_grounding_by_subtype"].items():
+            print(f"      {st:<10} false_grounding={_fmt(rate, True)}")
+        print(f"  Answerability AUROC: {_fmt(m['answerability_auroc'])}")
+    else:
+        print("  (no unanswerable queries in this run — add the T3 rows to see false grounding)")
+    print(f"  Abstention-aware accuracy: {_fmt(m['abstention_aware_accuracy'], True)}")
+    if m["n_missing_confidence"]:
+        print(f"  WARNING: {m['n_missing_confidence']} results had no {key}; "
+              "they were treated as committed (no abstention credit).")
+
+
 # ── Evaluator ──────────────────────────────────────────────────────────────────
 
 class Evaluator:
@@ -672,13 +871,17 @@ class Evaluator:
         kg_path: str | Path | None = None,
         model: str = DEFAULT_MODEL,
         top_k: int = DEFAULT_TOP_K,
+        prompt_variant: str = DEFAULT_PROMPT_VARIANT,
     ):
         if condition not in CONDITIONS:
             raise ValueError(f"Unknown condition: {condition}")
+        if prompt_variant not in PROMPT_VARIANTS:
+            raise ValueError(f"Unknown prompt variant: {prompt_variant}")
 
         self.condition = condition
         self.model = model
         self.top_k = top_k
+        self.prompt_variant = prompt_variant
 
         if kg_path is None:
             kg_path = ROOT / "output" / "lumin_kg.json"
@@ -756,7 +959,9 @@ class Evaluator:
             context_docs, recall, confidence = self.concept_index.retrieve(
                 query, self.top_k, gt, concept_label
             )
-            raw = run_rag_query(query, context_docs, self.llm_client, self.model)
+            raw = run_rag_query(
+                query, context_docs, self.llm_client, self.model, self.prompt_variant
+            )
             predicted = normalize_filters(raw)
             verbalized_confidence = extract_verbalized_confidence(raw)
 
@@ -765,7 +970,9 @@ class Evaluator:
             context_docs, recall, confidence = self.mapping_index.retrieve(
                 query, self.top_k, gt, concept_label
             )
-            raw = run_rag_query(query, context_docs, self.llm_client, self.model)
+            raw = run_rag_query(
+                query, context_docs, self.llm_client, self.model, self.prompt_variant
+            )
             predicted = normalize_filters(raw)
             verbalized_confidence = extract_verbalized_confidence(raw)
 
@@ -775,7 +982,9 @@ class Evaluator:
             context_docs = [oracle_doc] if oracle_doc else []
             recall = None
             confidence = 1.0
-            raw = run_rag_query(query, context_docs, self.llm_client, self.model)
+            raw = run_rag_query(
+                query, context_docs, self.llm_client, self.model, self.prompt_variant
+            )
             predicted = normalize_filters(raw)
             verbalized_confidence = extract_verbalized_confidence(raw)
 
@@ -788,7 +997,7 @@ class Evaluator:
             context_docs = []
 
         elif self.condition == "zero_shot":
-            raw = run_rag_query(query, [], self.llm_client, self.model)
+            raw = run_rag_query(query, [], self.llm_client, self.model, self.prompt_variant)
             predicted = normalize_filters(raw)
             confidence = 0.5
             recall = None
@@ -808,6 +1017,7 @@ class Evaluator:
             context_docs=context_docs,
             retrieval_recall=recall,
             verbalized_confidence=verbalized_confidence,
+            subtype=case.get("subtype"),
         )
 
     def aggregate(self, results: list[EvalResult]) -> dict:
@@ -822,6 +1032,16 @@ class Evaluator:
             ),
             "by_tier": {},
         }
+        answerable = [r for r in results if r.ground_truth_filters]
+        unanswerable = [r for r in results if not r.ground_truth_filters]
+        if unanswerable:
+            # Headline accuracy over T0-T2 only, so adding T3 rows never
+            # silently moves the number the earlier runs were reported on.
+            summary["accuracy_answerable"] = (
+                sum(r.correct for r in answerable) / max(1, len(answerable))
+            )
+            summary["n_answerable"] = len(answerable)
+            summary["n_unanswerable"] = len(unanswerable)
 
         for tier in TIERS:
             tier_results = [r for r in results if r.tier == tier]
@@ -910,6 +1130,7 @@ def load_test_cases(path: str | Path | None) -> list[dict]:
                 "tier": row.get("tier", "T0"),
                 "ground_truth_filters": gt,
                 "concept_label": row.get("concept_label") or None,
+                "subtype": row.get("subtype") or None,
             })
     return cases
 
@@ -920,6 +1141,9 @@ def _print_summary(summary: dict):
     print("=" * 60)
     print(f"  Queries:          {summary['n']}")
     print(f"  Accuracy:         {summary['accuracy']:.3f}")
+    if "accuracy_answerable" in summary:
+        print(f"  Accuracy (T0-T2): {summary['accuracy_answerable']:.3f}  "
+              f"(n={summary['n_answerable']}; T3 n={summary['n_unanswerable']} scored separately)")
     if summary.get("retrieval_recall") is not None:
         print(f"  Retrieval recall: {summary['retrieval_recall']:.3f}")
 
@@ -951,13 +1175,17 @@ def _print_calibration_anchors(curve: list[dict]):
 
 # ── CLI ────────────────────────────────────────────────────────────────────────
 
+def _results_from_payload(payload: dict) -> list[EvalResult]:
+    fields = set(EvalResult.__dataclass_fields__)
+    return [EvalResult(**{k: v for k, v in r.items() if k in fields}) for r in payload["results"]]
+
+
 def main():
     parser = argparse.ArgumentParser(description="LUMIN evaluation pipeline")
     parser.add_argument(
         "--condition",
-        required=True,
         choices=CONDITIONS,
-        help="Evaluation condition",
+        help="Evaluation condition (not needed with --reanalyze)",
     )
     parser.add_argument(
         "--model",
@@ -967,7 +1195,16 @@ def main():
     parser.add_argument(
         "--dataset",
         default=None,
-        help="CSV test dataset path (default: inline dev set)",
+        help="CSV test dataset path (default: inline dev set). Rows with an "
+             "empty ground_truth_filters are treated as unanswerable (T3).",
+    )
+    parser.add_argument(
+        "--prompt-variant",
+        default=DEFAULT_PROMPT_VARIANT,
+        choices=PROMPT_VARIANTS,
+        help="System prompt for the LLM conditions. 'baseline' is the prompt "
+             "used for all earlier runs; 'improved' adds completeness, value-form, "
+             "no-forced-match and abstention rules (no dataset-specific content).",
     )
     parser.add_argument(
         "--top-k",
@@ -979,6 +1216,28 @@ def main():
         "--kg-path",
         default=None,
         help="Path to lumin_kg.json",
+    )
+    parser.add_argument(
+        "--tau",
+        type=float,
+        default=0.0,
+        help="Abstain when the abstain-key confidence is below this. Applied at "
+             "scoring time to the stored raw predictions, so it never needs a "
+             "re-run. 0.0 = no confidence-based abstention (default).",
+    )
+    parser.add_argument(
+        "--abstain-key",
+        default=None,
+        choices=["confidence", "verbalized_confidence"],
+        help="Signal that --tau thresholds. Default: 'confidence' (rho) for kg, "
+             "'verbalized_confidence' for the LLM conditions.",
+    )
+    parser.add_argument(
+        "--reanalyze",
+        default=None,
+        metavar="RESULTS_JSON",
+        help="Skip all API calls: reload a saved eval_results_*.json and print "
+             "the abstention report / sweep at the given --tau.",
     )
     parser.add_argument(
         "--calibration-curve",
@@ -1007,20 +1266,50 @@ def main():
     )
     args = parser.parse_args()
 
+    # ── Offline re-analysis: no API calls, no KG load ──────────────────────
+    if args.reanalyze:
+        with open(args.reanalyze, encoding="utf-8") as f:
+            payload = json.load(f)
+        results = _results_from_payload(payload)
+        condition = payload.get("condition") or args.condition or "kg"
+        key = args.abstain_key or default_abstain_key(condition)
+        print(f"Re-analyzing {args.reanalyze}  "
+              f"[condition={condition}, prompt={payload.get('prompt_variant', 'baseline')}]")
+        print_abstention_report(results, key, args.tau)
+        print(f"\n  Sweep ({key}):")
+        print(f"  {'tau':>5} {'ans_cov':>8} {'sel_acc':>8} {'silent':>7} {'false_grd':>10} {'abst_acc':>9}")
+        for row in abstention_sweep(results, key, step=0.1):
+            print(f"  {row['tau']:5.2f} {_fmt(row['answerable_coverage'], True):>8} "
+                  f"{_fmt(row['selective_accuracy'], True):>8} {row['silent_failures']:7d} "
+                  f"{_fmt(row['false_grounding_rate'], True):>10} "
+                  f"{_fmt(row['abstention_aware_accuracy'], True):>9}")
+        return
+
+    if not args.condition:
+        parser.error("--condition is required unless --reanalyze is given")
+
     test_cases = load_test_cases(args.dataset)
     evaluator = Evaluator(
         condition=args.condition,
         kg_path=args.kg_path,
         model=args.model,
         top_k=args.top_k,
+        prompt_variant=args.prompt_variant,
     )
 
+    llm_cond = args.condition != "kg"
     print(f"\nRunning {len(test_cases)} test cases "
-          f"[condition={args.condition}, model={args.model}]")
+          f"[condition={args.condition}, model={args.model}"
+          f"{', prompt=' + args.prompt_variant if llm_cond else ''}]")
 
     results = evaluator.run(test_cases)
     summary = evaluator.aggregate(results)
     _print_summary(summary)
+
+    abstain_key = args.abstain_key or default_abstain_key(args.condition)
+    has_t3 = any(not r.ground_truth_filters for r in results)
+    if has_t3 or args.tau > 0:
+        print_abstention_report(results, abstain_key, args.tau)
 
     out_dir = Path(args.output)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -1032,6 +1321,7 @@ def main():
         payload = {
             "condition": args.condition,
             "model": args.model,
+            "prompt_variant": args.prompt_variant,
             "confidence_key": args.confidence_key,
             "n_queries": len(results),
             "auroc": metrics["auroc"],
@@ -1062,14 +1352,25 @@ def main():
         if any(r.verbalized_confidence is not None for r in results):
             metrics_verbalized = evaluator.calibration_metrics(results, confidence_key="verbalized_confidence")
 
-        results_path = out_dir / f"eval_results_{args.condition}.json"
+        # Non-default prompt variants get their own file so they never
+        # overwrite the baseline results the earlier analysis was built on.
+        suffix = "" if (args.prompt_variant == DEFAULT_PROMPT_VARIANT or not llm_cond) \
+            else f"__{args.prompt_variant}"
+        results_path = out_dir / f"eval_results_{args.condition}{suffix}.json"
         payload = {
             "condition": args.condition,
             "model": args.model,
+            "prompt_variant": args.prompt_variant if llm_cond else None,
             "summary": summary,
             "calibration_metrics": {
                 "confidence": metrics_confidence,
                 "verbalized_confidence": metrics_verbalized,
+            },
+            "abstention": {
+                "confidence_key": abstain_key,
+                "tau": args.tau,
+                "at_tau": abstention_metrics(results, abstain_key, args.tau),
+                "sweep": abstention_sweep(results, abstain_key),
             },
             "results": [asdict(r) for r in results],
         }
